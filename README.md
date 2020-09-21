@@ -1,2 +1,2 @@
-# modelling-manual
-Interactive manual for learning how to model environmental dynamics
+# glm-workbook
+Interactive manual for learning how to model with GLM
