@@ -9,7 +9,7 @@ bookdown::gitbook:
         <li><a href="./"><b>GLM Workbook</b></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: [["Module 8 Resources.zip", "Module 8 Resources"]]
+    download: [["GLM Module Resources.zip", "GLM Module Resources"]]
     search: yes
     fontsettings:
       theme: white
@@ -17,7 +17,7 @@ bookdown::gitbook:
       size: 2
     sharing:
       facebook: no
-      github: no
+      github: yes
       twitter: no
       linkedin: no
       weibo: no

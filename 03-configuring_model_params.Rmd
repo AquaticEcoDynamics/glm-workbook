@@ -8,7 +8,6 @@ To configure the model, open the `glm3.nml` file in the *Kinneret97* directory w
 The easiest way to edit the `glm3.nml` file is with the Atom text editor. You can download it [here](https://atom.io).
 ```
 
-
 ```{style="max-height: 400px;"}
 !------------------------------------------------------------------------------!
 !                                                                              !
@@ -70,43 +69,4 @@ You will need to update the output depth of your surface output file.
 
 
 
-
-<!-- ### Exercises {#M8_9 -} -->
-
-<!-- #### Lake Stratification {#M8_10 -} -->
-
-<!-- The simulation in the *Kinneret97* directory is an example 40m deep, monomictic lake that is used to supply drinking water and support an active fishery. -->
-
-<!-- Before running the model, open the file `glm3.nml` in a text editor and inspect the model setup etc. This file is the main configuration file that drives the model. The file `glm3.nml` has several key sections in it related to the model domain and parameters, the sources of boundary condition data, and details of outputs. Scan the parameters, e.g. number of layers, light extinction coefficient, mixing coefficient etc. -->
-
-<!-- Once the model has run, you can inspect the results. There are three ways to look at output: -->
-
-<!-- - Via the time-depth contour plots that appear during the run (configured via `plots.nml`) -->
-<!-- - Further information on the daily water and energy balance is in the output file `lake.csv` -->
-<!-- - Time series values of selected state variables (e.g. temperature, salinity, etc...) can be requested for a specific depth (depth above bottom) – this is setup in `&outputs` (eg. `WQ_5.csv`) -->
-
-<!-- 1) Draw a schematic picture of the lake, the relevant boundary conditions (both related to water -->
-<!-- fluxes and energy fluxes). -->
-<!-- 2) Identify and open the boundary condition input files - these are csv files containing time-series of meteorological information, and inflow and outflow volumes. These files can be opened in Excel or a text-editor. Find where these files are called from within `glm3.nml`. -->
-<!-- 3) Plot the lake water balance – volume, water level and fluxes including inflows, outflows, rainfall and evaporation (refer to columns in `lake.csv`, and copy the appropriate data into your own excel spreadsheet). -->
-
-<!-- <center> -->
-<!-- ```{r module8-5, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '75%'} -->
-<!-- knitr::include_graphics("images/09-module8/picture2.png") -->
-<!-- ``` -->
-<!-- </center> -->
-
-<!-- <!-- add in equation from slide --> -->
-
-
-<!-- 4) Plot the surface heat fluxes such as shortwave, longwave, sensible heat latent heat (refer to columns in `lake.csv`). -->
-
-<!-- <center> -->
-<!-- ```{r module8-6, echo=FALSE, fig.cap="Schematic diagram of surface heat fluxes impacting lake water temperature. For a description of the heat flux terms refer to the [GLM paper](https://gmd.copernicus.org/articles/12/473/2019/)", out.width = '75%'} -->
-<!-- knitr::include_graphics("images/09-module8/picture3.png") -->
-<!-- ``` -->
-<!-- </center> -->
-
-
-<!-- #### The Ecosystem Model {#M8_11 -} -->
 

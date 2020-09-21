@@ -1,7 +1,7 @@
 # Module 3: The Ecosystem Model {#C04_1 -}
 
 <center>
-```{r pic04-1, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r pic04-1, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("images/09-module8/picture1.jpg")
 ```
 </center>

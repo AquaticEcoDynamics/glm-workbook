@@ -1,6 +1,6 @@
 # Module 1: Getting Started with GLM {#C02_1 -}
 
-### Module Resources {#C02_2 -} 
+### Module Resources {#C02_2 -}
 
 Download the GLM files for this module by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
@@ -49,7 +49,7 @@ If the model is not opening make sure you're **not** working in a network direct
 ### Anatomy of a Simulation {#C02_7 -}
 
 <center>
-```{r pic02-3, echo=FALSE, fig.cap="Schematic diagram of water balance components.", out.width = '85%'}
+```{r pic02-3, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("images/09-module8/picture4.jpg")
 ```
 </center>
