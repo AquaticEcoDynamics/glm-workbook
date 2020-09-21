@@ -1,0 +1,11 @@
+book_filename: GLM Workbook
+output_dir: docs
+delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "01-preparation.Rmd",
+            "02-getting_started.Rmd",
+            "03-configuring_model_params.Rmd",
+            "04-ecosystem_model.Rmd",
+            "05-error_sensitivity.Rmd",
+            "10-references.Rmd"]
+new_session: no

@@ -1,0 +1,82 @@
+# Module 3: The Ecosystem Model {#C04_1 -}
+
+<center>
+```{r pic04-1, echo=FALSE, fig.cap="", out.width = '75%'}
+knitr::include_graphics("images/09-module8/picture1.jpg")
+```
+</center>
+
+The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html). These are separate models, but have been set up to run side by side. They are configured using the text file `aed2.nml`.
+
+```{block2, hint04_2, type='rmdnote2'}
+
+The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed2.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
+
+```
+
+Let’s also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
+
+```{block2, hint04_3, type='rmdtip2'}
+If they are there already, make sure that the number of variables is high enough to include them all.
+```
+
+In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
+
+<center>
+```{r table04-4, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module8_1 <- read.csv("tables/module8/table1.csv", check.names=FALSE) 
+kable(module8_1, format = "html", escape = F, align = "c", caption = "Water quality variables and their descriptions.") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "25em") %>%
+  column_spec(2, width_min = "25em") %>%
+  scroll_box(width = "100%", height="250px",
+             fixed_thead = FALSE) 
+```
+</center>
+<br>
+
+Now run the model as above by double clicking the `glm.bat`.
+
+1) Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups, all of the nitrogen variables, or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
+2) How would these concentrations change if the air temperature increased by 2°C?
+(You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so YYYY-MM-DD hh:mm. A pre-made version of this file can be found in *bcs* which is called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
+
+```{style="max-height: 239px;"}
+!-------------------------------------------------------------------------------
+! meteorology
+!-------------------------------------------------------------------------------
+&meteorology
+   met_sw      = .true.
+   lw_type     = 'LW_IN'
+   rain_sw     = .false.
+   atm_stab    = 0
+   fetch_mode  = 0
+  !rad_mode    = 1
+   albedo_mode = 1
+   cloud_mode  = 4
+   !-- BC file details
+   subdaily    = .true.
+   meteo_fl    = 'bcs/met_1997_2004.csv' <------- Update this!
+   wind_factor = 0.9
+   lw_factor   = 1.0
+   lw_offset   = 0.0
+   !-- Parameters
+   ce = 0.0013
+   ch = 0.0013
+   cd  = 0.0013
+  !catchrain      = .true.
+  !rain_threshold = 0.001
+  !runoff_coef    = 0.0
+/
+```
+
+3) What happens if we change the water clarity? Increase and decrease from the original value to see the response
+
+```{block2, hint04_5, type='rmdtip2'}
+You must change the light extinction coefficient `Kw` (range 0-1) in the `glm3.nml` file.
+```
