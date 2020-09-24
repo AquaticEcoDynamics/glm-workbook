@@ -189,18 +189,25 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \tag{1}
 \end{equation}\]</span>
 </center>
-<ol start="2" style="list-style-type: decimal">
-<li>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
-</ol>
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>
+<ol start="2">
+<li>
+<ol>
+<li>
+Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+</li>
 <center>
 <span class="math display" id="eq:05-2">\[\begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
 \tag{2}
 \end{equation}\]</span>
 </center>
-<ol start="3" style="list-style-type: decimal">
-<li>Assess how sensitive the phytoplankton biomass is to water clarity:</li>
-</ol>
+<li>
+Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
+</li>
+<br>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -222,35 +229,36 @@ Water clarity Increase 0.77
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 Average WQ_35 temperature
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 </center>
-<p><br></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Assess how sensitive the phytoplankton biomass is to wind speed:</li>
-</ol>
+<br>
+<li>
+Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
+</li>
+<br>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -260,43 +268,46 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 GLM results
 </th>
 <th style="text-align:center;">
-Wind Speed Decrease 0.37
+Wind Speed Decrease 0.6
 </th>
 <th style="text-align:center;">
-Wind Speed Original 0.57
+Wind Speed Original 0.9
 </th>
 <th style="text-align:center;">
-Wind Speed Increase 0.77
+Wind Speed Increase 1.2
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 Average WQ_35 temperature
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
-<td style="text-align:center;min-width: 12em; ">
+<td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
 </tbody>
 </table>
 </div>
 </center>
+</ol>
+</li>
+</ol>
 
 </div>
             </section>

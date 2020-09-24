@@ -67,6 +67,7 @@ The easiest way to edit the `glm3.nml` file is with the Atom text editor. You ca
 You will need to update the output depth of your surface output file.
 ```
 
-
-
+```{block2, hint09_8, type='rmdtip2'}
+For future activities make sure you change back to 43m.
+```
 

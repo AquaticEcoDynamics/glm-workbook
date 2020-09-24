@@ -9,7 +9,13 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \end{equation}
 </center>
 
-2) Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>   
+<ol start="2">
+<li>
+<ol>
+<li> Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
 
 <center>
 \begin{equation}
@@ -18,8 +24,8 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 \end{equation}
 </center>
 
-3) Assess how sensitive the phytoplankton biomass is to water clarity:
-
+<li>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</li>
+<br>
 <center>
 ```{r table05-1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -27,21 +33,20 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module8_2 <- read.csv("tables/module8/table2.csv", check.names=FALSE)
+module8_2 <- read.csv("tables/module8/table2.csv", check.names=FALSE) 
 kable(module8_2, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "12em") %>%
-  column_spec(2, width_min = "12em") %>%
-  column_spec(3, width_min = "12em") %>%
-  column_spec(4, width_min = "12em") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
   scroll_box(width = "100%",
-             fixed_thead = FALSE)
+             fixed_thead = FALSE) 
 ```
 </center>
 <br>
-
-4) Assess how sensitive the phytoplankton biomass is to wind speed:
-
+<li>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</li>
+<br>
 <center>
 ```{r table05-2, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -49,15 +54,17 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module8_3 <- read.csv("tables/module8/table3.csv", check.names=FALSE)
+module8_3 <- read.csv("tables/module8/table3.csv", check.names=FALSE) 
 kable(module8_3, format = "html", escape = F, align = "c") %>%
   kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "12em") %>%
-  column_spec(2, width_min = "12em") %>%
-  column_spec(3, width_min = "12em") %>%
-  column_spec(4, width_min = "12em") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
   scroll_box(width = "100%",
-             fixed_thead = FALSE)
+             fixed_thead = FALSE) 
 ```
 </center>
-
+</ol>
+</li>
+</ol>
