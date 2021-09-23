@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 2: Configuring Model Parameters | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 2: Configuring Model Parameters | GLM Workbook" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="C02-1.html"/>
 <link rel="next" href="C04-1.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="https://hypothes.is/embed.js" async></script>
@@ -60,6 +62,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -119,6 +122,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -187,55 +191,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="rmdnote2">
 The easiest way to edit the <code>glm3.nml</code> file is with the Atom text editor. You can download it <a href="https://atom.io">here</a>.
 </div>
-<pre style="max-height: 400px;"><code>!------------------------------------------------------------------------------!
-!                                                                              !
-!          .----------------.  .----------------.  .----------------.          !
-!          | .--------------. || .--------------. || .--------------. |        !
-!          | |    ______    | || |   _____      | || | ____    ____ | |        !
-!          | |  .&#39; ___  |   | || |  |_   _|     | || ||_   \  /   _|| |        !
-!          | | / .&#39;   \_|   | || |    | |       | || |  |   \/   |  | |        !
-!          | | | |    ____  | || |    | |   _   | || |  | |\  /| |  | |        !
-!          | | \ `.___]  _| | || |   _| |__/ |  | || | _| |_\/_| |_ | |        !
-!          | |  `._____.&#39;   | || |  |________|  | || ||_____||_____|| |        !
-!          | |              | || |              | || |              | |        !
-!          | &#39;--------------&#39; || &#39;--------------&#39; || &#39;--------------&#39; |        !
-!          &#39;----------------&#39;  &#39;----------------&#39;  &#39;----------------&#39;          !
-!                                                                              !
-!-------------------------------------------------------------------------------
-
-!-------------------------------------------------------------------------------
-! general model setup
-!-------------------------------------------------------------------------------
-&amp;glm_setup
-   sim_name = &#39;Example Kinneret GLM Simulation&#39;
-   max_layers = 500
-   min_layer_vol = 0.025
-   min_layer_thick = 0.15
-   max_layer_thick = 1.50
-   density_model = 1
-/</code></pre>
+<style type="text/css">
+.codeScroll {
+  overflow-y: scroll; 
+   height:450px;
+}
+</style>
+<div class="sourceCode" id="cb2"><pre class="sourceCode fortran codeScroll"><code class="sourceCode fortranfixed"><span id="cb2-1"><a href="C03-1.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">!------------------------------------------------------------------------------!</span></span>
+<span id="cb2-2"><a href="C03-1.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">!                                                                              !</span></span>
+<span id="cb2-3"><a href="C03-1.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">!          .----------------.  .----------------.  .----------------.          !</span></span>
+<span id="cb2-4"><a href="C03-1.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">!          | .--------------. || .--------------. || .--------------. |        !</span></span>
+<span id="cb2-5"><a href="C03-1.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |    ______    | || |   _____      | || | ____    ____ | |        !</span></span>
+<span id="cb2-6"><a href="C03-1.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |  .&#39; ___  |   | || |  |_   _|     | || ||_   \  /   _|| |        !</span></span>
+<span id="cb2-7"><a href="C03-1.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | / .&#39;   \_|   | || |    | |       | || |  |   \/   |  | |        !</span></span>
+<span id="cb2-8"><a href="C03-1.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | | |    ____  | || |    | |   _   | || |  | |\  /| |  | |        !</span></span>
+<span id="cb2-9"><a href="C03-1.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">!          | | \ `.___]  _| | || |   _| |__/ |  | || | _| |_\/_| |_ | |        !</span></span>
+<span id="cb2-10"><a href="C03-1.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |  `._____.&#39;   | || |  |________|  | || ||_____||_____|| |        !</span></span>
+<span id="cb2-11"><a href="C03-1.html#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">!          | |              | || |              | || |              | |        !</span></span>
+<span id="cb2-12"><a href="C03-1.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">!          | &#39;--------------&#39; || &#39;--------------&#39; || &#39;--------------&#39; |        !</span></span>
+<span id="cb2-13"><a href="C03-1.html#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">!          &#39;----------------&#39;  &#39;----------------&#39;  &#39;----------------&#39;          !</span></span>
+<span id="cb2-14"><a href="C03-1.html#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">!                                                                              !</span></span>
+<span id="cb2-15"><a href="C03-1.html#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb2-16"><a href="C03-1.html#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="C03-1.html#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb2-18"><a href="C03-1.html#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">! general model setup</span></span>
+<span id="cb2-19"><a href="C03-1.html#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb2-20"><a href="C03-1.html#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>glm_setup</span>
+<span id="cb2-21"><a href="C03-1.html#cb2-21" aria-hidden="true" tabindex="-1"></a>   sim_name <span class="kw">=</span> <span class="st">&#39;Example Kinneret GLM Simulation&#39;</span></span>
+<span id="cb2-22"><a href="C03-1.html#cb2-22" aria-hidden="true" tabindex="-1"></a>   max_layers <span class="kw">=</span> <span class="dv">500</span></span>
+<span id="cb2-23"><a href="C03-1.html#cb2-23" aria-hidden="true" tabindex="-1"></a>   min_layer_vol <span class="kw">=</span> <span class="fl">0.025</span></span>
+<span id="cb2-24"><a href="C03-1.html#cb2-24" aria-hidden="true" tabindex="-1"></a>   min_layer_thick <span class="kw">=</span> <span class="fl">0.15</span></span>
+<span id="cb2-25"><a href="C03-1.html#cb2-25" aria-hidden="true" tabindex="-1"></a>   max_layer_thick <span class="kw">=</span> <span class="fl">1.50</span></span>
+<span id="cb2-26"><a href="C03-1.html#cb2-26" aria-hidden="true" tabindex="-1"></a>   density_model <span class="kw">=</span> <span class="dv">1</span></span>
+<span id="cb2-27"><a href="C03-1.html#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
 </div>
 <div id="C03_3" class="section level3 unnumbered">
 <h3>Exercise: Adding Output Points</h3>
 <ol style="list-style-type: decimal">
 <li>Go to the <code>&amp;output</code> section of <code>glm3.nml</code> and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.</li>
 </ol>
-<pre style="max-height: 239px;"><code>!-------------------------------------------------------------------------------
-! format for output and filename(s)
-!-------------------------------------------------------------------------------
-&amp;output
-   out_dir = &#39;output&#39;
-   out_fn  = &#39;output&#39;
-   nsave = 6  !This will output every 6 hours
-   ! General summary file
-   csv_lake_fname = &#39;lake&#39;
-   ! Depth specific outputs
-   csv_point_nlevs = 2 
-   csv_point_fname = &#39;WQ_&#39;
-   csv_point_at = 5.,35.
-   csv_point_nvars = 4
-   csv_point_vars = &#39;temp&#39;,&#39;salt&#39;,&#39;PHS_frp&#39;,&#39;NIT_amm&#39;
-/</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb3-1"><a href="C03-1.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb3-2"><a href="C03-1.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">! format for output and filename(s)</span></span>
+<span id="cb3-3"><a href="C03-1.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb3-4"><a href="C03-1.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>output</span>
+<span id="cb3-5"><a href="C03-1.html#cb3-5" aria-hidden="true" tabindex="-1"></a>   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
+<span id="cb3-6"><a href="C03-1.html#cb3-6" aria-hidden="true" tabindex="-1"></a>   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
+<span id="cb3-7"><a href="C03-1.html#cb3-7" aria-hidden="true" tabindex="-1"></a>   nsave <span class="kw">=</span> <span class="dv">6</span>  <span class="co">!This will output every 6 hours</span></span>
+<span id="cb3-8"><a href="C03-1.html#cb3-8" aria-hidden="true" tabindex="-1"></a>   <span class="co">! General summary file</span></span>
+<span id="cb3-9"><a href="C03-1.html#cb3-9" aria-hidden="true" tabindex="-1"></a>   csv_lake_fname <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></span>
+<span id="cb3-10"><a href="C03-1.html#cb3-10" aria-hidden="true" tabindex="-1"></a>   <span class="co">! Depth specific outputs</span></span>
+<span id="cb3-11"><a href="C03-1.html#cb3-11" aria-hidden="true" tabindex="-1"></a>   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span> </span>
+<span id="cb3-12"><a href="C03-1.html#cb3-12" aria-hidden="true" tabindex="-1"></a>   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span></span>
+<span id="cb3-13"><a href="C03-1.html#cb3-13" aria-hidden="true" tabindex="-1"></a>   csv_point_at <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span></span>
+<span id="cb3-14"><a href="C03-1.html#cb3-14" aria-hidden="true" tabindex="-1"></a>   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span></span>
+<span id="cb3-15"><a href="C03-1.html#cb3-15" aria-hidden="true" tabindex="-1"></a>   csv_point_vars <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></span>
+<span id="cb3-16"><a href="C03-1.html#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Assess how the degree of stratification changes as the initial water level of the lake is reduced by 20m. To do this change the initial starting lake depth and profile details in <code>glm3.nml</code>.</li>
 </ol>

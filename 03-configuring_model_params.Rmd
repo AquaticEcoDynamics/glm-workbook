@@ -8,7 +8,15 @@ To configure the model, open the `glm3.nml` file in the *Kinneret97* directory w
 The easiest way to edit the `glm3.nml` file is with the Atom text editor. You can download it [here](https://atom.io).
 ```
 
-```{style="max-height: 400px;"}
+```{css, echo=FALSE}
+.codeScroll {
+  overflow-y: scroll; 
+   height:450px;
+}
+```
+
+
+```{fortran, eval = FALSE, class.source="codeScroll"}
 !------------------------------------------------------------------------------!
 !                                                                              !
 !          .----------------.  .----------------.  .----------------.          !
@@ -42,7 +50,7 @@ The easiest way to edit the `glm3.nml` file is with the Atom text editor. You ca
 
 1) Go to the `&output` section of `glm3.nml` and customize the configuration to make two output files, one at 5m from the bottom (ie. in the lake hypolimnion) and one at 35m from the bottom (ie. in the lake epilimnion). This create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. Plot the temperate of the two layers in excel. Identify the periods where the lake is stratified and mixed.
 
-```{style="max-height: 239px;"}
+```{fortran, eval = FALSE, style="max-height: 239px;"}
 !-------------------------------------------------------------------------------
 ! format for output and filename(s)
 !-------------------------------------------------------------------------------
