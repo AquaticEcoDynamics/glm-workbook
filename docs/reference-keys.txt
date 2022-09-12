@@ -1,3 +1,5 @@
 eq:05-1
 eq:05-2
 tab:table06-1
+glm-configuration-file-glm3.nml
+glm-plot-window-file-plots.nml
