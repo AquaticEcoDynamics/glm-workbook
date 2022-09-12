@@ -3,12 +3,14 @@
 #### Running GLM on MacOS {#C02_4 -}
 
 - Open the Terminal application on your Mac
-- Use the `cd` (change directory) command to navigate to the *Kinneret97* folder
+- Use the `cd` (change directory) command to navigate to the simulation directory (e.g. the *Kinneret97* folder)
 - In Finder, go to the macGLM folder and right-click on the glm app, select *Show Package Contents*
 - Enter the Contents folder then the MacOS folder, and locate the glm executable file
 - Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal
 - Leave a space after the file path and type `--xdisp`
-- Press Enter and the model will open
+- Press Enter and the model will run
+
+These steps are shown in the screen recording below for the *Kinneret97* simulation:
 
 <center>
 <video width="100%" height="100%" controls>
@@ -16,15 +18,15 @@
 </video>
 </center>
 
-```{block2, hint02_1, type='rmdnote2'}
+```{block2, hint03_1, type='rmdnote2'}
 Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
 ```
 
 #### Running GLM on Windows {#C02_5 -}
 
-On Windows, the model can be run using a batch-file `glm.bat`, which you can double click from in the *Kinneret97* directory. The `.bat` file calls the GLM model from the current working directory.
+On Windows, the model can be run using a batch-file `glm.bat`, which you can open from in the simulation directory (e.g. *Kinneret97* folder). The `.bat` file calls the GLM model from the current working directory.
 
-```{block2, hint02_2, type='rmdnote2'}
+```{block2, hint03_2, type='rmdnote2'}
 
 If the model is not opening make sure you're **not** working in a network directory (e.g. OneDrive) and the file path to the `glm.bat` file has **zero** spaces in it.
 

@@ -138,16 +138,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#glm-documentation"><i class="fa fa-check"></i>GLM Documentation</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs</a></li>
-<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i>Error Assessment</a></li>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Kinneret</a></li>
-<li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Darwin</a></li>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i>Error Assessment</a><ul>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_2"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_3"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Case Study: Kinneret</a><ul>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Case Study: Darwin</a></li>
 <li class="chapter" data-level="" data-path="other-sims.html"><a href="other-sims.html"><i class="fa fa-check"></i>Other Simulations</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -171,135 +180,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="error-assessment" class="section level1 unnumbered hasAnchor">
 <h1>Error Assessment<a href="error-assessment.html#error-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<ol style="list-style-type: decimal">
-<li>Calculate the mean absolute error in the simulation using the observed temperature data (<code>ObservedTempData.xlsx</code> from the <em>data</em> folder in <em>Kinneret97</em>) and the simulated temperature data (the simulated temperature data is from the surface layer in <code>lake.csv</code>).</li>
-</ol>
+<div id="C05_2" class="section level2 unnumbered hasAnchor">
+<h2>Mean Absolute Error (MAE)<a href="error-assessment.html#C05_2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mean absolute error measures the average absolute difference between the simulated results and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:</p>
 <center>
 <span class="math display" id="eq:05-1">\[\begin{equation}
 MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \tag{1}
 \end{equation}\]</span>
 </center>
-<style>
-ol > li > ol > li {list-style-type:lower-alpha}
-</style>
-<ol start="2">
-<li>
-<ol>
-<li>
-Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
-</li>
+</div>
+<div id="C05_3" class="section level2 unnumbered hasAnchor">
+<h2>Sensitivity Index (SI)<a href="error-assessment.html#C05_3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:</p>
 <center>
 <span class="math display" id="eq:05-2">\[\begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
 \tag{2}
 \end{equation}\]</span>
 </center>
-<li>
-Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
-</li>
-<br>
-<center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;">
-GLM results
-</th>
-<th style="text-align:center;">
-Water clarity Decrease 0.37
-</th>
-<th style="text-align:center;">
-Water clarity Original 0.57
-</th>
-<th style="text-align:center;">
-Water clarity Increase 0.77
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-Average WQ_35 temperature
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-Average WQ_35 phytoplankton (green, crypto, diatom) biomass
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</center>
-<br>
-<li>
-Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
-</li>
-<br>
-<center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;">
-GLM results
-</th>
-<th style="text-align:center;">
-Wind Speed Decrease 0.6
-</th>
-<th style="text-align:center;">
-Wind Speed Original 0.9
-</th>
-<th style="text-align:center;">
-Wind Speed Increase 1.2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-Average WQ_35 temperature
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-Average WQ_35 phytoplankton (green, crypto, diatom) biomass
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</center>
-</ol>
-</li>
-</ol>
 
+</div>
 </div>
             </section>
 
