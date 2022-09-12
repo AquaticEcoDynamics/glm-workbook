@@ -1,7 +1,8 @@
 # Error Assessment {#error-assessment -}
 
+## Mean Absolute Error (MAE) {#C05_2 -}
 
-1) Calculate the mean absolute error in the simulation using the observed temperature data (`ObservedTempData.xlsx` from the *data* folder in *Kinneret97*) and the simulated temperature data (the simulated temperature data is from the surface layer in `lake.csv`).
+Mean absolute error measures the average absolute difference between the simulated results and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:
 
 <center>
 \begin{equation}
@@ -10,13 +11,9 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \end{equation}
 </center>
 
-<style>
-ol > li > ol > li {list-style-type:lower-alpha}
-</style>   
-<ol start="2">
-<li>
-<ol>
-<li> Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</li>
+## Sensitivity Index (SI) {#C05_3 -}
+
+Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:
 
 <center>
 \begin{equation}
@@ -24,48 +21,3 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 (\#eq:05-2)
 \end{equation}
 </center>
-
-<li>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</li>
-<br>
-<center>
-```{r table05-1, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(hablar)
-library(dplyr)
-options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module8_2 <- read.csv("tables/module8/table2.csv", check.names=FALSE) 
-kable(module8_2, format = "html", escape = F, align = "c") %>%
-  kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "10em") %>%
-  column_spec(2, width_min = "10em") %>%
-  column_spec(3, width_min = "10em") %>%
-  column_spec(4, width_min = "10em") %>%
-  scroll_box(width = "100%",
-             fixed_thead = FALSE) 
-```
-</center>
-<br>
-<li>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</li>
-<br>
-<center>
-```{r table05-2, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(hablar)
-library(dplyr)
-options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module8_3 <- read.csv("tables/module8/table3.csv", check.names=FALSE) 
-kable(module8_3, format = "html", escape = F, align = "c") %>%
-  kable_styling(full_width = F, position = "center") %>%
-  column_spec(1, width_min = "10em") %>%
-  column_spec(2, width_min = "10em") %>%
-  column_spec(3, width_min = "10em") %>%
-  column_spec(4, width_min = "10em") %>%
-  scroll_box(width = "100%",
-             fixed_thead = FALSE) 
-```
-</center>
-</ol>
-</li>
-</ol>
