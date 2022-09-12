@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>GLM Workbook</title>
+  <title>Running GLM | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="GLM Workbook" />
+  <meta property="og:title" content="Running GLM | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GLM Workbook" />
+  <meta name="twitter:title" content="Running GLM | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="GettingStarted.html"/>
+<link rel="prev" href="glm-file-structure.html"/>
+<link rel="next" href="processing-outputs.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -173,22 +173,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">GLM Workbook</h1>
-<p class="author"><em>Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight</em></p>
-<p class="date"><em>Last updated: 2022-09-12</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered hasAnchor">
-<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="running-glm" class="section level1 unnumbered hasAnchor">
+<h1>Running GLM<a href="running-glm.html#running-glm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="C02_4" class="section level4 unnumbered hasAnchor">
+<h4>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Open the Terminal application on your Mac</li>
+<li>Use the <code>cd</code> (change directory) command to navigate to the <em>Kinneret97</em> folder</li>
+<li>In Finder, go to the macGLM folder and right-click on the glm app, select <em>Show Package Contents</em></li>
+<li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
+<li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
+<li>Leave a space after the file path and type <code>--xdisp</code></li>
+<li>Press Enter and the model will open</li>
+</ul>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/09-module8/video1.mp4" type="video/mp4">
+</video>
+</center>
 
+<div class="rmdnote2">
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway.’
+</div>
+</div>
+<div id="C02_5" class="section level4 unnumbered hasAnchor">
+<h4>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can double click from in the <em>Kinneret97</em> directory. The <code>.bat</code> file calls the GLM model from the current working directory.</p>
+
+<div class="rmdnote2">
+<p>If the model is not opening make sure you’re <strong>not</strong> working in a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
+</div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="GettingStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="glm-file-structure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="processing-outputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

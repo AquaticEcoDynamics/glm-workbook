@@ -1,5 +1,2 @@
-fig:pic02-4
-fig:pic02-5
-tab:table04-4
 eq:05-1
 eq:05-2

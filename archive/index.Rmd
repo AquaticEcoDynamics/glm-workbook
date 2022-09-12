@@ -1,6 +1,6 @@
 --- 
 title: "GLM Workbook"
-author: "Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight"
+author: "Matt Hipsey, Giles Knight, Casper Boon, Dan Paraska"
 date: "Last updated: `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book

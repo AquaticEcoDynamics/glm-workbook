@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>GLM Workbook</title>
+  <title>Error Assessment | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="GLM Workbook" />
+  <meta property="og:title" content="Error Assessment | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GLM Workbook" />
+  <meta name="twitter:title" content="Error Assessment | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="GettingStarted.html"/>
+<link rel="prev" href="processing-outputs.html"/>
+<link rel="next" href="kinneret-sim.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -173,13 +173,136 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">GLM Workbook</h1>
-<p class="author"><em>Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight</em></p>
-<p class="date"><em>Last updated: 2022-09-12</em></p>
+<div id="error-assessment" class="section level1 unnumbered hasAnchor">
+<h1>Error Assessment<a href="error-assessment.html#error-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<ol style="list-style-type: decimal">
+<li>Calculate the mean absolute error in the simulation using the observed temperature data (<code>ObservedTempData.xlsx</code> from the <em>data</em> folder in <em>Kinneret97</em>) and the simulated temperature data (the simulated temperature data is from the surface layer in <code>lake.csv</code>).</li>
+</ol>
+<center>
+<span class="math display" id="eq:05-1">\[\begin{equation}
+MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
+\tag{1}
+\end{equation}\]</span>
+</center>
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>
+<ol start="2">
+<li>
+<ol>
+<li>
+Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+</li>
+<center>
+<span class="math display" id="eq:05-2">\[\begin{equation}
+SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
+\tag{2}
+\end{equation}\]</span>
+</center>
+<li>
+Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
+</li>
+<br>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+GLM results
+</th>
+<th style="text-align:center;">
+Water clarity Decrease 0.37
+</th>
+<th style="text-align:center;">
+Water clarity Original 0.57
+</th>
+<th style="text-align:center;">
+Water clarity Increase 0.77
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Average WQ_35 temperature
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Average WQ_35 phytoplankton (green, crypto, diatom) biomass
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="introduction" class="section level1 unnumbered hasAnchor">
-<h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+</center>
+<br>
+<li>
+Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
+</li>
+<br>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+GLM results
+</th>
+<th style="text-align:center;">
+Wind Speed Decrease 0.6
+</th>
+<th style="text-align:center;">
+Wind Speed Original 0.9
+</th>
+<th style="text-align:center;">
+Wind Speed Increase 1.2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Average WQ_35 temperature
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Average WQ_35 phytoplankton (green, crypto, diatom) biomass
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</ol>
+</li>
+</ol>
 
 </div>
             </section>
@@ -187,8 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="GettingStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="processing-outputs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kinneret-sim.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
