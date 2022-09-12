@@ -166,10 +166,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_3"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Case Study: Kinneret</a><ul>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#about"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Case Study: Darwin</a></li>
 <li class="chapter" data-level="" data-path="other-sims.html"><a href="other-sims.html"><i class="fa fa-check"></i>Other Simulations</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -192,13 +195,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="kinneret-sim" class="section level1 unnumbered hasAnchor">
 <h1>Case Study: Kinneret<a href="kinneret-sim.html#kinneret-sim" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="about" class="section level2 unnumbered hasAnchor">
+<h2>About<a href="kinneret-sim.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Lake Kinneret is a freshwater lake (32 ºN, 35 ºE) situated in northern Israel, and is the lowest freshwater lake in the world (209m below Mediterranean Sea Level). The lake has a surface area of 173 km<sup>2</sup>, and is about 49 m deep. The model is set-up to simulate the hydrological domain of Lake Kinneret for 2 years, from 1997-01-01 to 1999-01-01 (<code>&amp;time</code>), with water balance and heat fluxes hypothetically calculated based on the lake configuration and input data. Water quality functionality (AED2) is disabled for the simulation (<code>&amp;wq_setup</code>).</p>
 <center>
 <img src="images/09-module8/picture1.jpg" width="100%" />
 </center>
-<p>The <em>Kinneret97</em> model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a>. These are separate models, but have been set up to run side by side. They are configured using the text file <code>aed2.nml</code>.</p>
+<p>The <em>Kinneret97</em> model simulation above has the ecological model aed2 enabled. It has been pre-configured to run the customizable <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a>. These are separate models, but have been set up to run side by side. They are configured using the text file <code>aed2.nml</code>.</p>
+</div>
+<div id="exercises" class="section level2 unnumbered hasAnchor">
+<h2>Exercises<a href="kinneret-sim.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Begin by running the model as-is. If you’re not sure how to do this, read the <a href="running-glm.html#running-glm">Getting Started</a> page.</p>
 
 <div class="rmdnote2">
-<p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed2.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
+<p>This simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed2.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
 </div>
 
 <p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
@@ -520,6 +530,7 @@ Create a well formatted, interesting graph of variables of your choice (for exam
 You must change the light extinction coefficient <code>Kw</code> (range 0-1) in the <code>glm3.nml</code> file.
 </div>
 
+</div>
 <div id="error-assessment-1" class="section level2 unnumbered hasAnchor">
 <h2>Error Assessment<a href="kinneret-sim.html#error-assessment-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol start="4" style="list-style-type: decimal">
