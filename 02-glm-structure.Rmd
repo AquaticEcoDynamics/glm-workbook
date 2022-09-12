@@ -91,7 +91,11 @@ The `plots.nml` text file configures the automatic plot window that runs during 
 -   `&plots`:`vars` is a list of the GLM or AED variables for each plot, in the same sequence as `title`.\
 -   `&plots`:`min_z` and `max_z` set the minimum and maximum values for each of the variables, in the same sequence as `title`.
 
-
+<center>
+```{r pic02-8, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("images/02-files/Plotwindow.png")
+```
+</center>
 
 
 
