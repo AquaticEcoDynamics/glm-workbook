@@ -5,7 +5,7 @@
 Lake Kinneret is a freshwater lake (32 ºN, 35 ºE) situated in northern Israel, and is the lowest freshwater lake in the world (209m below Mediterranean Sea Level). The lake has a surface area of 173 km^2^, and is about 49 m deep. The model is set-up to simulate the hydrological domain of Lake Kinneret for 2 years, from 1997-01-01 to 1999-01-01 (`&time`), with water balance and heat fluxes hypothetically calculated based on the lake configuration and input data. Water quality functionality (AED2) is disabled for the simulation (`&wq_setup`).
 
 <center>
-```{r pic04-1, echo=FALSE, fig.cap="", out.width = '100%'}
+```{r pic06-1, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("images/09-module8/picture1.jpg")
 ```
 </center>
