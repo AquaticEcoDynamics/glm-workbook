@@ -1,15 +1,3 @@
 eq:05-1
 eq:05-2
 tab:table06-1
-glm-input-files
-glm-configuration-file-glm3.nml
-glm-plot-window-file-plots.nml
-boundary-files
-inflow-files
-outflow-files
-meteorological-file
-glm-output-files
-output-netcdf
-general-lake-csv
-depth-specific-.csv
-aed-water-quality-model-files
