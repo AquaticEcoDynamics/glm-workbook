@@ -9,6 +9,7 @@ rmd_files: ["index.Rmd",
             "05-error-assessment.Rmd",
             "06-kinneret-sim.Rmd",
             "07-darwin-sim.Rmd",
-            "08-other-sims.Rmd"
+            "08-other-sims.Rmd",
+            "references.Rmd"
             ]
 new_session: no

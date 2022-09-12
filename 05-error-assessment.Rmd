@@ -2,7 +2,7 @@
 
 ## Mean Absolute Error (MAE) {#C05_2 -}
 
-Mean absolute error measures the average absolute difference between the simulated results and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:
+Mean absolute error measures the average absolute difference between the simulated and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:
 
 <center>
 \begin{equation}

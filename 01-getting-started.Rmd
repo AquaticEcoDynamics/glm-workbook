@@ -1,42 +1,54 @@
-# Getting Started {#GettingStarted -}
+# Getting Started {#GettingStarted .unnumbered}
 
-## GLM Documentation {-} 
+## GLM Documentation {.unnumbered}
 
+For GLM technical documentation, visit the [glm-aed](https://github.com/AquaticEcoDynamics/glm-aed/wiki) GitHub Repository wiki. For a detailed scientific overview of GLM, refer to @hipsey2019general's paper available [here](https://gmd.copernicus.org/articles/12/473/2019/gmd-12-473-2019.pdf).
 
-## Tools You'll Need {-} 
+## Tools You'll Need {.unnumbered}
 
-### Text Editor {-} 
+### Text Editor {.unnumbered}
 
-A text editor is required to edit GLM's `.nml` configuration files. Simple text editors like *TextEdit* on MacOS or *Wordpad* on Windows can be used however more extensible editors like [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io) are recommended. To edit the `.nml` file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM. 
+A text editor is required to edit GLM's `.nml` configuration files. Simple text editors like *TextEdit* on MacOS or *Wordpad* on Windows can be used however more extensible editors like [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io) are recommended. To edit the `.nml` file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM.
 
-### Excel {-} 
+### Excel {.unnumbered}
 
-GLM can read and write data in CSV format. Excel can be used to edit these files (e.g. time series meteorological input data) or plotting outputs. 
+GLM can read and write data in CSV format. Excel can be used to edit these files (e.g. time series meteorological input data) or plotting outputs.
 
-### R {-}
+### R {.unnumbered}
 
 Similarly to Excel, R can be used to manipulate and visualise GLM's inputted/outputted dated.
 
-- R can be downloaded [here](https://cran.csiro.au)
-- R Studio can be downloaded [here](https://rstudio.com)
+-   R can be downloaded [here](https://cran.csiro.au)
+-   R Studio can be downloaded [here](https://rstudio.com)
 
-## Unzipping files {-}
+## Unzipping files {.unnumbered}
 
 The GLM model and case study simulations featured in this workbook are distributed as a zipped file. Extracting these files will depend on your operating system.
 
 On MacOS, simply double click the 'zipped' file:
+
 <center>
+
 <video width="100%" height="100%" controls>
-  <source src="images/01-gettingstarted/video1.mp4" type="video/mp4">
+
+<source src="images/01-gettingstarted/video1.mp4" type="video/mp4">
+
 </video>
+
 </center>
+
 <br>
 
 On Windows, click 'Extract All' and follow the prompt:
 
 <center>
+
 <video width="100%" height="100%" controls>
-  <source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
+
+<source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
+
 </video>
+
 </center>
+
 <br>

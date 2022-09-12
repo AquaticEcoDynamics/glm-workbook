@@ -1,23 +1,30 @@
 # Case Study: Kinneret {#kinneret-sim -}
 
+## About {-}
+
+Lake Kinneret is a freshwater lake (32 ºN, 35 ºE) situated in northern Israel, and is the lowest freshwater lake in the world (209m below Mediterranean Sea Level). The lake has a surface area of 173 km^2^, and is about 49 m deep. The model is set-up to simulate the hydrological domain of Lake Kinneret for 2 years, from 1997-01-01 to 1999-01-01 (`&time`), with water balance and heat fluxes hypothetically calculated based on the lake configuration and input data. Water quality functionality (AED2) is disabled for the simulation (`&wq_setup`).
+
 <center>
 ```{r pic04-1, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("images/09-module8/picture1.jpg")
 ```
 </center>
 
-The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre- configured to run the customizable [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html). These are separate models, but have been set up to run side by side. They are configured using the text file `aed2.nml`.
+The *Kinneret97* model simulation above has the ecological model aed2 enabled. It has been pre-configured to run the customizable [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html). These are separate models, but have been set up to run side by side. They are configured using the text file `aed2.nml`.
+
+## Exercises {-}
+
+Begin by running the model as-is. If you're not sure how to do this, read the [Getting Started](#running-glm) page.
 
 ```{block2, hint04_2, type='rmdnote2'}
 
-The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed2.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
+This simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed2.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
 
 ```
 
 In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
 
 <center>
-
 ```{r table06-1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
@@ -32,10 +39,9 @@ kable(module8_1, format = "html", escape = F, align = "c", caption = "Water qual
   scroll_box(width = "100%", height="250px",
              fixed_thead = FALSE) 
 ```
-
 </center>
-
 <br>
+
 
 Let's also now add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
 
