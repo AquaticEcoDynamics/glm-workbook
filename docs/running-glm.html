@@ -138,16 +138,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#glm-documentation"><i class="fa fa-check"></i>GLM Documentation</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs</a></li>
-<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i>Error Assessment</a></li>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Kinneret</a></li>
-<li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Darwin</a></li>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i>Error Assessment</a><ul>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_2"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_3"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Case Study: Kinneret</a><ul>
+<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Case Study: Darwin</a></li>
 <li class="chapter" data-level="" data-path="other-sims.html"><a href="other-sims.html"><i class="fa fa-check"></i>Other Simulations</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -175,13 +184,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Open the Terminal application on your Mac</li>
-<li>Use the <code>cd</code> (change directory) command to navigate to the <em>Kinneret97</em> folder</li>
+<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>Kinneret97</em> folder)</li>
 <li>In Finder, go to the macGLM folder and right-click on the glm app, select <em>Show Package Contents</em></li>
 <li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
 <li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
 <li>Leave a space after the file path and type <code>--xdisp</code></li>
-<li>Press Enter and the model will open</li>
+<li>Press Enter and the model will run</li>
 </ul>
+<p>These steps are shown in the screen recording below for the <em>Kinneret97</em> simulation:</p>
 <center>
 <video width="100%" height="100%" controls>
 <source src="images/09-module8/video1.mp4" type="video/mp4">
@@ -195,7 +205,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <div id="C02_5" class="section level4 unnumbered hasAnchor">
 <h4>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can double click from in the <em>Kinneret97</em> directory. The <code>.bat</code> file calls the GLM model from the current working directory.</p>
+<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory.</p>
 
 <div class="rmdnote2">
 <p>If the model is not opening make sure you’re <strong>not</strong> working in a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
