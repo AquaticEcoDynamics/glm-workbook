@@ -3,11 +3,6 @@ eq:enbal-1
 eq:ex4-1
 tab:tabex5-1
 eq:ex6-1
-fig:figM7-1
-fig:figM7-2
-tab:tabM7-1
-eq:outputs-1
-tab:table06-1
 WaterBalance
 WaterHeatingAndStratification
 energy-balance
