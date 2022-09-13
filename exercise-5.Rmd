@@ -22,13 +22,21 @@ Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/resea
 
 ```{block2, hintex5_5, type='rmdnote2'}
 
-The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
+The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file you simply need to add `plots_aed.nml` after the call to glm --xdisp.
 
 ```
 
 <br>
 
-In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
+<center>
+<video width="90%" height="100%" controls>
+  <source src="images/Exercises/plots_aed.mp4" type="video/mp4">
+</video>
+</center>
+
+<br>
+
+In `plots_aed.nml` the required variables are all listed, make sure the number of plots is high enough to include them all, and feel free to customise the settings.
 
 <center>
 
@@ -51,10 +59,10 @@ kable(module7_1, format = "html", escape = F, align = "c", caption = "Water qual
 
 <br>
 
-Add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
+Add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `WQ_x.csv` files that were configured earlier
 
 ```{block2, hintex5_6, type='rmdtip2'}
-If they are there already, make sure that the number of variables is high enough to include them all.
+If they are there already, make sure that the number of variables `nvar` is high enough to include them all.
 ```
 
 ```{=html}

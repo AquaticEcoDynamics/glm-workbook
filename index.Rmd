@@ -18,3 +18,6 @@ For GLM technical documentation, visit the [glm-aed](https://github.com/AquaticE
 
 For a detailed scientific overview of GLM, refer to @hipsey2019general's paper available [here](https://gmd.copernicus.org/articles/12/473/2019/gmd-12-473-2019.pdf).
 
+```{r figint-1, echo=FALSE, fig.cap="", out.width = '35%', out.extra='data-action="zoom"'}
+knitr::include_graphics("images/glm_hex.png")
+```
