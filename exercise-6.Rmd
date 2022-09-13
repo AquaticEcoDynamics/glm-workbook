@@ -20,7 +20,7 @@ Assess how sensitive the temperature and phytoplankton biomass is to water clari
 
 <center>
 
-```{r tabM7-2, echo=FALSE, message=FALSE, warning=FALSE}
+```{r tabex6-1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
@@ -47,7 +47,7 @@ Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
 
 <center>
 
-```{r tabM7-3, echo=FALSE, message=FALSE, warning=FALSE}
+```{r tabex6-2, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)

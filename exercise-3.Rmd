@@ -26,7 +26,7 @@ knitr::include_graphics("images/Exercises/DepthDropTip-13.png")
 ```
 </center>
 
-```{block2, hint09_16, type='rmdtip2'}
+```{block2, hintex3_2, type='rmdtip2'}
 For future activities make sure you change back to the original height.
 ```
 

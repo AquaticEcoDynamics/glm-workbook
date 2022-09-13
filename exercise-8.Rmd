@@ -3,7 +3,7 @@
 Edit the heights and areas of the lake using `&morphometry`: `H` and `A`. Remember that the first area must be 0 m^2^ and that all of the heights and areas must be increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation. 
 
 <center>
-```{r pic02-1, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r picex8-1, echo=FALSE, fig.cap="", out.width = '75%'}
 knitr::include_graphics("images/02-files/Files-02.png")
 ```
 </center>

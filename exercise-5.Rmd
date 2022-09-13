@@ -2,7 +2,7 @@
 
 <center>
 
-```{r figM7-3, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
+```{r figex5-1, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/Exercises/AEDWQ.jpg")
 ```
 
@@ -10,7 +10,7 @@ knitr::include_graphics("images/Exercises/AEDWQ.jpg")
 
 Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html) by making sure the `&wq_setup`: `wq_lib` = 'aed'. Make sure `glm3.nml` can find another namelist file `aed.nml` to configure the water quality model parameters, using the `&wq_setup` parameter `wq_nml_file`.
 
-```{block2, hintM7_5, type='rmdnote2'}
+```{block2, hintex5_5, type='rmdnote2'}
 
 The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
 
@@ -20,7 +20,7 @@ In `plots.nml` the required variables are all listed, make sure the number of pl
 
 <center>
 
-```{r tabM7-1, echo=FALSE, message=FALSE, warning=FALSE}
+```{r tabex5-1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(hablar)
@@ -41,7 +41,7 @@ kable(module7_1, format = "html", escape = F, align = "c", caption = "Water qual
 
 Add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `.csv` file that were configured above.
 
-```{block2, hintM7_6, type='rmdtip2'}
+```{block2, hintex5_6, type='rmdtip2'}
 If they are there already, make sure that the number of variables is high enough to include them all.
 ```
 
