@@ -1,5 +1,14 @@
 eq:05-1
 eq:05-2
+eq:outputs-1
 tab:table06-1
-glm-configuration-file-glm3.nml
-glm-plot-window-file-plots.nml
+water-level-balance
+water-heating-stratification
+updating-initial-height-conditions
+error-assessment
+mean-absolute-error-mae
+add-water-qualiry-modelling
+sensitivity-assessment
+sensitivity-index-si
+warming-air-scenario
+changing-morphometry

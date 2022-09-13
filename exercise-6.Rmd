@@ -1,0 +1,12 @@
+# Sensitivity Assessment
+
+## Sensitivity Index (SI) 
+
+Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:
+
+<center>
+\begin{equation}
+SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
+(\#eq:05-2)
+\end{equation}
+</center>

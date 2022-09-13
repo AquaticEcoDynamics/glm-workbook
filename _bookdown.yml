@@ -2,14 +2,24 @@ book_filename: GLM Workbook
 output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
-            "01-getting-started.Rmd",
-            "02-glm-structure.Rmd",
-            "03-running-glm.Rmd",
-            "04-processing-outputs.Rmd",
-            "05-error-assessment.Rmd",
-            "06-kinneret-sim.Rmd",
-            "07-darwin-sim.Rmd",
-            "08-other-sims.Rmd",
+            "getting-started.Rmd",
+            "glm-structure.Rmd",
+            "running-glm.Rmd",
+            "exercise-1.Rmd",
+            "exercise-2.Rmd",
+            "exercise-3.Rmd",
+            "exercise-4.Rmd",
+            "exercise-5.Rmd",
+            "exercise-6.Rmd",
+            "exercise-7.Rmd",
+            "exercise-8.Rmd",
+            "warm-lake.Rmd",
+            "cool-lake.Rmd",
+            "tropical-reservoir.Rmd",
+            "processing-outputs-old.Rmd",
+            "kinneret-sim-old.Rmd",
+            "darwin-sim-old.Rmd",
+            "other-sims-old.Rmd",
             "references.Rmd"
             ]
 new_session: no

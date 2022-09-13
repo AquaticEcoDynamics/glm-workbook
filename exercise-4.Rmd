@@ -1,0 +1,13 @@
+# Error Assessment {#error-assessment}
+
+## Mean Absolute Error (MAE) 
+
+Mean absolute error measures the average absolute difference between the simulated and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:
+
+<center>
+\begin{equation}
+MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
+(\#eq:05-1)
+\end{equation}
+</center>
+

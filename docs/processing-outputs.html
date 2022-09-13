@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Processing Outputs | GLM Workbook</title>
+  <title>Processing Outputs - OLD | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Processing Outputs | GLM Workbook" />
+  <meta property="og:title" content="Processing Outputs - OLD | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Processing Outputs | GLM Workbook" />
+  <meta name="twitter:title" content="Processing Outputs - OLD | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="running-glm.html"/>
-<link rel="next" href="error-assessment.html"/>
+<link rel="prev" href="tropical-reservoir.html"/>
+<link rel="next" href="case-study-kinneret---old.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,28 +54,31 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="https://hypothes.is/embed.js" async></script>
+  
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -84,9 +87,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -119,6 +122,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -137,46 +162,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
+<ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#glm-documentation"><i class="fa fa-check"></i>GLM Documentation</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
+<ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a><ul>
-<li class="chapter" data-level="0.0.1" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i><b>0.0.1</b> GLM configuration file: <code class="unnumbered">glm3.nml</code></a></li>
-<li class="chapter" data-level="0.0.2" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i><b>0.0.2</b> GLM plot window file: <code class="unnumbered">plots.nml</code></a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i>GLM configuration file: <code>glm3.nml</code></a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i>GLM plot window file: <code>plots.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#boundary-files"><i class="fa fa-check"></i>Boundary files</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#aed-water-quality-model-files"><i class="fa fa-check"></i>AED water quality model files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a><ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a>
+<ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-csv"><i class="fa fa-check"></i>General lake csv</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a></li>
-<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs</a><ul>
-<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
+<li class="part"><span><b>I Exercises</b></span></li>
+<li class="chapter" data-level="1" data-path="water-level-balance.html"><a href="water-level-balance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
+<li class="chapter" data-level="2" data-path="water-heating-stratification.html"><a href="water-heating-stratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a></li>
+<li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
+<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i><b>4.1</b> Mean Absolute Error (MAE)</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="add-water-qualiry-modelling.html"><a href="add-water-qualiry-modelling.html"><i class="fa fa-check"></i><b>5</b> Add Water Qualiry Modelling</a></li>
+<li class="chapter" data-level="6" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Assessment</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#sensitivity-index-si"><i class="fa fa-check"></i><b>6.1</b> Sensitivity Index (SI)</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
+<li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
+<li class="part"><span><b>II Case Studies</b></span></li>
+<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html"><i class="fa fa-check"></i>Warm Lake</a></li>
+<li class="chapter" data-level="" data-path="cool-lake.html"><a href="cool-lake.html"><i class="fa fa-check"></i>Cool Lake</a></li>
+<li class="chapter" data-level="" data-path="tropical-reservoir.html"><a href="tropical-reservoir.html"><i class="fa fa-check"></i>Tropical Reservoir</a></li>
+<li class="part"><span><b>III Old Stuff</b></span></li>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs - OLD</a>
+<ul>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a>
+<ul>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#r-1"><i class="fa fa-check"></i>R</a></li>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#WaterBalance"><i class="fa fa-check"></i>Water balance</a></li>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#heat-balance"><i class="fa fa-check"></i>Heat balance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i>Error Assessment</a><ul>
-<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_2"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
-<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#C05_3"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
+<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html"><i class="fa fa-check"></i>Case Study: Kinneret - OLD</a>
+<ul>
+<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#about"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
+<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html"><i class="fa fa-check"></i>Case Study: Kinneret</a><ul>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#about"><i class="fa fa-check"></i>About</a></li>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
-<li class="chapter" data-level="" data-path="kinneret-sim.html"><a href="kinneret-sim.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
+<li class="chapter" data-level="" data-path="case-study-darwin---old.html"><a href="case-study-darwin---old.html"><i class="fa fa-check"></i>Case Study: Darwin - OLD</a>
+<ul>
+<li class="chapter" data-level="" data-path="case-study-darwin---old.html"><a href="case-study-darwin---old.html#about-1"><i class="fa fa-check"></i>About</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="darwin-sim.html"><a href="darwin-sim.html"><i class="fa fa-check"></i>Case Study: Darwin</a></li>
-<li class="chapter" data-level="" data-path="other-sims.html"><a href="other-sims.html"><i class="fa fa-check"></i>Other Simulations</a></li>
+<li class="chapter" data-level="" data-path="other-simulations---old.html"><a href="other-simulations---old.html"><i class="fa fa-check"></i>Other Simulations - OLD</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -199,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="processing-outputs" class="section level1 unnumbered hasAnchor">
-<h1>Processing Outputs<a href="processing-outputs.html#processing-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1>Processing Outputs - OLD<a href="processing-outputs.html#processing-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="visualising-results" class="section level2 unnumbered hasAnchor">
 <h2>Visualising Results<a href="processing-outputs.html#visualising-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM’s general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs.</p>
@@ -209,19 +263,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="r-1" class="section level3 unnumbered hasAnchor">
 <h3>R<a href="processing-outputs.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># Load packages</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(tidyverse) </a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb1-4" title="4"></a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="kw">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># Read GLM csv</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb1-7" title="7">    <span class="dt">time =</span> <span class="kw">as_datetime</span>(time, <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></a>
-<a class="sourceLine" id="cb1-8" title="8">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> temp)) <span class="op">+</span><span class="st"> </span><span class="co"># Plot with ggplot()</span></a>
-<a class="sourceLine" id="cb1-10" title="10"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-11" title="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="st">  </span><span class="kw">theme_classic</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="processing-outputs.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb1-2"><a href="processing-outputs.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-3"><a href="processing-outputs.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-4"><a href="processing-outputs.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="processing-outputs.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="sc">%&gt;%</span>  <span class="co"># Read GLM csv</span></span>
+<span id="cb1-6"><a href="processing-outputs.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-7"><a href="processing-outputs.html#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">as_datetime</span>(time, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></span>
+<span id="cb1-8"><a href="processing-outputs.html#cb1-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="processing-outputs.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> temp)) <span class="sc">+</span> <span class="co"># Plot with ggplot()</span></span>
+<span id="cb1-10"><a href="processing-outputs.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="processing-outputs.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="processing-outputs.html#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p><img src="GLM-Workbook_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="WaterBalance" class="section level3 unnumbered hasAnchor">
+<h3>Water balance<a href="processing-outputs.html#WaterBalance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/02-files/GLMworkbook-10.png" width="40%" /><img src="images/Spacer.png" width="10%" /><img src="images/02-files/GLMworkbook-09.png" width="40%" /></p>
+<span class="math display" id="eq:outputs-1">\[\begin{eqnarray}
+\frac{\Delta Storage}{\Delta time} = Rainfall + Snow + Local \ \ runoff + River \ \ inflow
+\\
+- Evaporation - Withdrawal - Overflow - Seepage
+\tag{8.1}
+\end{eqnarray}\]</span>
+</div>
+<div id="heat-balance" class="section level3 unnumbered hasAnchor">
+<h3>Heat balance<a href="processing-outputs.html#heat-balance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/02-files/GLMworkbook-11.png" width="40%" /></p>
 
 </div>
 </div>
@@ -231,8 +299,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="running-glm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="error-assessment.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tropical-reservoir.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="case-study-kinneret---old.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
