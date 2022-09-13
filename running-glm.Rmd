@@ -1,5 +1,12 @@
 # Running GLM {#running-glm -}
 
+#### Simulation workflow {#C02_4 -}
+
+```{r picrun-1, echo=FALSE, fig.cap="", out.width = '60%'}
+knitr::include_graphics("images/01-gettingstarted/workflow.png")
+```
+
+
 #### Running GLM on MacOS {#C02_4 -}
 
 - Open the Terminal application on your Mac
