@@ -2,6 +2,14 @@
 
 The height of the water in the lake at the first time step is set in `&init_profiles`: `lake_depth`. Consider this: what would happen if all the environmental boundary conditions were the same, but the initial storage were half as much? Decrease your `lake_depth` to 50% of the value you started with. 
 
+
+
+<center>
+```{r picex3-1, echo=FALSE, fig.cap="", out.width = '75%'}
+knitr::include_graphics("images/Exercises/DropInitHeight-14.png")
+```
+</center>
+
 Examine the results in the GLM plotting window and compare them to the original simulation.
 
 Create an output profile just below the surface. For example, if your initial height is 21 m, create `csv_point_at` files at 5 m and 18 m from the bottom. Calculate the temperature difference between the top and the bottom, as in the previous exercise.
@@ -13,7 +21,7 @@ Describe the effect on stratification of having a shallower lake.
 If a `csv_point_at` depth is listed but it is greater than the initial depth of the lake, no initial value can be written and the model will not work.
 ```
 <center>
-```{r pic02-3, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r picex3-2, echo=FALSE, fig.cap="", out.width = '75%'}
 knitr::include_graphics("images/Exercises/DepthDropTip-13.png")
 ```
 </center>
