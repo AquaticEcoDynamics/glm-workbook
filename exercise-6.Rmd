@@ -1,4 +1,4 @@
-# Sensitivity Index (SI) {-}
+# Sensitivity Index (SI) 
 
 Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Another way to think of this is *how much does an output change if I change an input?* Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:
 
