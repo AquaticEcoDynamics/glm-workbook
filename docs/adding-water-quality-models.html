@@ -235,11 +235,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 
 <div class="rmdnote2">
-<p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
+<p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed.nml</code> has been created. To use this file you simply need to add <code>plots_aed.nml</code> after the call to glm –xdisp.</p>
 </div>
 
 <p><br></p>
-<p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
+<center>
+<video width="90%" height="100%" controls>
+<source src="images/Exercises/plots_aed.mp4" type="video/mp4">
+</video>
+</center>
+<p><br></p>
+<p>In <code>plots_aed.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all, and feel free to customise the settings.</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -494,10 +500,10 @@ Zooplankton
 </div>
 </center>
 <p><br></p>
-<p>Add water quality variables to the specific depth output files (i.e. <code>WQ_5.csv</code>). To do so we must edit the output section of the <code>glm3.nml</code> file, by adding the variables as extra columns to the <code>.csv</code> file that were configured above.</p>
+<p>Add water quality variables to the specific depth output files (i.e. <code>WQ_5.csv</code>). To do so we must edit the output section of the <code>glm3.nml</code> file, by adding the variables as extra columns to the <code>WQ_x.csv</code> files that were configured earlier</p>
 
 <div class="rmdtip2">
-If they are there already, make sure that the number of variables is high enough to include them all.
+If they are there already, make sure that the number of variables <code>nvar</code> is high enough to include them all.
 </div>
 
 <style>
