@@ -25,3 +25,9 @@ If a `csv_point_at` depth is listed but it is greater than the initial depth of 
 knitr::include_graphics("images/Exercises/DepthDropTip-13.png")
 ```
 </center>
+
+```{block2, hint09_16, type='rmdtip2'}
+For future activities make sure you change back to the original height.
+```
+
+
