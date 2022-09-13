@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Cool Lake | GLM Workbook</title>
+  <title>5 Adding Water Quality Models | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Cool Lake | GLM Workbook" />
+  <meta property="og:title" content="5 Adding Water Quality Models | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Cool Lake | GLM Workbook" />
+  <meta name="twitter:title" content="5 Adding Water Quality Models | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="warm-lake.html"/>
-<link rel="next" href="tropical-reservoir.html"/>
+<link rel="prev" href="error-assessment.html"/>
+<link rel="next" href="sensitivity-index-si.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -217,8 +217,283 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="cool-lake" class="section level1 unnumbered hasAnchor">
-<h1>Cool Lake<a href="cool-lake.html#cool-lake" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="adding-water-quality-models" class="section level1 hasAnchor">
+<h1><span class="header-section-number">5</span> Adding Water Quality Models<a href="adding-water-quality-models.html#adding-water-quality-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<center>
+<p><img src="images/Exercises/AEDWQ.jpg" width="75%" data-action="zoom" /></p>
+</center>
+<p>Activate the water quality <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a> by making sure the <code>&amp;wq_setup</code>: <code>wq_lib</code> = ‘aed’. Make sure <code>glm3.nml</code> can find another namelist file <code>aed.nml</code> to configure the water quality model parameters, using the <code>&amp;wq_setup</code> parameter <code>wq_nml_file</code>.</p>
+
+<div class="rmdnote2">
+<p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
+</div>
+
+<p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tabex5-1">Table 5.1: </span>Water quality variables and their descriptions.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Variable Name
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Passive tracer
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>TRC_tr1</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Water age
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>TRC_age</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Suspended solids
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>NCS_ss1</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Dissolved oxygen
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OXY_oxy</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Dissolved inorganic carbon
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>CAR_dic</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+pH
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>CAR_pH</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Methane (dissolved)
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>CAR_ch4</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Methane (bubbles)
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>CAR_ch4_bub</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Reactive Silica
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>SIL_rsi</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Ammonium
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>NIT_amm</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Nitrate/Nitrite
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>NIT_nit</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Phosphate
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHS_frp</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Particulate inorganic phosphorus
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHS_frp_ads</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Dissolved organic carbon
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_doc</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Particualte organic carbon
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_poc</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Dissolved organic nitrogen
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_don</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Particulate organic nitrogen
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_pon</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Dissolved organic phosphorus
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_dop</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Particulate organic phsophorus
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>OGM_pop</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Green algae
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_green</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Green algae
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_green_IN</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Green algae
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_green_IP</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Diatoms
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_diatom</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Diatoms
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_diatom_IN</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Diatoms
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_diatom_IP</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Cyrptophytes
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_crypto</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Cyrptophytes
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_crypto_IN</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Cyrptophytes
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>PHY_crypto_IP</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 25em; ">
+Zooplankton
+</td>
+<td style="text-align:center;min-width: 25em; ">
+<code>ZOO_zoo01</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p><br></p>
+<p>Add water quality variables to the specific depth output files (i.e. <code>WQ_5.csv</code>). To do so we must edit the output section of the <code>glm3.nml</code> file, by adding the variables as extra columns to the <code>.csv</code> file that were configured above.</p>
+
+<div class="rmdtip2">
+If they are there already, make sure that the number of variables is high enough to include them all.
+</div>
+
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>
+<p>As an example of output water quality variables, let’s plot all the nitrogen variables. Change <code>csv_point_vars</code> to include <code>NIT_amm</code>, <code>NIT_nit</code>, <code>OGM_don</code>, <code>OGM_pon</code>, <code>PHY_green_IN</code> - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking <code>glm.bat</code> again). Once it’s run open <code>WQ_35.csv</code> to see these new variables and create a stacked area plot to show how the different variables contribute to TN.</p>
+<p>Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.</p>
 
 </div>
             </section>
@@ -226,8 +501,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="warm-lake.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tropical-reservoir.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="error-assessment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sensitivity-index-si.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

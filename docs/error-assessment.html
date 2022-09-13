@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="updating-initial-height-conditions.html"/>
-<link rel="next" href="add-water-qualiry-modelling.html"/>
+<link rel="next" href="adding-water-quality-models.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -161,20 +161,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a></li>
 <li class="part"><span><b>I Exercises</b></span></li>
-<li class="chapter" data-level="1" data-path="water-level-balance.html"><a href="water-level-balance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="water-heating-stratification.html"><a href="water-heating-stratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a></li>
+<li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
+<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a></li>
 <li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
 <li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a><ul>
-<li class="chapter" data-level="4.1" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i><b>4.1</b> Mean Absolute Error (MAE)</a></li>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="add-water-qualiry-modelling.html"><a href="add-water-qualiry-modelling.html"><i class="fa fa-check"></i><b>5</b> Add Water Qualiry Modelling</a></li>
-<li class="chapter" data-level="6" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Assessment</a><ul>
-<li class="chapter" data-level="6.1" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#sensitivity-index-si"><i class="fa fa-check"></i><b>6.1</b> Sensitivity Index (SI)</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
+<li class="chapter" data-level="6" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Index (SI)</a></li>
 <li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
 <li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
 <li class="part"><span><b>II Case Studies</b></span></li>
-<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html"><i class="fa fa-check"></i>Warm Lake</a></li>
+<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html"><i class="fa fa-check"></i>Warm Lake</a><ul>
+<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html#lake-stratification"><i class="fa fa-check"></i>Lake Stratification</a></li>
+<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html#the-ecosystem-model"><i class="fa fa-check"></i>The Ecosystem Model</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="cool-lake.html"><a href="cool-lake.html"><i class="fa fa-check"></i>Cool Lake</a></li>
 <li class="chapter" data-level="" data-path="tropical-reservoir.html"><a href="tropical-reservoir.html"><i class="fa fa-check"></i>Tropical Reservoir</a></li>
 <li class="part"><span><b>III Old Stuff</b></span></li>
@@ -182,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#r-1"><i class="fa fa-check"></i>R</a></li>
-<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#WaterBalance"><i class="fa fa-check"></i>Water balance</a></li>
+<li class="chapter" data-level="" data-path="WaterBalance.html"><a href="WaterBalance.html#WaterBalance"><i class="fa fa-check"></i>Water balance</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#heat-balance"><i class="fa fa-check"></i>Heat balance</a></li>
 </ul></li>
 </ul></li>
@@ -218,15 +219,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="error-assessment" class="section level1 hasAnchor">
 <h1><span class="header-section-number">4</span> Error Assessment<a href="error-assessment.html#error-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="mean-absolute-error-mae" class="section level2 hasAnchor">
-<h2><span class="header-section-number">4.1</span> Mean Absolute Error (MAE)<a href="error-assessment.html#mean-absolute-error-mae" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mean-absolute-error-mae" class="section level2 unnumbered hasAnchor">
+<h2>Mean Absolute Error (MAE)<a href="error-assessment.html#mean-absolute-error-mae" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mean absolute error measures the average absolute difference between the simulated and the observed results. It is calculated by summing the absolute error between paired values (i.e. modeled and actual) and dividing by the number of observations:</p>
 <center>
-<span class="math display" id="eq:05-1">\[\begin{equation}
+<span class="math display" id="eq:ex4-1">\[\begin{equation}
 MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
 \tag{4.1}
 \end{equation}\]</span>
 </center>
+<p>Calculate the mean absolute error in the simulation for the lake surface temperature (<code>Surface Temp</code> in <code>lake.csv</code>), comparing it to a dataset of observed temperature data for the same time period. In Excel, in a new column, calculate the absolute difference between daily simulated and observed lake temperature for each time step. Calculate the average of these differences.</p>
 
 </div>
 </div>
@@ -236,7 +238,7 @@ MAE = \frac{\sum_{i}\left | T_{i}^{sim}-T_{i}^{obs} \right |}{n}
         </div>
       </div>
 <a href="updating-initial-height-conditions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="add-water-qualiry-modelling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="adding-water-quality-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
