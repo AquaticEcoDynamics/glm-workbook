@@ -1,2 +1,36 @@
 # Warming Air Scenario
 
+How would these concentrations change if the air temperature increased by 2 °C? (You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm. 
+
+Check whether your simulation package has a pre-made version of the meteorology file in the *bcs* folder, with the air temperature increased by 2 °C. For example, the file may be called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
+
+Examine the phytoplankton outputs from the AED water quality model and compare them to the baseline scenario. 
+
+``` {fortran, eval = FALSE, style="max-height: 239px;"}
+!-------------------------------------------------------------------------------
+! meteorology
+!-------------------------------------------------------------------------------
+&meteorology
+   met_sw      = .true.
+   lw_type     = 'LW_IN'
+   rain_sw     = .false.
+   atm_stab    = 0
+   fetch_mode  = 0
+  !rad_mode    = 1
+   albedo_mode = 1
+   cloud_mode  = 4
+   !-- BC file details
+   subdaily    = .true.
+   meteo_fl    = 'bcs/met_1997_2004.csv' !UPDATE THIS
+   wind_factor = 0.9
+   lw_factor   = 1.0
+   lw_offset   = 0.0
+   !-- Parameters
+   ce = 0.0013
+   ch = 0.0013
+   cd  = 0.0013
+  !catchrain      = .true.
+  !rain_threshold = 0.001
+  !runoff_coef    = 0.0
+/
+```
