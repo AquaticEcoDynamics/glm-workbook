@@ -54,31 +54,28 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="https://hypothes.is/embed.js" async></script>
-  
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +84,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -122,28 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -162,28 +137,23 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a>
-<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#glm-documentation"><i class="fa fa-check"></i>GLM Documentation</a></li>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
-<ul>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a>
-<ul>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a>
-<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a><ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i>GLM configuration file: <code>glm3.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i>GLM plot window file: <code>plots.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#boundary-files"><i class="fa fa-check"></i>Boundary files</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#aed-water-quality-model-files"><i class="fa fa-check"></i>AED water quality model files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a>
-<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a><ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
@@ -194,13 +164,11 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="water-level-balance.html"><a href="water-level-balance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
 <li class="chapter" data-level="2" data-path="water-heating-stratification.html"><a href="water-heating-stratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a></li>
 <li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
-<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
-<ul>
+<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a><ul>
 <li class="chapter" data-level="4.1" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i><b>4.1</b> Mean Absolute Error (MAE)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="add-water-qualiry-modelling.html"><a href="add-water-qualiry-modelling.html"><i class="fa fa-check"></i><b>5</b> Add Water Qualiry Modelling</a></li>
-<li class="chapter" data-level="6" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Assessment</a>
-<ul>
+<li class="chapter" data-level="6" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Assessment</a><ul>
 <li class="chapter" data-level="6.1" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#sensitivity-index-si"><i class="fa fa-check"></i><b>6.1</b> Sensitivity Index (SI)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
@@ -210,24 +178,20 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="cool-lake.html"><a href="cool-lake.html"><i class="fa fa-check"></i>Cool Lake</a></li>
 <li class="chapter" data-level="" data-path="tropical-reservoir.html"><a href="tropical-reservoir.html"><i class="fa fa-check"></i>Tropical Reservoir</a></li>
 <li class="part"><span><b>III Old Stuff</b></span></li>
-<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs - OLD</a>
-<ul>
-<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a>
-<ul>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html"><i class="fa fa-check"></i>Processing Outputs - OLD</a><ul>
+<li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#r-1"><i class="fa fa-check"></i>R</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#WaterBalance"><i class="fa fa-check"></i>Water balance</a></li>
 <li class="chapter" data-level="" data-path="processing-outputs.html"><a href="processing-outputs.html#heat-balance"><i class="fa fa-check"></i>Heat balance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html"><i class="fa fa-check"></i>Case Study: Kinneret - OLD</a>
-<ul>
+<li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html"><i class="fa fa-check"></i>Case Study: Kinneret - OLD</a><ul>
 <li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#about"><i class="fa fa-check"></i>About</a></li>
 <li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#exercises"><i class="fa fa-check"></i>Exercises</a></li>
 <li class="chapter" data-level="" data-path="case-study-kinneret---old.html"><a href="case-study-kinneret---old.html#error-assessment-1"><i class="fa fa-check"></i>Error Assessment</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="case-study-darwin---old.html"><a href="case-study-darwin---old.html"><i class="fa fa-check"></i>Case Study: Darwin - OLD</a>
-<ul>
+<li class="chapter" data-level="" data-path="case-study-darwin---old.html"><a href="case-study-darwin---old.html"><i class="fa fa-check"></i>Case Study: Darwin - OLD</a><ul>
 <li class="chapter" data-level="" data-path="case-study-darwin---old.html"><a href="case-study-darwin---old.html#about-1"><i class="fa fa-check"></i>About</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="other-simulations---old.html"><a href="other-simulations---old.html"><i class="fa fa-check"></i>Other Simulations - OLD</a></li>
@@ -269,6 +233,7 @@ div.csl-indent {
 <div class="rmdnote2">
 <p>This simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed2.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
 </div>
+
 <p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; ">
@@ -529,6 +494,7 @@ Zooplankton
 <div class="rmdtip2">
 If they are there already, make sure that the number of variables is high enough to include them all.
 </div>
+
 <style>
 ol > li > ol > li {list-style-type:lower-alpha}
 </style>
@@ -553,32 +519,32 @@ Create a well formatted, interesting graph of variables of your choice (for exam
    height:450px;
 }
 </style>
-<div class="sourceCode" id="cb2"><pre class="sourceCode fortran codeScroll"><code class="sourceCode fortranfixed"><span id="cb2-1"><a href="case-study-kinneret---old.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb2-2"><a href="case-study-kinneret---old.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">! meteorology</span></span>
-<span id="cb2-3"><a href="case-study-kinneret---old.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb2-4"><a href="case-study-kinneret---old.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>meteorology</span>
-<span id="cb2-5"><a href="case-study-kinneret---old.html#cb2-5" aria-hidden="true" tabindex="-1"></a>   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb2-6"><a href="case-study-kinneret---old.html#cb2-6" aria-hidden="true" tabindex="-1"></a>   lw_type     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></span>
-<span id="cb2-7"><a href="case-study-kinneret---old.html#cb2-7" aria-hidden="true" tabindex="-1"></a>   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></span>
-<span id="cb2-8"><a href="case-study-kinneret---old.html#cb2-8" aria-hidden="true" tabindex="-1"></a>   atm_stab    <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb2-9"><a href="case-study-kinneret---old.html#cb2-9" aria-hidden="true" tabindex="-1"></a>   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb2-10"><a href="case-study-kinneret---old.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">!rad_mode    = 1</span></span>
-<span id="cb2-11"><a href="case-study-kinneret---old.html#cb2-11" aria-hidden="true" tabindex="-1"></a>   albedo_mode <span class="kw">=</span> <span class="dv">1</span></span>
-<span id="cb2-12"><a href="case-study-kinneret---old.html#cb2-12" aria-hidden="true" tabindex="-1"></a>   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></span>
-<span id="cb2-13"><a href="case-study-kinneret---old.html#cb2-13" aria-hidden="true" tabindex="-1"></a>   <span class="co">!-- BC file details</span></span>
-<span id="cb2-14"><a href="case-study-kinneret---old.html#cb2-14" aria-hidden="true" tabindex="-1"></a>   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb2-15"><a href="case-study-kinneret---old.html#cb2-15" aria-hidden="true" tabindex="-1"></a>   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!&lt;------- Update this</span></span>
-<span id="cb2-16"><a href="case-study-kinneret---old.html#cb2-16" aria-hidden="true" tabindex="-1"></a>   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></span>
-<span id="cb2-17"><a href="case-study-kinneret---old.html#cb2-17" aria-hidden="true" tabindex="-1"></a>   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></span>
-<span id="cb2-18"><a href="case-study-kinneret---old.html#cb2-18" aria-hidden="true" tabindex="-1"></a>   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></span>
-<span id="cb2-19"><a href="case-study-kinneret---old.html#cb2-19" aria-hidden="true" tabindex="-1"></a>   <span class="co">!-- Parameters</span></span>
-<span id="cb2-20"><a href="case-study-kinneret---old.html#cb2-20" aria-hidden="true" tabindex="-1"></a>   ce <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb2-21"><a href="case-study-kinneret---old.html#cb2-21" aria-hidden="true" tabindex="-1"></a>   ch <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb2-22"><a href="case-study-kinneret---old.html#cb2-22" aria-hidden="true" tabindex="-1"></a>   cd  <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb2-23"><a href="case-study-kinneret---old.html#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">!catchrain      = .true.</span></span>
-<span id="cb2-24"><a href="case-study-kinneret---old.html#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">!rain_threshold = 0.001</span></span>
-<span id="cb2-25"><a href="case-study-kinneret---old.html#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">!runoff_coef    = 0.0</span></span>
-<span id="cb2-26"><a href="case-study-kinneret---old.html#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode fortran codeScroll"><code class="sourceCode fortran"><a class="sourceLine" id="cb2-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">! meteorology</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw">&amp;</span>meteorology</a>
+<a class="sourceLine" id="cb2-5" title="5">   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb2-6" title="6">   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></a>
+<a class="sourceLine" id="cb2-8" title="8">   atm_stab    <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-9" title="9">   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb2-10" title="10">  <span class="co">!rad_mode    = 1</span></a>
+<a class="sourceLine" id="cb2-11" title="11">   albedo_mode <span class="kw">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb2-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb2-13" title="13">   <span class="co">!-- BC file details</span></a>
+<a class="sourceLine" id="cb2-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb2-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!&lt;------- Update this</span></a>
+<a class="sourceLine" id="cb2-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
+<a class="sourceLine" id="cb2-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb2-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb2-19" title="19">   <span class="co">!-- Parameters</span></a>
+<a class="sourceLine" id="cb2-20" title="20">   ce <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb2-21" title="21">   ch <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb2-22" title="22">   cd  <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb2-23" title="23">  <span class="co">!catchrain      = .true.</span></a>
+<a class="sourceLine" id="cb2-24" title="24">  <span class="co">!rain_threshold = 0.001</span></a>
+<a class="sourceLine" id="cb2-25" title="25">  <span class="co">!runoff_coef    = 0.0</span></a>
+<a class="sourceLine" id="cb2-26" title="26"><span class="kw">/</span></a></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>What happens if we change the water clarity? Increase and decrease from the original value to see the response</li>
 </ol>
@@ -586,6 +552,7 @@ Create a well formatted, interesting graph of variables of your choice (for exam
 <div class="rmdtip2">
 You must change the light extinction coefficient <code>Kw</code> (range 0-1) in the <code>glm3.nml</code> file.
 </div>
+
 </div>
 <div id="error-assessment-1" class="section level2 unnumbered hasAnchor">
 <h2>Error Assessment<a href="case-study-kinneret---old.html#error-assessment-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
