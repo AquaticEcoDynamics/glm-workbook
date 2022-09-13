@@ -1,12 +1,66 @@
-# Sensitivity Assessment
+# Sensitivity Index (SI) {-}
 
-## Sensitivity Index (SI) 
-
-Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:
+Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Another way to think of this is *how much does an output change if I change an input?* Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:
 
 <center>
 \begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
-(\#eq:05-2)
+(\#eq:ex6-1)
 \end{equation}
 </center>
+
+If there is a large change in the output variable, we say that the variable is sensitive to the parameter. If there is a small change in the output variable, we say the variable is not sensitive to the parameter.
+
+Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`: `&light` and `&meteorology`. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.
+
+Assess how sensitive the temperature and phytoplankton biomass is to water clarity:
+
+
+<center>
+
+```{r tabM7-2, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module7_2 <- read.csv("tables/Exercises/table2.csv", check.names=FALSE) 
+kable(module7_2, format = "html", escape = F, align = "c") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
+  scroll_box(width = "100%",
+             fixed_thead = FALSE) 
+```
+
+</center>
+
+<br>
+
+
+Assess how sensitive the temperature and phytoplankton biomass is to wind speed:
+
+</li>
+
+<br>
+
+<center>
+
+```{r tabM7-3, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module7_3 <- read.csv("tables/Exercises/table3.csv", check.names=FALSE) 
+kable(module7_3, format = "html", escape = F, align = "c") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
+  scroll_box(width = "100%",
+             fixed_thead = FALSE) 
+```

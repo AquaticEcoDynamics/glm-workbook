@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Sensitivity Assessment | GLM Workbook</title>
+  <title>Sensitivity Index (SI) | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Sensitivity Assessment | GLM Workbook" />
+  <meta property="og:title" content="Sensitivity Index (SI) | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Sensitivity Assessment | GLM Workbook" />
+  <meta name="twitter:title" content="Sensitivity Index (SI) | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -113,14 +113,9 @@
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
-<li class="chapter" data-level="6" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Assessment</a>
-<ul>
-<li class="chapter" data-level="" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#sensitivity-index-si"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
-<li class="chapter" data-level="" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#calculating"><i class="fa fa-check"></i>Calculating</a></li>
-<li class="chapter" data-level="" data-path="sensitivity-assessment.html"><a href="sensitivity-assessment.html#calculating-sensitivity"><i class="fa fa-check"></i>Calculating sensitivity</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
-<li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
+<li class="chapter" data-level="" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i>Sensitivity Index (SI)</a></li>
+<li class="chapter" data-level="6" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>6</b> Warming Air Scenario</a></li>
+<li class="chapter" data-level="7" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>7</b> Changing Morphometry</a></li>
 <li class="part"><span><b>II Case Studies</b></span></li>
 <li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html"><i class="fa fa-check"></i>Warm Lake</a></li>
 <li class="chapter" data-level="" data-path="cool-lake.html"><a href="cool-lake.html"><i class="fa fa-check"></i>Cool Lake</a></li>
@@ -168,24 +163,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sensitivity-assessment" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Sensitivity Assessment<a href="sensitivity-assessment.html#sensitivity-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sensitivity-index-si" class="section level2 unnumbered hasAnchor">
-<h2>Sensitivity Index (SI)<a href="sensitivity-assessment.html#sensitivity-index-si" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sensitivity-index-si" class="section level1 unnumbered hasAnchor">
+<h1>Sensitivity Index (SI)<a href="sensitivity-index-si.html#sensitivity-index-si" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Another way to think of this is <em>how much does an output change if I change an input?</em> Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:</p>
 <center>
 <span class="math display" id="eq:ex6-1">\[\begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
-\tag{6.1}
+\tag{5.1}
 \end{equation}\]</span>
 </center>
 <p>If there is a large change in the output variable, we say that the variable is sensitive to the parameter. If there is a small change in the output variable, we say the variable is not sensitive to the parameter.</p>
-</div>
-<div id="calculating" class="section level2 unnumbered hasAnchor">
-<h2>Calculating<a href="sensitivity-assessment.html#calculating" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="calculating-sensitivity" class="section level2 unnumbered hasAnchor">
-<h2>Calculating sensitivity<a href="sensitivity-assessment.html#calculating-sensitivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>: <code>&amp;light</code> and <code>&amp;meteorology</code>. Try increasing and decreasing the default parameter value by 20% and see how much the output changes.</p>
 <p>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</p>
 <center>
@@ -284,7 +271,6 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </table>
 </div>
 
-</div>
 </div>
             </section>
 
