@@ -8,8 +8,11 @@ fig:figM7-2
 tab:tabM7-1
 eq:outputs-1
 tab:table06-1
+case-study-download
 WaterBalance
 WaterHeatingAndStratification
+energy-balance
+lake-stratification
 updating-initial-height-conditions
 error-assessment
 adding-water-quality-models

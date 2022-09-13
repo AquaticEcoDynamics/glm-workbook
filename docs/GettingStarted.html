@@ -136,14 +136,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./"><b>GLM Workbook</b></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#glm-information"><i class="fa fa-check"></i>GLM Information</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html"><i class="fa fa-check"></i>Getting Started</a><ul>
-<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#glm-documentation"><i class="fa fa-check"></i>GLM Documentation</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
+<li class="chapter" data-level="0.1" data-path="GettingStarted.html"><a href="GettingStarted.html#case-study-download"><i class="fa fa-check"></i><b>0.1</b> Case-study download</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
@@ -162,7 +164,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a></li>
 <li class="part"><span><b>I Exercises</b></span></li>
 <li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a></li>
+<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a><ul>
+<li class="chapter" data-level="2.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>2.1</b> Energy Balance</a></li>
+<li class="chapter" data-level="2.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>2.2</b> Lake Stratification</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
 <li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a><ul>
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
@@ -173,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
 <li class="part"><span><b>II Case Studies</b></span></li>
 <li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html"><i class="fa fa-check"></i>Warm Lake</a><ul>
-<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html#lake-stratification"><i class="fa fa-check"></i>Lake Stratification</a></li>
+<li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html#lake-stratification-1"><i class="fa fa-check"></i>Lake Stratification</a></li>
 <li class="chapter" data-level="" data-path="warm-lake.html"><a href="warm-lake.html#the-ecosystem-model"><i class="fa fa-check"></i>The Ecosystem Model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="cool-lake.html"><a href="cool-lake.html"><i class="fa fa-check"></i>Cool Lake</a></li>
@@ -219,32 +224,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="GettingStarted" class="section level1 unnumbered hasAnchor">
 <h1>Getting Started<a href="GettingStarted.html#GettingStarted" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="glm-documentation" class="section level2 unnumbered hasAnchor">
-<h2>GLM Documentation<a href="GettingStarted.html#glm-documentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For GLM technical documentation, visit the <a href="https://github.com/AquaticEcoDynamics/glm-aed/wiki">glm-aed</a> GitHub Repository wiki. For a detailed scientific overview of GLM, refer to <span class="citation">Hipsey et al. (<a href="#ref-hipsey2019general">2019</a>)</span>’s paper available <a href="https://gmd.copernicus.org/articles/12/473/2019/gmd-12-473-2019.pdf">here</a>.</p>
-</div>
 <div id="tools-youll-need" class="section level2 unnumbered hasAnchor">
 <h2>Tools You’ll Need<a href="GettingStarted.html#tools-youll-need" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="text-editor" class="section level3 unnumbered hasAnchor">
 <h3>Text Editor<a href="GettingStarted.html#text-editor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A text editor is required to edit GLM’s <code>.nml</code> configuration files. Simple text editors like <em>TextEdit</em> on MacOS or <em>Wordpad</em> on Windows can be used however more extensible editors like <a href="https://code.visualstudio.com">Visual Studio Code</a> or <a href="https://atom.io">Atom</a> are recommended. To edit the <code>.nml</code> file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM.</p>
+<p>A text editor is required to edit GLM’s <code>.nml</code> configuration files. Simple text editors like <em>TextEdit</em> on MacOS or <em>Wordpad</em> on Windows can be used however more extensible editors like <a href="https://code.visualstudio.com">Visual Studio Code</a>, UltraEdit or <a href="https://atom.io">Atom</a> are recommended.</p>
+<p>To edit the <code>.nml</code> file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM.</p>
 </div>
 <div id="excel" class="section level3 unnumbered hasAnchor">
 <h3>Excel<a href="GettingStarted.html#excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>GLM can read and write data in CSV format. Excel can be used to edit these files (e.g. time series meteorological input data) or plotting outputs.</p>
+<p>GLM reads and writes data in CSV format. Excel can be used to edit these files (e.g. time series meteorological input data) or for plotting outputs.</p>
 </div>
 <div id="r" class="section level3 unnumbered hasAnchor">
 <h3>R<a href="GettingStarted.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Similarly to Excel, R can be used to manipulate and visualise GLM’s inputted/outputted dated.</p>
+<p>R is also commonly used to manipulate and visualise GLM’s input/output data.</p>
 <ul>
 <li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
 <li>R Studio can be downloaded <a href="https://rstudio.com">here</a></li>
 </ul>
 </div>
 </div>
+<div id="case-study-download" class="section level2 hasAnchor">
+<h2><span class="header-section-number">0.1</span> Case-study download<a href="GettingStarted.html#case-study-download" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The GLM model and two case-study simulations setup for the below exercises are available for download by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
+</div>
 <div id="unzipping-files" class="section level2 unnumbered hasAnchor">
 <h2>Unzipping files<a href="GettingStarted.html#unzipping-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The GLM model and case study simulations featured in this workbook are distributed as a zipped file. Extracting these files will depend on your operating system.</p>
+<p>The GLM model and case study simulations featured in this workbook are distributed as a zipped file. In some cases users may erroneously be working “within” the zip without properly extracting the file and this prevents the simulation from running.</p>
+<p>Extracting these files will depend on your operating system.</p>
 <p>On MacOS, simply double click the ‘zipped’ file:</p>
 <center>
 <video width="100%" height="100%" controls>
@@ -260,12 +267,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </center>
 <p><br></p>
 
-</div>
-</div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references">
-<div id="ref-hipsey2019general">
-<p>Hipsey, Matthew R, Louise C Bruce, Casper Boon, Brendan Busch, Cayelan C Carey, David P Hamilton, Paul C Hanson, et al. 2019. “A General Lake Model (Glm 3.0) for Linking with High-Frequency Sensor Data from the Global Lake Ecological Observatory Network (Gleon).” <em>Geoscientific Model Development</em> 12 (1): 473–523.</p>
 </div>
 </div>
             </section>
