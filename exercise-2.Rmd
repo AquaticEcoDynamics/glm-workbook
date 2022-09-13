@@ -17,6 +17,14 @@ knitr::include_graphics("images/Exercises/HeatBalance-12.png")
 ```
 </center>
 
+<center>
+```{r picex2-2, echo=FALSE, fig.cap="", out.width = '50%'}
+knitr::include_graphics("images/Exercises/StratificationMovie.gif")
+```
+</center>
+
+
+
 Copy the data from `lake.csv` to a new spreadsheet. Plot the surface heat fluxes and the total energy balance over time.
 
 A lake is 'stratified' if it has a large difference between the top and bottom for a variable such as temperature or salinity. A seasonal weather pattern may break the stratification. Use the GLM plotting window to examine whether you lake is stratified. Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?
