@@ -28,3 +28,7 @@ read_csv("plots/processing-outputs/WQ_5.csv") %>%  # Read GLM csv
   theme_classic()
   
 ```
+
+### Water balance {.unnumbered #WaterBalance}
+
+### Heat balance {-}

@@ -138,13 +138,16 @@ knitr::include_graphics("images/02-files/Files-07.png")
 ```
 </center>
 
-### General lake csv{-}
-One csv is written for each simulation. The file name is set with the parameter `&output`: `csv_lake_fname`, for example 'lake.csv'.
-This file contains values that apply to the whole lake, such as lake volume, lake level and surface temperature.
+### General lake .csv{-}
+One csv is written for each simulation. The file name is set with the parameter `&output`: `csv_lake_fname`, for example 'lake.csv'. This file contains values that apply to the whole lake, such as lake volume, lake level and surface temperature.
 
 ```{block2, hint02_2, type='rmdtip2'}
 If this file is open in a program such as Excel, the GLM program cannot overwrite the file. Close the .csv or save it with a different file name before running the model again.  
 ```
+
+A list of the variables contained in the lake .csv [can be found here](https://github.com/AquaticEcoDynamics/glm-aed/wiki/Navigating-GLM-outputs). The table '2D variables from lake.csv' lists the variables, a description and the units of each. 
+
+This .csv is especially useful for calculating the [water balance](#WaterBalance) and heat balance of the lake.
 
 ### Depth-specific .csv{-}
 Profiles can be output at specified depths, using `&output`: `csv_point_fname` and `csv_point_at`. For example, if `csv_point_fname` is 'WQ' and `csv_point_at` is 1, 5, 12, then the model will create files 'WQ_1', 'WQ_5' and 'WQ_12'. The variables for this file are listed in the parameter `csv_point_vars`. This file can be used to access output data at one depth more easily than via the netcdf file.
