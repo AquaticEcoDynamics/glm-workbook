@@ -145,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
-<li class="chapter" data-level="0.1" data-path="GettingStarted.html"><a href="GettingStarted.html#case-study-download"><i class="fa fa-check"></i><b>0.1</b> Case-study download</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#case-study-download"><i class="fa fa-check"></i>Case-study download</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
@@ -224,18 +224,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="adding-water-quality-models" class="section level1 hasAnchor">
 <h1><span class="header-section-number">5</span> Adding Water Quality Models<a href="adding-water-quality-models.html#adding-water-quality-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><br></p>
+<p>Now lets turn our attention to the watre quality / ecology part of the case-study simulation. Both the WarmLake and TropicalReservoir case-studies have the AED model pre-configured. A schematic (conceptual model) of the interactions being simulated are shown below.</p>
+<p><br></p>
 <center>
 <p><img src="images/Exercises/AEDWQ.jpg" width="75%" data-action="zoom" /></p>
 </center>
-<p>Activate the water quality <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a> by making sure the <code>&amp;wq_setup</code>: <code>wq_lib</code> = ‘aed’. Make sure <code>glm3.nml</code> can find another namelist file <code>aed.nml</code> to configure the water quality model parameters, using the <code>&amp;wq_setup</code> parameter <code>wq_nml_file</code>.</p>
+<p><br></p>
+<p>Activate the water quality <a href="http://aquatic.science.uwa.edu.au/research/models/AED/modules.html">AED modules</a> by making sure the <code>&amp;wq_setup</code> block is ready and uncommented, and the <code>wq_lib</code> = ‘aed’ entry is set. Make sure <code>glm3.nml</code> can find another namelist file <code>aed.nml</code> to configure the water quality model parameters, using the <code>&amp;wq_setup</code> parameter <code>wq_nml_file</code>.</p>
+<p><br></p>
 
 <div class="rmdnote2">
 <p>The above simulation was only plotting temperature and salinity and these plots were configured in <code>plots.nml</code>. Open <code>plots.nml</code> to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called <code>plots_aed.nml</code> has been created. To use this file, rename it to <code>plots.nml</code> (you’ll first need to rename the existing <code>plots.nml</code>) and run the model. You should now see more outputs for the lake simulation.</p>
 </div>
 
+<p><br></p>
 <p>In <code>plots.nml</code> the required variables are all listed, make sure the number of plots is high enough to include them all.</p>
 <center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabex5-1">Table 5.1: </span>Water quality variables and their descriptions.

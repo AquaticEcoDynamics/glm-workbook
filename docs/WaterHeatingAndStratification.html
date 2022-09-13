@@ -145,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#r"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
-<li class="chapter" data-level="0.1" data-path="GettingStarted.html"><a href="GettingStarted.html#case-study-download"><i class="fa fa-check"></i><b>0.1</b> Case-study download</a></li>
+<li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#case-study-download"><i class="fa fa-check"></i>Case-study download</a></li>
 <li class="chapter" data-level="" data-path="GettingStarted.html"><a href="GettingStarted.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
@@ -241,14 +241,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="lake-stratification" class="section level2 hasAnchor">
 <h2><span class="header-section-number">2.2</span> Lake Stratification<a href="WaterHeatingAndStratification.html#lake-stratification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A lake is ‘stratified’ if it has a large difference between the top and bottom for a variable such as temperature or salinity. A seasonal weather pattern may break the stratification.</p>
+<p>A lake is ‘stratified’ if it has a large difference between the top and bottom for a variable such as temperature or salinity. Stratification is usually created by sunlight making surface water warm and buoyant. Wind events and prolonged periods of surface cooling lead to mixing and can break the stratification. GLM uses many layers to resolve the vertical temperature and salinity profiles over the water column depth.</p>
 <center>
 <video width="60%" height="100%" controls>
 <source src="images/Exercises/layer_animation.mp4" type="video/mp4">
 </video>
 </center>
-<p>Use the GLM plotting window to examine whether your lake is stratified. Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?</p>
-<p>Outputing variables at multiple depths: Go to the <code>&amp;output</code> (not <code>&amp;outflow</code>!) section of <code>glm3.nml</code> and customize the configuration to make two output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter <code>csv_point_at</code> to set the depths, from the bottom, at which the model will write .csv files. This creates two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths.</p>
+<p>Inspect the depth-time contour plots in the GLM plotting window to examine the nature of stratification in the case study simulation(s). Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?</p>
+<p><em>Outputing variables at multiple depths</em>: We can configure GLM to look in more depth the nature of differences between the upper and lower layers. Go to the <code>&amp;output</code> (not <code>&amp;outflow</code>!) section of <code>glm3.nml</code> and customize the configuration to make two <em>depth-specific</em> output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter <code>csv_point_at</code> to set the depths, from the bottom, at which the model will write .csv files. This will create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths.</p>
 <p><br></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb2-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co">! format for output and filename(s)</span></a>
@@ -256,7 +256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-4" title="4"><span class="kw">&amp;</span>output</a>
 <a class="sourceLine" id="cb2-5" title="5">   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
 <a class="sourceLine" id="cb2-6" title="6">   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
-<a class="sourceLine" id="cb2-7" title="7">   nsave   <span class="kw">=</span> <span class="dv">6</span>                       <span class="co">! This will output every 6 hours</span></a>
+<a class="sourceLine" id="cb2-7" title="7">   nsave   <span class="kw">=</span> <span class="dv">24</span>                      <span class="co">! This will output every 24 hours</span></a>
 <a class="sourceLine" id="cb2-8" title="8">  <span class="co">!- General summary file</span></a>
 <a class="sourceLine" id="cb2-9" title="9">   csv_lake_fname  <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></a>
 <a class="sourceLine" id="cb2-10" title="10">  <span class="co">!- Depth specific outputs</span></a>
