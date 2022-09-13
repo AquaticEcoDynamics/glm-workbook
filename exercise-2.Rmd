@@ -28,7 +28,7 @@ Save the data in `lake.csv` as a new xls spreadsheet. Plot the surface heat flux
 ## Lake Stratification 
 
 
-A lake is 'stratified' if it has a large difference between the top and bottom for a variable such as temperature or salinity. A seasonal weather pattern may break the stratification. 
+A lake is 'stratified' if it has a large difference between the top and bottom for a variable such as temperature or salinity. Stratification is usually created by sunlight making surface water warm and buoyant. Wind events and prolonged periods of surface cooling lead to mixing and can break the stratification. GLM uses many layers to resolve the vertical temperature and salinity profiles over the water column depth.
 
 <center>
 
@@ -39,9 +39,9 @@ A lake is 'stratified' if it has a large difference between the top and bottom f
 </center>
 
 
-Use the GLM plotting window to examine whether your lake is stratified. Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?
+Inspect the depth-time contour plots in the GLM plotting window to examine the nature of stratification in the case study simulation(s). Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?
 
-Outputing variables at multiple depths: Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the configuration to make two output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter `csv_point_at` to set the depths, from the bottom, at which the model will write .csv files. This creates two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. 
+*Outputing variables at multiple depths*: We can configure GLM to look in more depth the nature of differences between the upper and lower layers. Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the configuration to make two *depth-specific* output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter `csv_point_at` to set the depths, from the bottom, at which the model will write .csv files. This will create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. 
 
 <br>
 
@@ -52,7 +52,7 @@ Outputing variables at multiple depths: Go to the `&output` (not `&outflow`!) se
 &output
    out_dir = 'output'
    out_fn  = 'output'
-   nsave   = 6                       ! This will output every 6 hours
+   nsave   = 24                      ! This will output every 24 hours
   !- General summary file
    csv_lake_fname  = 'lake'
   !- Depth specific outputs

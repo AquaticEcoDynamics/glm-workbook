@@ -1,5 +1,11 @@
 # Adding Water Quality Models
 
+<br>
+
+Now lets turn our attention to the watre quality / ecology part of the case-study simulation. Both the WarmLake and TropicalReservoir case-studies have the AED model pre-configured. A schematic (conceptual model) of the interactions being simulated are shown below.
+
+<br>
+
 <center>
 
 ```{r figex5-1, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
@@ -8,13 +14,19 @@ knitr::include_graphics("images/Exercises/AEDWQ.jpg")
 
 </center>
 
-Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html) by making sure the `&wq_setup`: `wq_lib` = 'aed'. Make sure `glm3.nml` can find another namelist file `aed.nml` to configure the water quality model parameters, using the `&wq_setup` parameter `wq_nml_file`.
+<br>
+
+Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html) by making sure the `&wq_setup` block is ready and uncommented, and the  `wq_lib` = 'aed' entry is set. Make sure `glm3.nml` can find another namelist file `aed.nml` to configure the water quality model parameters, using the `&wq_setup` parameter `wq_nml_file`.
+
+<br>
 
 ```{block2, hintex5_5, type='rmdnote2'}
 
 The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file, rename it to `plots.nml` (you'll first need to rename the existing `plots.nml`) and run the model. You should now see more outputs for the lake simulation.
 
 ```
+
+<br>
 
 In `plots.nml` the required variables are all listed, make sure the number of plots is high enough to include them all.
 
@@ -31,7 +43,7 @@ kable(module7_1, format = "html", escape = F, align = "c", caption = "Water qual
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "25em") %>%
   column_spec(2, width_min = "25em") %>%
-  scroll_box(width = "100%", height="250px",
+  scroll_box(width = "100%", height="450px",
              fixed_thead = FALSE) 
 ```
 
