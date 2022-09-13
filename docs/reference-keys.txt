@@ -1,9 +1,10 @@
-eq:05-1
+eq:ex4-1
 eq:05-2
-eq:outputs-1
-tab:table06-1
-water-level-balance
-water-heating-stratification
+fig:figM7-1
+fig:figM7-2
+tab:tabM7-1
+WaterBalance
+WaterHeatingAndStratification
 updating-initial-height-conditions
 error-assessment
 mean-absolute-error-mae
