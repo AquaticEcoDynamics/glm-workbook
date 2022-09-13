@@ -234,22 +234,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Copy the data from <code>lake.csv</code> to a new spreadsheet. Plot the surface heat fluxes and the total energy balance over time.</p>
 <p>A lake is ‘stratified’ if it has a large difference between the top and bottom for a variable such as temperature or salinity. A seasonal weather pattern may break the stratification. Use the GLM plotting window to examine whether you lake is stratified. Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?</p>
 <p>Go to the <code>&amp;output</code> (not <code>&amp;outflow</code>!) section of <code>glm3.nml</code> and customize the configuration to make two output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter <code>csv_point_at</code> to set the depths, from the bottom, at which the model will write .csv files. This creates two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co">! format for output and filename(s)</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">&amp;</span>output</a>
-<a class="sourceLine" id="cb1-5" title="5">   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
-<a class="sourceLine" id="cb1-6" title="6">   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
-<a class="sourceLine" id="cb1-7" title="7">   nsave <span class="kw">=</span> <span class="dv">6</span>  <span class="co">!This will output every 6 hours</span></a>
-<a class="sourceLine" id="cb1-8" title="8">   <span class="co">! General summary file</span></a>
-<a class="sourceLine" id="cb1-9" title="9">   csv_lake_fname <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></a>
-<a class="sourceLine" id="cb1-10" title="10">   <span class="co">! Depth specific outputs</span></a>
-<a class="sourceLine" id="cb1-11" title="11">   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span> </a>
-<a class="sourceLine" id="cb1-12" title="12">   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span></a>
-<a class="sourceLine" id="cb1-13" title="13">   csv_point_at <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span></a>
-<a class="sourceLine" id="cb1-14" title="14">   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span></a>
-<a class="sourceLine" id="cb1-15" title="15">   csv_point_vars <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></a>
-<a class="sourceLine" id="cb1-16" title="16"><span class="kw">/</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb2-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">! format for output and filename(s)</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw">&amp;</span>output</a>
+<a class="sourceLine" id="cb2-5" title="5">   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">   nsave <span class="kw">=</span> <span class="dv">6</span>  <span class="co">!This will output every 6 hours</span></a>
+<a class="sourceLine" id="cb2-8" title="8">   <span class="co">! General summary file</span></a>
+<a class="sourceLine" id="cb2-9" title="9">   csv_lake_fname <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">   <span class="co">! Depth specific outputs</span></a>
+<a class="sourceLine" id="cb2-11" title="11">   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span> </a>
+<a class="sourceLine" id="cb2-12" title="12">   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span></a>
+<a class="sourceLine" id="cb2-13" title="13">   csv_point_at <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span></a>
+<a class="sourceLine" id="cb2-14" title="14">   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb2-15" title="15">   csv_point_vars <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="kw">/</span></a></code></pre></div>
 <p>Save the <code>glm3.nml</code> and run the model again.</p>
 <p>Find the new output .csv files in the <code>output</code> folder. Copy the data to a new Excel spreadsheet. Calculate the temperature difference between the top and the bottom. Identify the periods where the lake is stratified and mixed.</p>
 

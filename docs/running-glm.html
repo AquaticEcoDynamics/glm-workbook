@@ -221,20 +221,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Running GLM<a href="running-glm.html#running-glm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="C02_4" class="section level4 unnumbered hasAnchor">
 <h4>Simulation workflow<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<center>
 <p><img src="images/01-gettingstarted/workflow.png" width="60%" /></p>
+</center>
 </div>
 <div id="C02_4" class="section level4 unnumbered hasAnchor">
 <h4>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Open the Terminal application on your Mac</li>
-<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>Kinneret97</em> folder)</li>
-<li>In Finder, go to the macGLM folder and right-click on the glm app, select <em>Show Package Contents</em></li>
+<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>WarmLake</em> folder)</li>
+<li>In Finder, go to the <code>GLM/mac</code> folder and right-click on the glm app, select <em>Show Package Contents</em></li>
 <li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
 <li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
 <li>Leave a space after the file path and type <code>--xdisp</code></li>
-<li>Press Enter and the model will run</li>
+<li>Press <code>Enter</code> and the model will run</li>
 </ul>
-<p>These steps are shown in the screen recording below for the <em>Kinneret97</em> simulation:</p>
+<p>These steps are shown in the screen recording below for an example simulation:</p>
 <center>
 <video width="100%" height="100%" controls>
 <source src="images/09-module8/video1.mp4" type="video/mp4">
@@ -245,13 +247,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
 </div>
 
+<p><br></p>
 </div>
 <div id="C02_5" class="section level4 unnumbered hasAnchor">
 <h4>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory.</p>
+<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1">..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</a>
+<a class="sourceLine" id="cb1-2" title="2">echo press <span class="fu">any</span> key</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">pause</span></a></code></pre></div>
 
 <div class="rmdnote2">
-<p>If the model is not opening make sure you’re <strong>not</strong> working in a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
+<p>If the model is not opening make sure that you are <strong>not</strong> working from a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
 </div>
 
 

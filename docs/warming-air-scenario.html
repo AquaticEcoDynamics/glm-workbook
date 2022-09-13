@@ -222,32 +222,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>How would these concentrations change if the air temperature increased by 2 °C? (You will need to edit the <code>met_hourly.csv</code> file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm.</p>
 <p>Check whether your simulation package has a pre-made version of the meteorology file in the <em>bcs</em> folder, with the air temperature increased by 2 °C. For example, the file may be called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</p>
 <p>Examine the phytoplankton outputs from the AED water quality model and compare them to the baseline scenario.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb2-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">! meteorology</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw">&amp;</span>meteorology</a>
-<a class="sourceLine" id="cb2-5" title="5">   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></a>
-<a class="sourceLine" id="cb2-6" title="6">   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></a>
-<a class="sourceLine" id="cb2-7" title="7">   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></a>
-<a class="sourceLine" id="cb2-8" title="8">   atm_stab    <span class="kw">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb2-9" title="9">   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb2-10" title="10">  <span class="co">!rad_mode    = 1</span></a>
-<a class="sourceLine" id="cb2-11" title="11">   albedo_mode <span class="kw">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb2-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
-<a class="sourceLine" id="cb2-13" title="13">   <span class="co">!-- BC file details</span></a>
-<a class="sourceLine" id="cb2-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
-<a class="sourceLine" id="cb2-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!UPDATE THIS</span></a>
-<a class="sourceLine" id="cb2-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
-<a class="sourceLine" id="cb2-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
-<a class="sourceLine" id="cb2-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
-<a class="sourceLine" id="cb2-19" title="19">   <span class="co">!-- Parameters</span></a>
-<a class="sourceLine" id="cb2-20" title="20">   ce <span class="kw">=</span> <span class="fl">0.0013</span></a>
-<a class="sourceLine" id="cb2-21" title="21">   ch <span class="kw">=</span> <span class="fl">0.0013</span></a>
-<a class="sourceLine" id="cb2-22" title="22">   cd  <span class="kw">=</span> <span class="fl">0.0013</span></a>
-<a class="sourceLine" id="cb2-23" title="23">  <span class="co">!catchrain      = .true.</span></a>
-<a class="sourceLine" id="cb2-24" title="24">  <span class="co">!rain_threshold = 0.001</span></a>
-<a class="sourceLine" id="cb2-25" title="25">  <span class="co">!runoff_coef    = 0.0</span></a>
-<a class="sourceLine" id="cb2-26" title="26"><span class="kw">/</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb3-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">! meteorology</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">&amp;</span>meteorology</a>
+<a class="sourceLine" id="cb3-5" title="5">   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb3-6" title="6">   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></a>
+<a class="sourceLine" id="cb3-7" title="7">   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></a>
+<a class="sourceLine" id="cb3-8" title="8">   atm_stab    <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-9" title="9">   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-10" title="10">  <span class="co">!rad_mode    = 1</span></a>
+<a class="sourceLine" id="cb3-11" title="11">   albedo_mode <span class="kw">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb3-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb3-13" title="13">   <span class="co">!-- BC file details</span></a>
+<a class="sourceLine" id="cb3-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb3-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!UPDATE THIS</span></a>
+<a class="sourceLine" id="cb3-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
+<a class="sourceLine" id="cb3-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb3-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb3-19" title="19">   <span class="co">!-- Parameters</span></a>
+<a class="sourceLine" id="cb3-20" title="20">   ce <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb3-21" title="21">   ch <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb3-22" title="22">   cd  <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb3-23" title="23">  <span class="co">!catchrain      = .true.</span></a>
+<a class="sourceLine" id="cb3-24" title="24">  <span class="co">!rain_threshold = 0.001</span></a>
+<a class="sourceLine" id="cb3-25" title="25">  <span class="co">!runoff_coef    = 0.0</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="kw">/</span></a></code></pre></div>
 
 </div>
             </section>
