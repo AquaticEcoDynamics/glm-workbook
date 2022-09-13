@@ -1,6 +1,6 @@
 # Running GLM {#running-glm -}
 
-#### Simulation workflow {#C02_4 -}
+### Simulation workflow {#C02_4 -}
 
 <center>
 
@@ -51,3 +51,36 @@ pause
 If the model is not opening make sure that you are **not** working from a network directory (e.g. OneDrive) and the file path to the `glm.bat` file has **zero** spaces in it.
 
 ```
+
+
+
+<br>
+
+### Visualising Results {-}
+
+Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM's general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs. 
+
+### Excel {-}
+
+```{r pic04-1, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("images/processing-outputs/picture1.png")
+```
+
+### R {-}
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# Load packages
+library(tidyverse) 
+library(lubridate)
+
+read_csv("plots/processing-outputs/WQ_5.csv") %>%  # Read GLM csv
+  mutate(
+    time = as_datetime(time, format = "%Y-%m-%d %H:%M:%S") # Format date/time
+  ) %>% 
+  ggplot(mapping = aes(x = time, y = temp)) + # Plot with ggplot()
+  geom_line(colour = 'red') +
+  labs(x = "Date", y = "Temperature (°C)") +
+  theme_classic()
+  
+```
+
