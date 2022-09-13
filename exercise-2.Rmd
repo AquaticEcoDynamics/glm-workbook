@@ -17,19 +17,23 @@ knitr::include_graphics("images/Exercises/HeatBalance-12.png")
 ```
 </center>
 
+<br>
+
 <center>
 ```{r picex2-2, echo=FALSE, fig.cap="", out.width = '50%'}
-knitr::include_graphics("images/Exercises/StratificationMovie.gif")
+knitr::include_graphics("images/Exercises/layer_animation.mp4")
 ```
 </center>
 
+<br>
 
-
-Copy the data from `lake.csv` to a new spreadsheet. Plot the surface heat fluxes and the total energy balance over time.
+Save the data in `lake.csv` as a new xls spreadsheet. Plot the surface heat fluxes and the total energy balance over time. Set the axes so that the incoming energy fluxes are positive and outgoing are negative; a stacked area plot is often a useful way to summarise.
 
 A lake is 'stratified' if it has a large difference between the top and bottom for a variable such as temperature or salinity. A seasonal weather pattern may break the stratification. Use the GLM plotting window to examine whether you lake is stratified. Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?
 
 Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the configuration to make two output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter `csv_point_at` to set the depths, from the bottom, at which the model will write .csv files. This creates two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. 
+
+<br>
 
 ``` {fortran, eval = FALSE, style="max-height: 239px;"}
 !-------------------------------------------------------------------------------
@@ -49,6 +53,8 @@ Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the co
    csv_point_vars = 'temp','salt','PHS_frp','NIT_amm'
 /
 ```
+
+<br>
 
 Save the `glm3.nml` and run the model again.
 
