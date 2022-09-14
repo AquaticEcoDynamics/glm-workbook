@@ -1,4 +1,6 @@
-# Getting Started {#GettingStarted .unnumbered}
+# (PART) Getting Started {-}
+
+# Setup {.unnumbered}
 
 ## Tools You'll Need {.unnumbered}
 
