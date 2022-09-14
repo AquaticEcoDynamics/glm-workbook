@@ -6,7 +6,7 @@
 
 A text editor is required to edit GLM's `.nml` configuration files. Simple text editors like *TextEdit* on MacOS or *Wordpad* on Windows can be used however more extensible editors like [Visual Studio Code](https://code.visualstudio.com), UltraEdit or [Atom](https://atom.io) are recommended. 
 
-To edit the `.nml` file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM. Any text with a '!' before it is not read by the program, but is used as a comment for the user. 
+To edit the `.nml` file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM. Any text with a '!' before it is not read by the GLM program, but is used as a comment for the user. 
 
 ### Excel {.unnumbered}
 
@@ -24,9 +24,9 @@ R is also commonly used to manipulate and visualise GLM's input/output data.
 
 The GLM model and two case-study simulations setup for the below exercises are available for download by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.
 
-The simulation in the WarmLake directory is an example 40 m deep, monomictic lake that is used to supply drinking water and support an active fishery. 
+The simulation in the **WarmLake** directory is an example 40 m deep, monomictic lake that is used to supply drinking water and support an active fishery. 
 
-The simulation in the TropicalReservoir directory is a typical water supply reservoir (drowned river valley) located in a sub-tropical climate. This simulation is polymictic, mixing variably throughout the year.
+The simulation in the **TropicalReservoir** directory is a typical water supply reservoir (drowned river valley) located in a sub-tropical climate. This simulation is polymictic, mixing variably throughout the year.
 
 Other model simulations are also available in the glm-aed GitHub repository in glm-examples directory.
 
