@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Changing Morphometry | GLM Workbook</title>
+  <title>Setup | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Changing Morphometry | GLM Workbook" />
+  <meta property="og:title" content="Setup | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Changing Morphometry | GLM Workbook" />
+  <meta name="twitter:title" content="Setup | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="warming-air-scenario.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="glm-file-structure.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -203,22 +203,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="changing-morphometry" class="section level1 hasAnchor">
-<h1><span class="header-section-number">8</span> Changing Morphometry<a href="changing-morphometry.html#changing-morphometry" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Edit the heights and areas of the lake using <code>&amp;morphometry</code>: <code>H</code> and <code>A</code>. Remember that the first area must be 0 m<sup>2</sup> and that all of the heights and areas must be increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation.</p>
+<div id="setup" class="section level1 unnumbered hasAnchor">
+<h1>Setup<a href="setup.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tools-youll-need" class="section level2 unnumbered hasAnchor">
+<h2>Tools You’ll Need<a href="setup.html#tools-youll-need" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="text-editor" class="section level3 unnumbered hasAnchor">
+<h3>Text Editor<a href="setup.html#text-editor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A text editor is required to edit GLM’s <code>.nml</code> configuration files. Simple text editors like <em>TextEdit</em> on MacOS or <em>Wordpad</em> on Windows can be used however more extensible editors like <a href="https://code.visualstudio.com">Visual Studio Code</a>, UltraEdit or <a href="https://atom.io">Atom</a> are recommended.</p>
+<p>To edit the <code>.nml</code> file, simply right click on the file and open it in your preferred text editor. Changes to the file must be saved before running GLM. Any text with a ‘!’ before it is not read by the program, but is used as a comment for the user.</p>
+</div>
+<div id="excel" class="section level3 unnumbered hasAnchor">
+<h3>Excel<a href="setup.html#excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>GLM reads and writes data in CSV format. Excel can be used to edit these files (e.g. time series meteorological input data) or for plotting outputs.</p>
+</div>
+<div id="r" class="section level3 unnumbered hasAnchor">
+<h3>R<a href="setup.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R is also commonly used to manipulate and visualise GLM’s input/output data.</p>
+<ul>
+<li>R can be downloaded <a href="https://cran.csiro.au">here</a></li>
+<li>R Studio can be downloaded <a href="https://rstudio.com">here</a></li>
+</ul>
+</div>
+</div>
+<div id="case-study-download" class="section level2 unnumbered hasAnchor">
+<h2>Case-study download<a href="setup.html#case-study-download" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The GLM model and two case-study simulations setup for the below exercises are available for download by clicking the download button in the tool bar <i class="fa fa-download" aria-hidden="true"></i>.</p>
+<p>The simulation in the WarmLake directory is an example 40 m deep, monomictic lake that is used to supply drinking water and support an active fishery.</p>
+<p>The simulation in the TropicalReservoir directory is a typical water supply reservoir (drowned river valley) located in a sub-tropical climate. This simulation is polymictic, mixing variably throughout the year.</p>
+<p>Other model simulations are also available in the glm-aed GitHub repository in glm-examples directory.</p>
+</div>
+<div id="unzipping-files" class="section level2 unnumbered hasAnchor">
+<h2>Unzipping files<a href="setup.html#unzipping-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The GLM model and case study simulations featured in this workbook are distributed as a zipped file. In some cases users may erroneously be working “within” the zip without properly extracting the file and this prevents the simulation from running.</p>
+<p>Extracting these files will depend on your operating system.</p>
+<p>On MacOS, simply double click the ‘zipped’ file:</p>
 <center>
-<img src="images/02-files/Files-02.png" width="75%" />
+<video width="100%" height="100%" controls>
+<source src="images/01-gettingstarted/video1.mp4" type="video/mp4">
+</video>
 </center>
+<p><br></p>
+<p>On Windows, click ‘Extract All’ and follow the prompt:</p>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/01-gettingstarted/video2.mp4" type="video/mp4">
+</video>
+</center>
+<p><br></p>
 
-
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="warming-air-scenario.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glm-file-structure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
