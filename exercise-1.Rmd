@@ -27,3 +27,12 @@ Plot the lake water balance -- volume, water level and fluxes including inflows,
 ```{r picex1-2, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("images/02-files/excel.png")
 ```
+
+<br>
+
+```{r picex1-3, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("images/Exercises/WaterBalanceExcel2.png")
+```
+
+
+
