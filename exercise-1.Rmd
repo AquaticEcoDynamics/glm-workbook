@@ -1,4 +1,4 @@
-# (PART) Exercises {-}
+# (PART) Case Study Exercises {-}
 
 # Water Level & Balance { #WaterBalance}
 
