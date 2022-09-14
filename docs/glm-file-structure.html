@@ -276,7 +276,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="boundary-files" class="section level3 unnumbered hasAnchor">
 <h3>Boundary files<a href="glm-file-structure.html#boundary-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Boundary .csv files can be found in the ‘inputs’ directory. The exact names and paths are listed in the glm3.nml block <code>&amp;inflow</code>, <code>&amp;outflow</code> and <code>&amp;meteorology</code>.</p>
+<p>Boundary .csv files can be found in the ‘inputs’ or ‘bcs’ (<em>boundary conditions</em>) directory. The exact names and paths are listed in the glm3.nml block <code>&amp;inflow</code>, <code>&amp;outflow</code> and <code>&amp;meteorology</code>.</p>
 <div id="inflow-files" class="section level4 unnumbered hasAnchor">
 <h4>Inflow files<a href="glm-file-structure.html#inflow-files" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The simulated lake may have streams or rivers flowing into it. If so, one time series boundary .csv file is used for each inflow stream. The rows of the csv are time steps and the columns are inflowing variables, such as flow volume, salinity and oxygen. The file names are listed in <code>inflow_fl</code> and the model will read them in from left to right according to the number set in <code>num_inflows</code>.</p>
