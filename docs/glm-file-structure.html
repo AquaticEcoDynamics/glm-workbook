@@ -208,51 +208,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>GLM input files<a href="glm-file-structure.html#glm-input-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="glm-configuration-file-glm3.nml" class="section level3 unnumbered hasAnchor">
 <h3>GLM configuration file: <code>glm3.nml</code><a href="glm-file-structure.html#glm-configuration-file-glm3.nml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A GLM model simulation is controlled through the main configuration file : glm3.nml.</p>
-<p>The key elements of this file are depicted as ‘blocks’ and each block of configuration options and parameters is summarised in detail on <a href="https://aquatic.science.uwa.edu.au/research/models/GLM/configuration.html">this page</a>. Each block is started with an ampersand <code>&amp;</code> and finished with a slash <code>/</code>. The blocks contain text that can be either
-- single parameters (with units)<br />
-- listed parameters, for example, for every depth layer or every river inflow<br />
-- listed variables, for example, variables to be read in or written to the output<br />
-- file paths and file names<br />
-- configuration switches (integers or logical values)<br />
-</p>
+<p>A GLM model simulation is controlled through the main configuration file : glm3.nml. This file is read as text by the GLM program, from top to bottom. Any text with a ‘!’ before it is not read by the program, but is used as a comment for the user.</p>
+<p>The key elements of this file are depicted as ‘blocks’ and each block of configuration options and parameters is summarised in detail on <a href="https://aquatic.science.uwa.edu.au/research/models/GLM/configuration.html">this page</a>. Each block is started with an ampersand <code>&amp;</code> and finished with a slash <code>/</code>. The blocks contain text that can be either</p>
+<ul>
+<li>single parameters (with units)<br />
+</li>
+<li>listed parameters, for example, for every depth layer or every river inflow<br />
+</li>
+<li>listed variables, for example, variables to be read in or written to the output<br />
+</li>
+<li>file paths and file names<br />
+</li>
+<li>configuration switches (integers or logical values)<br />
+</li>
+</ul>
 <p>Some key inputs for setting up a GLM simulation are listed below.</p>
 <p><code>&amp;wq_setup</code>:<code>wq_lib</code> sets an external water quality model, for example, ‘aed’.<br />
 <code>&amp;wq_setup</code>:<code>wq_nml_file</code> is the filepath and filename for an external water quality model namelist.<br />
 </p>
 <p><code>&amp;glm_morphometry</code>:<code>H</code> is a list of some of the heights of the lake.<br />
 <code>&amp;glm_morphometry</code>:<code>A</code> is a list of some of the areas of the lake, at the same layers listed in <code>H</code>.</p>
-<center>
-<img src="images/02-files/Files-02.png" width="75%" />
-</center>
 <p><code>&amp;time</code>:<code>timefmt</code> is a switch for the time setup: either number of days (= 3) or start and stop days (= 2).<br />
 <code>&amp;time</code>:<code>start</code> and <code>stop</code> are the dates to start and stop (<code>timefmt</code> = 2).<br />
 <code>&amp;time</code>:<code>num_days</code> is the number of days for a simulation (<code>timefmt</code> = 3).<br />
 </p>
-<center>
-<img src="images/02-files/Files-03.png" width="75%" />
-</center>
 <p><code>&amp;output</code>:<code>csv_point_nlevs</code> is the number of <code>csv_point_at</code> depths to use, as listed left to right.<br />
 <code>&amp;output</code>:<code>csv_point_at</code> is a list of the depths (m) from the bottom at which an output csv file is written.<br />
 <code>&amp;output</code>:<code>csv_point_vars</code> is a list of the simulated variables to write to the output csv.<br />
 <code>&amp;output</code>:<code>csv_point_nvars</code> is the number of <code>csv_point_vars</code> to use, as listed left to right.<br />
 </p>
-
-<div class="rmdtip2">
-If a <code>csv_point_at</code> depth is listed but it is greater than the initial depth of the lake, no initial value can be written and the model will not work.
-</div>
-
-<center>
-<img src="images/02-files/Files-04.png" width="75%" />
-</center>
 <p><code>&amp;init_profiles</code>:<code>num_depths</code> is the number (integer) of depths to set for the initial profile.<br />
 <code>&amp;init_profiles</code>:<code>the_depths</code> are the depths (m) of the initial profiles, where other features are configured, from bottom to top.<br />
 <code>&amp;init_profiles</code>:<code>the_temps</code> are the initial temperatures at <code>the_depths</code>.<br />
 <code>&amp;init_profiles</code>:<code>the_sals</code> are the initial salinity at <code>the_depths</code>.<br />
 </p>
-<center>
-<img src="images/02-files/Files-05.png" width="75%" />
-</center>
 <p><code>&amp;inflow</code>:<code>num_inflows</code> is a number (integer) of inflowing streams.<br />
 <code>&amp;inflow</code>:<code>inflow_fl</code> is a list of the file names for the inflowing streams.<br />
 <code>&amp;inflow</code>:<code>inflow_vars</code> is a list of variables to be taken from the inflow files.<br />
@@ -262,18 +251,21 @@ If a <code>csv_point_at</code> depth is listed but it is greater than the initia
 <code>&amp;outflow</code>:<code>outflow_fl</code> is a list of the file names for the outflowing streams.<br />
 </p>
 <!-- `&sediment`:`zone_heights` is a list of the heights (m) of the sediment zones, from bottom to top.\ -->
-<center>
-<img src="images/02-files/Files-06.png" width="75%" />
-</center>
 </div>
 <div id="glm-plot-window-file-plots.nml" class="section level3 unnumbered hasAnchor">
 <h3>GLM plot window file: <code>plots.nml</code><a href="glm-file-structure.html#glm-plot-window-file-plots.nml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <code>plots.nml</code> text file configures the automatic plot window that runs during the simulation. The x axis is time, the y axis is lake depth layer and the z axis (colour bar) is the scale of the variable, for example concentration. The user can configure the plot window using the following:
-- <code>&amp;plots_window</code>:<code>width</code> and <code>height</code> set the dimensions of the plotting window (mm).<br />
-- <code>&amp;plots</code>:<code>plot_width</code> and <code>plot_height</code> set the dimensions of the individual plots (mm).<br />
-- <code>&amp;plots</code>:<code>title</code> is a list of the titles displayed above each plot.<br />
-- <code>&amp;plots</code>:<code>vars</code> is a list of the GLM or AED variables for each plot, in the same sequence as <code>title</code>.<br />
-- <code>&amp;plots</code>:<code>min_z</code> and <code>max_z</code> set the minimum and maximum values for each of the variables, in the same sequence as <code>title</code>.</p>
+<p>The <code>plots.nml</code> text file configures the automatic plot window that runs during the simulation. The x axis is time, the y axis is lake depth layer and the z axis (colour bar) is the scale of the variable, for example concentration. The user can configure the plot window using the following:</p>
+<ul>
+<li><code>&amp;plots_window</code>:<code>width</code> and <code>height</code> set the dimensions of the plotting window (mm).<br />
+</li>
+<li><code>&amp;plots</code>:<code>plot_width</code> and <code>plot_height</code> set the dimensions of the individual plots (mm).<br />
+</li>
+<li><code>&amp;plots</code>:<code>title</code> is a list of the titles displayed above each plot.<br />
+</li>
+<li><code>&amp;plots</code>:<code>vars</code> is a list of the GLM or AED variables for each plot, in the same sequence as <code>title</code>.<br />
+</li>
+<li><code>&amp;plots</code>:<code>min_z</code> and <code>max_z</code> set the minimum and maximum values for each of the variables, in the same sequence as <code>title</code>.</li>
+</ul>
 <center>
 <img src="images/02-files/Plotwindow.png" width="100%" />
 </center>
@@ -293,7 +285,7 @@ If a <code>csv_point_at</code> depth is listed but it is greater than the initia
 <h4>Meteorological file<a href="glm-file-structure.html#meteorological-file" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>One meteorological file sets conditions at the surface of the lake, i.e. the water-atmosphere boundary. It includes values such as air temperature, wind speed and light. The file is also a time-series boundary, with rows as time steps and columns as each boundary variable. It often has a name like ‘met.csv’.</p>
 <center>
-<img src="images/02-files/Files-06.png" width="50%" />
+<img src="images/02-files/GLMworkbook-06.png" width="75%" />
 </center>
 </div>
 </div>
@@ -309,7 +301,7 @@ If a <code>csv_point_at</code> depth is listed but it is greater than the initia
 <h3>Output Netcdf<a href="glm-file-structure.html#output-netcdf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The results of all variables at all time steps and depths are written to the netcdf file. This file may have a size of hundreds of MB or GB. The file can be accessed with Matlab or R packages that have been created to organize these large file types.</p>
 <center>
-<img src="images/02-files/Files-07.png" width="33%" />
+<img src="images/02-files/GLMworkbook-07.png" width="33%" />
 </center>
 </div>
 <div id="general-lake-.csv" class="section level3 unnumbered hasAnchor">
