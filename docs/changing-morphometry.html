@@ -205,10 +205,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="changing-morphometry" class="section level1 hasAnchor">
 <h1><span class="header-section-number">8</span> Changing Morphometry<a href="changing-morphometry.html#changing-morphometry" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Edit the heights and areas of the lake using <code>&amp;morphometry</code>: <code>H</code> and <code>A</code>. Remember that the first area must be 0 m<sup>2</sup> and that all of the heights and areas must be increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation.</p>
+<p>The lake shape will influence the water balance and pattern of vertical stratification. The lake’s shape in GLM is resolved using a <em>hypsographic curve</em> - that is the relationship between height and wetted area. This is captured in the <code>glm.nml</code> <code>&amp;morphometry</code> section.</p>
 <center>
 <img src="images/02-files/Files-02.png" width="75%" />
 </center>
+<p>Edit the heights and areas of the lake using <code>&amp;morphometry</code>: <code>H</code> and <code>A</code>. Remember that the first area must be 0 m<sup>2</sup> and that all of the heights and areas must be monotonically increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation.</p>
 
 
 </div>

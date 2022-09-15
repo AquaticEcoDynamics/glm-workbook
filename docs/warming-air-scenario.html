@@ -205,9 +205,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="warming-air-scenario" class="section level1 hasAnchor">
 <h1><span class="header-section-number">7</span> Warming Air Scenario<a href="warming-air-scenario.html#warming-air-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>How would these concentrations change if the air temperature increased by 2 °C? (You will need to edit the <code>met_hourly.csv</code> file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm.</p>
+<p>A common application using GLM is to undertake scenarios to assess how conditions might change in a warmer world. For example, how would stratification and water quality concentrations change if the air temperature increased by 2 °C?</p>
+<p>This can be achieved by altering the boundary condition files, such as the meteorology and inflow files, to represent this type of climate change scenario.</p>
 <p>Check whether your simulation package has a pre-made version of the meteorology file in the <em>bcs</em> folder, with the air temperature increased by 2 °C. For example, the file may be called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</p>
-<p>Examine the phytoplankton outputs from the AED water quality model and compare them to the baseline scenario.</p>
+<p>Or alternatively you can edit the <code>met_hourly.csv</code> file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb4-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co">! meteorology</span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
@@ -222,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb4-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
 <a class="sourceLine" id="cb4-13" title="13">   <span class="co">!-- BC file details</span></a>
 <a class="sourceLine" id="cb4-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
-<a class="sourceLine" id="cb4-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span> <span class="co">!UPDATE THIS</span></a>
+<a class="sourceLine" id="cb4-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span>   <span class="co">!&lt;---- UPDATE THIS LINE WITH THE NEW FILE</span></a>
 <a class="sourceLine" id="cb4-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
 <a class="sourceLine" id="cb4-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
 <a class="sourceLine" id="cb4-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
@@ -234,6 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb4-24" title="24">  <span class="co">!rain_threshold = 0.001</span></a>
 <a class="sourceLine" id="cb4-25" title="25">  <span class="co">!runoff_coef    = 0.0</span></a>
 <a class="sourceLine" id="cb4-26" title="26"><span class="kw">/</span></a></code></pre></div>
+<p>Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario.</p>
 
 </div>
             </section>
