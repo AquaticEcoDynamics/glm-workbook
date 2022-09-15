@@ -24,7 +24,7 @@ Or alternatively you can edit the `met_hourly.csv` file to reflect these conditi
    cloud_mode  = 4
    !-- BC file details
    subdaily    = .true.
-   meteo_fl    = 'bcs/met_1997_2004.csv' !UPDATE THIS
+   meteo_fl    = 'bcs/met_1997_2004.csv'   !<---- UPDATE THIS LINE WITH THE NEW FILE
    wind_factor = 0.9
    lw_factor   = 1.0
    lw_offset   = 0.0
@@ -38,4 +38,4 @@ Or alternatively you can edit the `met_hourly.csv` file to reflect these conditi
 /
 ```
 
-Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario. 
+Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario.
