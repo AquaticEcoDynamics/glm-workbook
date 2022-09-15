@@ -205,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="sensitivity-index-si" class="section level1 hasAnchor">
 <h1><span class="header-section-number">6</span> Sensitivity Index (SI)<a href="sensitivity-index-si.html#sensitivity-index-si" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Calculating a sensitivity index allows the impact of changing an independent variable to be assessed on a dependent variable. Another way to think of this is <em>how much does an output change if I change an input?</em> Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:</p>
+<p>Calculating a sensitivity index allows the impact of changing an independent variable (e.g. a model parameter) to be assessed on a dependent variable. Another way to think of this is <em>how much does an output change if I change an input?</em> Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:</p>
 <center>
 <span class="math display" id="eq:ex6-1">\[\begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
@@ -213,8 +213,10 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 \end{equation}\]</span>
 </center>
 <p>If there is a large change in the output variable, we say that the variable is sensitive to the parameter. If there is a small change in the output variable, we say the variable is not sensitive to the parameter.</p>
-<p>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>: <code>&amp;light</code> and <code>&amp;meteorology</code>. Try increasing and decreasing the default parameter value by 0.2 and see how much the output changes.</p>
-<p>Assess how sensitive the temperature and phytoplankton biomass is to water clarity:</p>
+<p>In this exercise we will compare the sensitivity of the water temperature and algae concentration to the mean wind speed, and the water clarity.</p>
+<p>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>: <code>&amp;light</code> and <code>&amp;meteorology</code>, respectively.</p>
+<p>Try increasing and decreasing the default parameter value by 0.2 (Kw) and 0.3 (wind) and see how much the output changes.</p>
+<p>Using the SI calculation on the simulation output, assess how sensitive the water temperature and phytoplankton biomass is to water clarity (<code>Kw</code>):</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -262,7 +264,7 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </div>
 </center>
 <p><br></p>
-<p>Assess how sensitive the temperature and phytoplankton biomass is to wind speed:</p>
+<p>Assess how sensitive the temperature and phytoplankton biomass is to wind speed (<code>wind_factor</code>):</p>
 <p><br></p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
@@ -309,6 +311,7 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </tbody>
 </table>
 </div>
+<p>Are the water variables more sensitive to the change in wind, or the change water clarity?</p>
 
 </div>
             </section>
