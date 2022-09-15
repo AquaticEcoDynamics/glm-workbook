@@ -1,10 +1,13 @@
 # Warming Air Scenario
 
-How would these concentrations change if the air temperature increased by 2 °C? (You will need to edit the `met_hourly.csv` file). Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm. 
+A common application using GLM is to undertake scenarios to assess how conditions might change in a warmer world. For example, how would stratification and water quality concentrations change if the air temperature increased by 2 °C?
+
+This can be achieved by altering the boundary condition files, such as the meteorology and inflow files, to represent this type of climate change scenario.
 
 Check whether your simulation package has a pre-made version of the meteorology file in the *bcs* folder, with the air temperature increased by 2 °C. For example, the file may be called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
 
-Examine the phytoplankton outputs from the AED water quality model and compare them to the baseline scenario. 
+Or alternatively you can edit the `met_hourly.csv` file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm.
+
 
 ``` {fortran, eval = FALSE, style="max-height: 239px;"}
 !-------------------------------------------------------------------------------
@@ -34,3 +37,5 @@ Examine the phytoplankton outputs from the AED water quality model and compare t
   !runoff_coef    = 0.0
 /
 ```
+
+Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario. 

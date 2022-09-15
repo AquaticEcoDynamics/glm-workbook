@@ -1,9 +1,11 @@
-# Changing Morphometry 
+# Changing Morphometry
 
-Edit the heights and areas of the lake using `&morphometry`: `H` and `A`. Remember that the first area must be 0 m^2^ and that all of the heights and areas must be increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation. 
+The lake shape will influence the water balance and pattern of vertical stratification. The lake's shape in GLM is resolved using a *hypsographic curve* - that is the relationship between height and wetted area. This is captured in the `glm.nml` `&morphometry` section.
 
 <center>
 ```{r picex8-1, echo=FALSE, fig.cap="", out.width = '75%'}
 knitr::include_graphics("images/02-files/Files-02.png")
 ```
 </center>
+
+Edit the heights and areas of the lake using `&morphometry`: `H` and `A`. Remember that the first area must be 0 m^2^ and that all of the heights and areas must be monotonically increasing. Create a very steep-sided lake or a very shallow lake. Compare the degree of stratification with your original simulation.
