@@ -2,7 +2,7 @@
 
 <br>
 
-Now lets turn our attention to the watre quality / ecology part of the case-study simulation. Both the WarmLake and TropicalReservoir case-studies have the AED model pre-configured. A schematic (conceptual model) of the interactions being simulated are shown below.
+Now lets turn our attention to the water quality / ecology part of the case-study simulation. Both the **WarmLake** and **TropicalReservoir** case-studies have the AED model pre-configured. A schematic (conceptual model) of the interactions being simulated in the AED module are shown below.
 
 <br>
 
@@ -46,13 +46,13 @@ library(kableExtra)
 library(hablar)
 library(dplyr)
 options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
-module7_1 <- read.csv("tables/Exercises/table1.csv", check.names=FALSE) 
+module7_1 <- read.csv("tables/Exercises/table1.csv", check.names=FALSE)
 kable(module7_1, format = "html", escape = F, align = "c", caption = "Water quality variables and their descriptions.") %>%
   kable_styling(full_width = F, position = "center") %>%
   column_spec(1, width_min = "25em") %>%
   column_spec(2, width_min = "25em") %>%
   scroll_box(width = "100%", height="450px",
-             fixed_thead = FALSE) 
+             fixed_thead = FALSE)
 ```
 
 </center>

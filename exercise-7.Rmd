@@ -6,7 +6,7 @@ This can be achieved by altering the boundary condition files, such as the meteo
 
 Check whether your simulation package has a pre-made version of the meteorology file in the *bcs* folder, with the air temperature increased by 2 °C. For example, the file may be called `met_1997_2004_airT2.csv`. To use this file, update `meteo_fl = 'bcs/met_1997_2004.csv'` in the `&meteorology` section of `glm3.nml`.
 
-Or alternatively you can edit the `met_hourly.csv` file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format YYYY-MM-DD hh:mm.
+Or alternatively you can edit the `met_hourly.csv` file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format `YYYY-MM-DD hh:mm`.
 
 
 ``` {fortran, eval = FALSE, style="max-height: 239px;"}
@@ -22,20 +22,17 @@ Or alternatively you can edit the `met_hourly.csv` file to reflect these conditi
   !rad_mode    = 1
    albedo_mode = 1
    cloud_mode  = 4
-   !-- BC file details
+ !-- BC file details
    subdaily    = .true.
-   meteo_fl    = 'bcs/met_1997_2004.csv'   !<---- UPDATE THIS LINE WITH THE NEW FILE
+   meteo_fl    = 'bcs/met_1997_2004.csv'   !<---- UPDATE THIS LINE TO READ THE NEW FILE
    wind_factor = 0.9
    lw_factor   = 1.0
    lw_offset   = 0.0
-   !-- Parameters
+ !-- Parameters
    ce = 0.0013
    ch = 0.0013
-   cd  = 0.0013
-  !catchrain      = .true.
-  !rain_threshold = 0.001
-  !runoff_coef    = 0.0
+   cd = 0.0013
 /
 ```
 
-Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario.
+Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario. This can be done by creating a time-series plot comparing the two simulations, and computing the mean difference between the two.
