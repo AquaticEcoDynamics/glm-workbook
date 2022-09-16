@@ -41,7 +41,7 @@ A lake is 'stratified' if it has a large difference between the top and bottom f
 
 Inspect the depth-time contour plots in the GLM plotting window to examine the nature of stratification in the case study simulation(s). Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?
 
-*Outputing variables at multiple depths*: We can configure GLM to look in more depth the nature of differences between the upper and lower layers. Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the configuration to make two *depth-specific* output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter `csv_point_at` to set the depths, from the bottom, at which the model will write .csv files. This will create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. 
+*Outputing variables at multiple depths*: We can configure GLM to look in more depth the nature of differences between the upper and lower layers. Go to the `&output` (not `&outflow`!) section of `glm3.nml` and customize the configuration to make two *depth-specific* output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter `csv_point_at` to set the depths, from the bottom, at which the model will write .csv files. This will create two `.csv` files (`WQ_5.csv` and `WQ_35.csv`) with conditions at these water depths. Make sure number of levels that you output (`csv_point_nlevs`) is set to the number of output .csvs that you want.
 
 <br>
 
