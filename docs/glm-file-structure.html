@@ -160,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#plot-window"><i class="fa fa-check"></i>Plot window</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a><ul>
@@ -325,6 +326,10 @@ If this file is open in a program such as Excel, the GLM program cannot overwrit
 <div id="depth-specific-.csv" class="section level3 unnumbered hasAnchor">
 <h3>Depth-specific .csv<a href="glm-file-structure.html#depth-specific-.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Profiles can be output at specified depths, using <code>&amp;output</code>: <code>csv_point_fname</code> and <code>csv_point_at</code>. For example, if <code>csv_point_fname</code> is ‘WQ’ and <code>csv_point_at</code> is 1, 5, 12, then the model will create files ‘WQ_1’, ‘WQ_5’ and ‘WQ_12’. The variables for this file are listed in the parameter <code>csv_point_vars</code>. This file can be used to access output data at one depth more easily than via the netcdf file.</p>
+</div>
+<div id="plot-window" class="section level3 unnumbered hasAnchor">
+<h3>Plot window<a href="glm-file-structure.html#plot-window" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can save the plot window as a .png image file by hitting the <code>Save</code> buttons. The plot window will overwrite any previous files each time you do this, so rename the file or save it to a different folder each time.</p>
 
 </div>
 </div>

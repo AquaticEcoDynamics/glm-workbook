@@ -160,6 +160,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#plot-window"><i class="fa fa-check"></i>Plot window</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a><ul>
@@ -209,10 +210,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Energy Balance<a href="WaterHeatingAndStratification.html#energy-balance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The energy balance is the sum of all energy entering and leaving the lake (Equation <a href="WaterHeatingAndStratification.html#eq:enbal-1">(2.1)</a>).</p>
 <span class="math display" id="eq:enbal-1">\[\begin{eqnarray}
-\frac{\Delta Energy}{\Delta time} = + φ_{SW}  + φ_{H} + φ_{LW} - φ_{E}
+\frac{\Delta Energy}{\Delta time} = + φ_{SW}  + φ_{H} + φ_{LW} + φ_{E}
 \tag{2.1}
 \end{eqnarray}\]</span>
-<p>where <span class="math inline">\(φSW\)</span> is the flux of shortwave radiation into the lake and all units are in W m<sup>-2</sup>. In the <code>lake.csv</code> file, this appears as <code>Daily Qsw</code>. <span class="math inline">\(φH\)</span> is the sensible heat flux (<code>Daily Qh</code>). <span class="math inline">\(φLW\)</span> is the sum of longwave radiation into and out of the lake (<code>Daily Qlw</code>). <span class="math inline">\(φE\)</span> is the latent heat flux (<code>Daily Qe</code>).</p>
+<p>where <span class="math inline">\(φSW\)</span> is the flux of shortwave radiation into the lake and all units are in W m<sup>-2</sup>. In the <code>lake.csv</code> file, this appears as <code>Daily Qsw</code>. <span class="math inline">\(φH\)</span> is the sensible heat flux (<code>Daily Qh</code>). <span class="math inline">\(φLW\)</span> is the sum of longwave radiation into and out of the lake (<code>Daily Qlw</code>). <span class="math inline">\(φE\)</span> is the latent heat flux (<code>Daily Qe</code>). The output <code>lake.csv</code> file calculates whether these are positive (energy gains into the lake) or negative (energy losses from the lake) and will display these as positive or negative, respectively.</p>
 <center>
 <img src="images/Exercises/HeatBalance-12.png" width="50%" />
 </center>
