@@ -132,3 +132,7 @@ This .csv is especially useful for calculating the [water balance](#WaterBalance
 
 ### Depth-specific .csv {-}
 Profiles can be output at specified depths, using `&output`: `csv_point_fname` and `csv_point_at`. For example, if `csv_point_fname` is 'WQ' and `csv_point_at` is 1, 5, 12, then the model will create files 'WQ_1', 'WQ_5' and 'WQ_12'. The variables for this file are listed in the parameter `csv_point_vars`. This file can be used to access output data at one depth more easily than via the netcdf file.
+
+### Plot window {-}
+You can save the plot window as a .png image file by hitting the `Save` buttons. The plot window will overwrite any previous files each time you do this, so rename the file or save it to a different folder each time.
+
