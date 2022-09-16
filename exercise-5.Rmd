@@ -22,7 +22,7 @@ Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/resea
 
 ```{block2, hintex5_5, type='rmdnote2'}
 
-The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file you simply need to add `plots_aed.nml` after the call to glm --xdisp.
+The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file you simply need to add `plots_aed.nml` after the call to glm --xdisp in the mac terminal or the Windows batch file (right click and open the batch file with a text editor).
 
 ```
 
