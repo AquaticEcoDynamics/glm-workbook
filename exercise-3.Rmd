@@ -18,7 +18,7 @@ Describe the effect on stratification of having a shallower lake.
 
 
 ```{block2, hintex3_1, type='rmdtip2'}
-If a `csv_point_at` depth is listed but it is greater than the initial depth of the lake, no initial value can be written and the model will not work.
+If a `csv_point_at` depth is listed but it is greater than the initial depth of the lake, no output value can be written and the model will not work. Similarly, the initial profiles (`the_depths`) need to be within the new depth of the lake.
 ```
 <center>
 ```{r picex3-2, echo=FALSE, fig.cap="", out.width = '75%'}
