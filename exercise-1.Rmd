@@ -34,7 +34,7 @@ knitr::include_graphics("images/Exercises/WaterBalancePlot3.PNG")
 Computing the daily surplus or deficit:
 
 ```{r picex1-2, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("images/02-files/excel.png")
+knitr::include_graphics("images/Exercises/WaterBalancePlot4.png")
 ```
 
 
