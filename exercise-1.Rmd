@@ -2,7 +2,7 @@
 
 # Water Level & Balance { #WaterBalance}
 
-The water balance is the sum of all water entering and leaving the lake (equation \@ref(eq:watbal-1)).
+The water balance is the sum of all water entering and leaving the lake (equation \@ref(eq:watbal-1)). 
 
 ```{=tex}
 \begin{eqnarray}
@@ -27,9 +27,8 @@ Plot the lake water balance -- volume, water level and fluxes including inflows,
 <br>
 
 Examining components of the water balance:
-
 ```{r picex1-3, echo=FALSE, fig.cap="", out.width = '100%'}
-knitr::include_graphics("images/Exercises/WaterBalanceExcel2.png")
+knitr::include_graphics("images/Exercises/WaterBalancePlot2.png")
 ```
 <br>
 

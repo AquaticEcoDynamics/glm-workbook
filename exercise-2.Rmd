@@ -11,7 +11,7 @@ The energy balance is the sum of all energy entering and leaving the lake (Equat
 \end{eqnarray}
 ```
 
-where $φSW$ is the flux of shortwave radiation into the lake and all units are in W/m2. In the `lake.csv` file, this appears as `Daily Qsw`. $φH$ is the sensible heat flux (`Daily Qh`). $φLW$ is the sum of longwave radiation into and out of the lake (`Daily Qlw`). $φE$ is the latent heat flux (`Daily Qe`).
+where $φSW$ is the flux of shortwave radiation into the lake and all units are in W m^-2^. In the `lake.csv` file, this appears as `Daily Qsw`. $φH$ is the sensible heat flux (`Daily Qh`). $φLW$ is the sum of longwave radiation into and out of the lake (`Daily Qlw`). $φE$ is the latent heat flux (`Daily Qe`).
 
 <center>
 ```{r picex2-1, echo=FALSE, fig.cap="", out.width = '50%'}

@@ -4,7 +4,7 @@ The lake shape will influence the water balance and pattern of vertical stratifi
 
 <center>
 ```{r picex8-1, echo=FALSE, fig.cap="", out.width = '75%'}
-knitr::include_graphics("images/02-files/Files-02.png")
+knitr::include_graphics("images/02-files/GLMworkbook-02.png")
 ```
 </center>
 
