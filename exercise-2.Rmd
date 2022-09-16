@@ -6,12 +6,12 @@ The energy balance is the sum of all energy entering and leaving the lake (Equat
 
 ```{=tex}
 \begin{eqnarray}
-\frac{\Delta Energy}{\Delta time} = + φ_{SW}  + φ_{H} + φ_{LW} - φ_{E}
+\frac{\Delta Energy}{\Delta time} = + φ_{SW}  + φ_{H} + φ_{LW} + φ_{E}
 (\#eq:enbal-1)
 \end{eqnarray}
 ```
 
-where $φSW$ is the flux of shortwave radiation into the lake and all units are in W m^-2^. In the `lake.csv` file, this appears as `Daily Qsw`. $φH$ is the sensible heat flux (`Daily Qh`). $φLW$ is the sum of longwave radiation into and out of the lake (`Daily Qlw`). $φE$ is the latent heat flux (`Daily Qe`).
+where $φSW$ is the flux of shortwave radiation into the lake and all units are in W m^-2^. In the `lake.csv` file, this appears as `Daily Qsw`. $φH$ is the sensible heat flux (`Daily Qh`). $φLW$ is the sum of longwave radiation into and out of the lake (`Daily Qlw`). $φE$ is the latent heat flux (`Daily Qe`). The output `lake.csv` file calculates whether these are positive (energy gains into the lake) or negative (energy losses from the lake) and will display these as positive or negative, respectively.
 
 <center>
 ```{r picex2-1, echo=FALSE, fig.cap="", out.width = '50%'}
