@@ -59,15 +59,15 @@ If the model is not opening make sure that you are **not** working from a networ
 
 #### Running and editing GLM with Visual Studio Code {#C02_5 -}
 
-Visual Studio Code is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:
+Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:
 
 - Download VSC from the website https://code.visualstudio.com/ 
 - Install VSC onto your computer
 - Open the GLM case study folder (e.g. TropicalReservoir) by clicking `File` --> `Open Folder`  
 - Open the `glm3.nml` by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file
-- If you are using Windows, open the glm.bat file batch-file, click the *Run* symbol (see figure below) to run GLM 
+- If you are using Windows, open the glm.bat batch-file, click the *Run* symbol (see figure below) to run GLM 
 - If you are using Mac, open a termial (by cliking `Terminal` --> `New Terminal`), then enter your commend in the terminal window to run GLM 
-- You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes 
+- You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs
 
 
 <center>
