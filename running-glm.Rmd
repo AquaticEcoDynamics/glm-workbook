@@ -73,8 +73,8 @@ Visual Studio Code is a convenient tool for editing and running GLM in an integr
 <center>
 
 ```{r picrun-2, echo=FALSE, fig.cap="", out.width = '100%'}
-# knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
-knitr::include_graphics("images/02-files/GLMworkbook-15.png")
+
+knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
 ```
 
 </center>
@@ -83,8 +83,9 @@ knitr::include_graphics("images/02-files/GLMworkbook-15.png")
 ```{block2, hint03_3, type='rmdnote2'}
 
 If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:
-- 'NewGRF Meta Language' extension for better visualising and editing nml files;
-- 'Batch Runner' extenstion to run the batch file 
+
+- *NewGRF Meta Language* extension for better visualising and editing nml files;
+- *Batch Runner* extenstion to run the batch file 
 
 
 ```
