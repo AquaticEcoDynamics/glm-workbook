@@ -70,11 +70,14 @@ Visual Studio Code is a convenient tool for editing and running GLM in an integr
 - You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes 
 
 
-``` {fortran, eval = FALSE, style="max-height: 239px;"}
-..\GLM\win\glm_3.3.0\glm.exe --xdisp
-echo press any key
-pause
+<center>
+
+```{r picrun-1, echo=FALSE, fig.cap="", out.width = '100%'}
+# knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
+knitr::include_graphics("images/02-files/GLMworkbook-15.png")
 ```
+
+</center>
 
 
 ```{block2, hint03_2, type='rmdnote2'}
