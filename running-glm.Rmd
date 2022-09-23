@@ -57,6 +57,39 @@ If the model is not opening make sure that you are **not** working from a networ
 
 <br>
 
+#### Running and editing GLM with Visual Studio Code {#C02_5 -}
+
+Visual Studio Code is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:
+
+- Download VSC from the website https://code.visualstudio.com/ 
+- Install VSC onto your computer
+- Open the GLM case study folder (e.g. TropicalReservoir) by clicking `File` --> `Open Folder`  
+- Open the `glm3.nml` by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file
+- If you are using Windows, open the glm.bat file batch-file, click the *Run* symbol (see figure below) to run GLM 
+- If you are using Mac, open a termial (by cliking `Terminal` --> `New Terminal`), then enter your commend in the terminal window to run GLM 
+- You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes 
+
+
+``` {fortran, eval = FALSE, style="max-height: 239px;"}
+..\GLM\win\glm_3.3.0\glm.exe --xdisp
+echo press any key
+pause
+```
+
+
+```{block2, hint03_2, type='rmdnote2'}
+
+If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:
+- 'NewGRF Meta Language' extension for better visualising and editing nml files;
+- 'Batch Runner' extenstion to run the batch file 
+
+
+```
+
+
+
+<br>
+
 ### Visualising Results {-}
 
 Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM's general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs. 
