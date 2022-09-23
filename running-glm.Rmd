@@ -80,7 +80,7 @@ knitr::include_graphics("images/02-files/GLMworkbook-15.png")
 </center>
 
 
-```{block2, hint03_2, type='rmdnote2'}
+```{block2, hint03_3, type='rmdnote2'}
 
 If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:
 - 'NewGRF Meta Language' extension for better visualising and editing nml files;
