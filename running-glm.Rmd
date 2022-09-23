@@ -72,7 +72,7 @@ Visual Studio Code is a convenient tool for editing and running GLM in an integr
 
 <center>
 
-```{r picrun-1, echo=FALSE, fig.cap="", out.width = '100%'}
+```{r picrun-2, echo=FALSE, fig.cap="", out.width = '100%'}
 # knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
 knitr::include_graphics("images/02-files/GLMworkbook-15.png")
 ```
