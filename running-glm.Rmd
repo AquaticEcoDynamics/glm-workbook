@@ -122,3 +122,61 @@ read_csv("plots/processing-outputs/WQ_5.csv") %>%  # Read GLM csv
   
 ```
 
+## Running GLM {#draft -}
+
+### Install Visual Studio Code {-}
+
+Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. Begin by downloading VSC [here](https://code.visualstudio.com/).
+
+### Open the WarmLake Directory in VSC {-}
+
+Launch VSC and click the *Explorer* button then *Open Folder*. Next, navigate to the *WarmLake* directory and click *Open*.
+
+<center>
+<video width="100%" height="100%" controls>
+  <source src="images/09-module8/openDirectory.mp4" type="video/mp4">
+</video>
+</center>
+
+### Enable Syntax Highlighting and Open a `.nml` File {-}
+
+GLM's WarmLake simulation can be configured by editing it's `.nml` text files in VSC. For better legibility when editing a `.nml`, enable Fortran syntax highlighting. Click on the *Extensions* button and search for the *Fortran* extension to install. Once installed, click on the *Explorer* button again and open the `glm3.nml` file. In the bottom right-hand corner, click on *Plain Text* and search for *Fortran - Modern*.
+
+<center>
+<video width="100%" height="100%" controls>
+  <source src="images/09-module8/syntax.mp4" type="video/mp4">
+</video>
+</center>
+
+### Run GLM {-}
+
+To launch GLM, first open a new terminal session from the menu bar. Depending on your operating system, the commands to run the simulation will differ:
+
+::::: {.panelset}
+::: {.panel}
+
+#### MacOS/Linux {-}
+
+```{bash eval = FALSE}
+chmod +x run_glm.sh 
+
+sh run_glm.sh
+```
+
+<center>
+<video width="100%" height="100%" controls>
+  <source src="images/09-module8/run_chmod.mp4" type="video/mp4">
+</video>
+</center>
+
+```{block2, hint03_9, type='rmdnote2'}
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'.
+```
+:::
+
+::: {.panel}
+
+#### Windows {-}
+
+:::
+::::: 

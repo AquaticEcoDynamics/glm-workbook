@@ -152,3 +152,9 @@ body {font-family: Arial;}
   border: 1px solid #ccc;
   border-top: none;
 }
+
+/* Fix panelset css */
+
+.panelset .panel-active {
+display: block !important;
+}

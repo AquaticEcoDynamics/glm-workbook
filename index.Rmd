@@ -21,3 +21,9 @@ For a detailed scientific overview of GLM, refer to @hipsey2019general's paper a
 ```{r figint-1, echo=FALSE, fig.cap="", out.width = '35%', out.extra='data-action="zoom"'}
 knitr::include_graphics("images/glm_hex.png")
 ```
+
+```{r xaringanExtra, include = FALSE}
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset_tabs(font_family = "inherit")
+```
