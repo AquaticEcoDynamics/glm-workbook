@@ -164,7 +164,16 @@ chmod +x run_glm.sh
 sh run_glm.sh
 ```
 
-![](images/09-module8/run_chmod.mp4){ width=100% }
+```{r panelsetVid, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/09-module8/run_chmod.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 
 
