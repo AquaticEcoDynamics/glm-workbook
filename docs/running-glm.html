@@ -175,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion on windows</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
@@ -279,6 +279,12 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <div class="panel">
 <p><span class="panel-name unnumbered">Windows</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Open a new terminal.</p></li>
+<li><p>Next, run the GLM script by entering <code>.\run_glm.bat</code> into the terminal prompt.</p></li>
+<li><p>You’ll then be prompted to select which GLM plotting script will be used to visualise the model’s outputs as it runs. Enter <code>1</code> and the simulation will launch with the basic visualisation configuration (temperature and salinity).</p></li>
+<li><p>Once the simulation has finished, click <em>Done</em> and return to the terminal to either re-run the model or quit (option <code>4</code>).</p></li>
+</ol>
 <video width="100%" controls>
 <source src="images/09-module8/run_glm_windows.mp4" type="video/mp4"/>
 </video>
@@ -290,7 +296,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <h2>Running GLM (Alternative Method)<a href="running-glm.html#running-glm-alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="C02_5" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>On Windows, the model can be run using a batch-file <code>run_glm.bat</code>, which you can open from in the simulation directory (e.g. <em>warmlake</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
+<p>On Windows, the model can be run by double-clicking the batch-file <code>run_glm.bat</code>, which you can open from in the simulation directory (e.g. <em>warmlake</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1">..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</a>
 <a class="sourceLine" id="cb1-2" title="2">echo press <span class="fu">any</span> key</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="kw">pause</span></a></code></pre></div>
@@ -302,7 +308,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <p><br></p>
 </div>
 <div id="C02_5" class="section level3 unnumbered hasAnchor">
-<h3>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion on windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Click ‘Extensions’ on left panel, search ‘Batch Runner’</li>
 <li>Install the <em>Batch Runner</em> extenstion</li>
