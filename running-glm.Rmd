@@ -139,10 +139,7 @@ knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
 
 ```{block2, hint03_3, type='rmdnote2'}
 
-If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:
-
-- *NewGRF Meta Language* extension for better visualising and editing nml files;
-- *Batch Runner* extenstion to run the batch file
+If you are new to Visual Studio Code and the software is being run for the first time, you can install the *NewGRF Meta Language* extension for better visualising and editing nml files.
 
 
 ```
