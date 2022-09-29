@@ -141,7 +141,6 @@ knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
 
 If you are new to Visual Studio Code and the software is being run for the first time, you can install the *NewGRF Meta Language* extension for better visualising and editing nml files.
 
-
 ```
 
 <br>
