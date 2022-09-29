@@ -89,7 +89,7 @@ htmltools::tags$video(
   width='100%',
   controls=NA,
   htmltools::tags$source(
-    src='images/09-module8/run_glm_windows.mp4',
+    src='images/09-module8/run_glm_windows_v2.mp4',
     type="video/mp4"
   )
   )
