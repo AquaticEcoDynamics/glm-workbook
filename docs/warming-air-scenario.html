@@ -56,31 +56,28 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="https://hypothes.is/embed.js" async></script>
-  
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -89,9 +86,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -124,28 +121,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -163,15 +138,12 @@ div.csl-indent {
 <li><a href="./"><b>GLM Workbook</b></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#glm-information"><i class="fa fa-check"></i>GLM Information</a></li>
 </ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
-<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i>Setup</a>
-<ul>
-<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
-<ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i>Setup</a><ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#r"><i class="fa fa-check"></i>R</a></li>
@@ -179,55 +151,46 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#case-study-download"><i class="fa fa-check"></i>Case-study download</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a>
-<ul>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a>
-<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a><ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i>GLM configuration file: <code>glm3.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i>GLM plot window file: <code>plots.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#boundary-files"><i class="fa fa-check"></i>Boundary files</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#aed-water-quality-model-files"><i class="fa fa-check"></i>AED water quality model files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a>
-<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a><ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#plot-window"><i class="fa fa-check"></i>Plot window</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a>
-<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Simulation workflow</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#draft"><i class="fa fa-check"></i>Running GLM (Suggested Method)</a>
-<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#draft"><i class="fa fa-check"></i>Running GLM (Suggested Method)</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#install-visual-studio-code"><i class="fa fa-check"></i>Install Visual Studio Code</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#open-the-warmlake-directory-in-vsc"><i class="fa fa-check"></i>Open the WarmLake Directory in VSC</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#enable-syntax-highlighting-and-open-a-.nml-file"><i class="fa fa-check"></i>Enable Syntax Highlighting and Open a <code>.nml</code> File</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#run-glm"><i class="fa fa-check"></i>Run GLM</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a>
-<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Running GLM on MacOS</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a>
-<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#r-1"><i class="fa fa-check"></i>R</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Case Study Exercises</b></span></li>
 <li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a>
-<ul>
+<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a><ul>
 <li class="chapter" data-level="2.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>2.1</b> Energy Balance</a></li>
 <li class="chapter" data-level="2.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>2.2</b> Lake Stratification</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
-<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
-<ul>
+<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a><ul>
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
@@ -255,35 +218,35 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="warming-air-scenario" class="section level1 hasAnchor" number="7">
+<div id="warming-air-scenario" class="section level1 hasAnchor">
 <h1><span class="header-section-number">7</span> Warming Air Scenario<a href="warming-air-scenario.html#warming-air-scenario" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A common application using GLM is to undertake scenarios to assess how conditions might change in a warmer world. For example, how would stratification and water quality concentrations change if the air temperature increased by 2 °C?</p>
 <p>This can be achieved by altering the boundary condition files, such as the meteorology and inflow files, to represent this type of climate change scenario.</p>
 <p>Check whether your simulation package has a pre-made version of the meteorology file in the <em>bcs</em> folder, with the air temperature increased by 2 °C. For example, the file may be called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</p>
 <p>Or alternatively you can edit the <code>met_hourly.csv</code> file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format <code>YYYY-MM-DD hh:mm</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb4-1"><a href="warming-air-scenario.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb4-2"><a href="warming-air-scenario.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">! meteorology</span></span>
-<span id="cb4-3"><a href="warming-air-scenario.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb4-4"><a href="warming-air-scenario.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&amp;</span>meteorology</span>
-<span id="cb4-5"><a href="warming-air-scenario.html#cb4-5" aria-hidden="true" tabindex="-1"></a>   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb4-6"><a href="warming-air-scenario.html#cb4-6" aria-hidden="true" tabindex="-1"></a>   lw_type     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></span>
-<span id="cb4-7"><a href="warming-air-scenario.html#cb4-7" aria-hidden="true" tabindex="-1"></a>   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></span>
-<span id="cb4-8"><a href="warming-air-scenario.html#cb4-8" aria-hidden="true" tabindex="-1"></a>   atm_stab    <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb4-9"><a href="warming-air-scenario.html#cb4-9" aria-hidden="true" tabindex="-1"></a>   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb4-10"><a href="warming-air-scenario.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">!rad_mode    = 1</span></span>
-<span id="cb4-11"><a href="warming-air-scenario.html#cb4-11" aria-hidden="true" tabindex="-1"></a>   albedo_mode <span class="kw">=</span> <span class="dv">1</span></span>
-<span id="cb4-12"><a href="warming-air-scenario.html#cb4-12" aria-hidden="true" tabindex="-1"></a>   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></span>
-<span id="cb4-13"><a href="warming-air-scenario.html#cb4-13" aria-hidden="true" tabindex="-1"></a> <span class="co">!-- BC file details</span></span>
-<span id="cb4-14"><a href="warming-air-scenario.html#cb4-14" aria-hidden="true" tabindex="-1"></a>   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb4-15"><a href="warming-air-scenario.html#cb4-15" aria-hidden="true" tabindex="-1"></a>   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span>   <span class="co">!&lt;---- UPDATE THIS LINE TO READ THE NEW FILE</span></span>
-<span id="cb4-16"><a href="warming-air-scenario.html#cb4-16" aria-hidden="true" tabindex="-1"></a>   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></span>
-<span id="cb4-17"><a href="warming-air-scenario.html#cb4-17" aria-hidden="true" tabindex="-1"></a>   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></span>
-<span id="cb4-18"><a href="warming-air-scenario.html#cb4-18" aria-hidden="true" tabindex="-1"></a>   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></span>
-<span id="cb4-19"><a href="warming-air-scenario.html#cb4-19" aria-hidden="true" tabindex="-1"></a> <span class="co">!-- Parameters</span></span>
-<span id="cb4-20"><a href="warming-air-scenario.html#cb4-20" aria-hidden="true" tabindex="-1"></a>   ce <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-21"><a href="warming-air-scenario.html#cb4-21" aria-hidden="true" tabindex="-1"></a>   ch <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-22"><a href="warming-air-scenario.html#cb4-22" aria-hidden="true" tabindex="-1"></a>   cd <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb4-23"><a href="warming-air-scenario.html#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb4-1" title="1"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">! meteorology</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">!-------------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">&amp;</span>meteorology</a>
+<a class="sourceLine" id="cb4-5" title="5">   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb4-6" title="6">   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></a>
+<a class="sourceLine" id="cb4-7" title="7">   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></a>
+<a class="sourceLine" id="cb4-8" title="8">   atm_stab    <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-9" title="9">   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb4-10" title="10">  <span class="co">!rad_mode    = 1</span></a>
+<a class="sourceLine" id="cb4-11" title="11">   albedo_mode <span class="kw">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb4-12" title="12">   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></a>
+<a class="sourceLine" id="cb4-13" title="13"> <span class="co">!-- BC file details</span></a>
+<a class="sourceLine" id="cb4-14" title="14">   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></a>
+<a class="sourceLine" id="cb4-15" title="15">   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span>   <span class="co">!&lt;---- UPDATE THIS LINE TO READ THE NEW FILE</span></a>
+<a class="sourceLine" id="cb4-16" title="16">   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></a>
+<a class="sourceLine" id="cb4-17" title="17">   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb4-18" title="18">   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></a>
+<a class="sourceLine" id="cb4-19" title="19"> <span class="co">!-- Parameters</span></a>
+<a class="sourceLine" id="cb4-20" title="20">   ce <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-21" title="21">   ch <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-22" title="22">   cd <span class="kw">=</span> <span class="fl">0.0013</span></a>
+<a class="sourceLine" id="cb4-23" title="23"><span class="kw">/</span></a></code></pre></div>
 <p>Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario. This can be done by creating a time-series plot comparing the two simulations, and computing the mean difference between the two.</p>
 
 </div>
