@@ -174,9 +174,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#run-glm"><i class="fa fa-check"></i>Run GLM</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a><ul>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Running GLM on MacOS</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a><ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
@@ -289,33 +288,9 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <div id="running-glm-alternative-method" class="section level2 unnumbered hasAnchor">
 <h2>Running GLM (Alternative Method)<a href="running-glm.html#running-glm-alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="C02_4" class="section level3 unnumbered hasAnchor">
-<h3>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>Open the Terminal application on your Mac</li>
-<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>WarmLake</em> folder)</li>
-<li>In Finder, go to the <code>GLM/mac</code> folder and right-click on the glm app, select <em>Show Package Contents</em></li>
-<li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
-<li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
-<li>Leave a space after the file path and type <code>--xdisp</code></li>
-<li>Press <code>Enter</code> and the model will run</li>
-</ul>
-<p>These steps are shown in the screen recording below for an example simulation:</p>
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/09-module8/video1.mp4" type="video/mp4">
-</video>
-</center>
-
-<div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
-</div>
-
-<p><br></p>
-</div>
 <div id="C02_5" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
+<p>On Windows, the model can be run using a batch-file <code>run_glm.bat</code>, which you can open from in the simulation directory (e.g. <em>warmlake</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1">..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</a>
 <a class="sourceLine" id="cb1-2" title="2">echo press <span class="fu">any</span> key</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="kw">pause</span></a></code></pre></div>
@@ -327,16 +302,13 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <p><br></p>
 </div>
 <div id="C02_5" class="section level3 unnumbered hasAnchor">
-<h3>Running and editing GLM with Visual Studio Code<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:</p>
+<h3>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>Download VSC from the website <a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a></li>
-<li>Install VSC onto your computer</li>
-<li>Open the GLM case study folder (e.g. TropicalReservoir) by clicking <code>File</code> –&gt; <code>Open Folder</code><br />
-</li>
+<li>Click ‘Extensions’ on left panel, search ‘Batch Runner’</li>
+<li>Install the <em>Batch Runner</em> extenstion</li>
+<li>Open the GLM case study folder (e.g. TropicalReservoir) by clicking <code>File</code> –&gt; <code>Open Folder</code></li>
+<li>open the glm.bat batch-file, click the <em>Run</em> symbol (see figure below) to run GLM</li>
 <li>Open the <code>glm3.nml</code> by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file</li>
-<li>If you are using Windows, open the glm.bat batch-file, click the <em>Run</em> symbol (see figure below) to run GLM</li>
-<li>If you are using Mac, open a termial (by cliking <code>Terminal</code> –&gt; <code>New Terminal</code>), then enter your commend in the terminal window to run GLM</li>
 <li>You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs</li>
 </ul>
 <center>
@@ -364,13 +336,13 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <div id="r-1" class="section level3 unnumbered hasAnchor">
 <h3>R<a href="running-glm.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Load packages</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(tidyverse) </a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(tidyverse)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="kw">library</span>(lubridate)</a>
 <a class="sourceLine" id="cb2-4" title="4"></a>
 <a class="sourceLine" id="cb2-5" title="5"><span class="kw">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># Read GLM csv</span></a>
 <a class="sourceLine" id="cb2-6" title="6"><span class="st">  </span><span class="kw">mutate</span>(</a>
 <a class="sourceLine" id="cb2-7" title="7">    <span class="dt">time =</span> <span class="kw">as_datetime</span>(time, <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></a>
-<a class="sourceLine" id="cb2-8" title="8">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-8" title="8">  ) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-9" title="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> temp)) <span class="op">+</span><span class="st"> </span><span class="co"># Plot with ggplot()</span></a>
 <a class="sourceLine" id="cb2-10" title="10"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb2-11" title="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="op">+</span></a>
