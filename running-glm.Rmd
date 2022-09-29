@@ -82,9 +82,7 @@ htmltools::tags$video(
 
 2. Next, run the GLM script by entering `.\run_glm.bat` into the terminal prompt.
 
-3. You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
-
-4. Once the simulation has finished, click _Done_ and return to the terminal to either re-run the model or quit (option `4`).
+3. Once the simulation has finished, click _Done_ and return to the terminal to either re-run the model or quit.
 
 ```{r panelsetVidWin, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
