@@ -113,7 +113,7 @@ pause
 
 ```{block2, hint03_2, type='rmdnote2'}
 
-If the model is not opening make sure that you are **not** working from a network directory (e.g. OneDrive) and the file path to the `glm.bat` file has **zero** spaces in it.
+If the model is not opening make sure that you are **not** working from a network directory (e.g. OneDrive) and the file path to the `run_glm.bat` file has **zero** spaces in it.
 
 ```
 
@@ -124,7 +124,7 @@ If the model is not opening make sure that you are **not** working from a networ
 - Click 'Extensions' on left panel, search 'Batch Runner'
 - Install the _Batch Runner_ extenstion
 - Open the GLM case study folder (e.g. TropicalReservoir) by clicking `File` --> `Open Folder`
-- open the glm.bat batch-file, click the _Run_ symbol (see figure below) to run GLM
+- open the `run_glm.bat` batch-file, click the _Run_ symbol (see figure below) to run GLM
 - Open the `glm3.nml` by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file
 - You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs
 
