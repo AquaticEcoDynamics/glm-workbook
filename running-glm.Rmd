@@ -78,6 +78,14 @@ htmltools::tags$video(
 ::: {.panel}
 [Windows]{.panel-name -}
 
+1. Open a new terminal.
+
+2. Next, run the GLM script by entering `.\run_glm.bat` into the terminal prompt.
+
+3. You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
+
+4. Once the simulation has finished, click _Done_ and return to the terminal to either re-run the model or quit (option `4`).
+
 ```{r panelsetVidWin, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
   width='100%',
@@ -97,7 +105,7 @@ htmltools::tags$video(
 
 ### Running GLM on Windows {#C02_5 -}
 
-On Windows, the model can be run using a batch-file `run_glm.bat`, which you can open from in the simulation directory (e.g. _warmlake_ folder). The `.bat` file calls the GLM model from the current working directory, and should be located where the `glm.nml' file is.
+On Windows, the model can be run by double-clicking the batch-file `run_glm.bat`, which you can open from in the simulation directory (e.g. _warmlake_ folder). The `.bat` file calls the GLM model from the current working directory, and should be located where the `glm.nml' file is.
 
 ```{fortran, eval = FALSE, style="max-height: 239px;"}
 ..\GLM\win\glm_3.3.0\glm.exe --xdisp
@@ -113,7 +121,7 @@ If the model is not opening make sure that you are **not** working from a networ
 
 <br>
 
-### Running and editing GLM with Visual Studio Code _Batch Runner_ extenstion {#C02_5 -}
+### Running and editing GLM with Visual Studio Code _Batch Runner_ extenstion on windows {#C02_5 -}
 
 - Click 'Extensions' on left panel, search 'Batch Runner'
 - Install the _Batch Runner_ extenstion
