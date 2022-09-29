@@ -56,28 +56,31 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="https://hypothes.is/embed.js" async></script>
+  
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -86,9 +89,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -121,6 +124,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -138,12 +163,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./"><b>GLM Workbook</b></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#glm-information"><i class="fa fa-check"></i>GLM Information</a></li>
 </ul></li>
 <li class="part"><span><b>I Getting Started</b></span></li>
-<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i>Setup</a><ul>
-<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a><ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i>Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
+<ul>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#excel"><i class="fa fa-check"></i>Excel</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#r"><i class="fa fa-check"></i>R</a></li>
@@ -151,40 +179,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#case-study-download"><i class="fa fa-check"></i>Case-study download</a></li>
 <li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a><ul>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a><ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a>
+<ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i>GLM configuration file: <code>glm3.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i>GLM plot window file: <code>plots.nml</code></a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#boundary-files"><i class="fa fa-check"></i>Boundary files</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#aed-water-quality-model-files"><i class="fa fa-check"></i>AED water quality model files</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a><ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a>
+<ul>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
 <li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#plot-window"><i class="fa fa-check"></i>Plot window</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a><ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a>
+<ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Simulation workflow</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#r-1"><i class="fa fa-check"></i>R</a></li>
-<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#draft"><i class="fa fa-check"></i>Running GLM</a><ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#draft"><i class="fa fa-check"></i>Running GLM (Suggested Method)</a>
+<ul>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#install-visual-studio-code"><i class="fa fa-check"></i>Install Visual Studio Code</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#open-the-warmlake-directory-in-vsc"><i class="fa fa-check"></i>Open the WarmLake Directory in VSC</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#enable-syntax-highlighting-and-open-a-.nml-file"><i class="fa fa-check"></i>Enable Syntax Highlighting and Open a <code>.nml</code> File</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#run-glm"><i class="fa fa-check"></i>Run GLM</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Running GLM on MacOS</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#r-1"><i class="fa fa-check"></i>R</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>II Case Study Exercises</b></span></li>
 <li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a><ul>
+<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>2.1</b> Energy Balance</a></li>
 <li class="chapter" data-level="2.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>2.2</b> Lake Stratification</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
-<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a><ul>
+<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
+<ul>
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
@@ -214,102 +257,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="running-glm" class="section level1 unnumbered hasAnchor">
 <h1>Running GLM<a href="running-glm.html#running-glm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="C02_4" class="section level3 unnumbered hasAnchor">
-<h3>Simulation workflow<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="C02_4" class="section level2 unnumbered hasAnchor">
+<h2>Simulation workflow<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <p><img src="images/02-files/GLMworkbook-15.png" width="100%" /></p>
 </center>
-<div id="C02_4" class="section level4 unnumbered hasAnchor">
-<h4>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>Open the Terminal application on your Mac</li>
-<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>WarmLake</em> folder)</li>
-<li>In Finder, go to the <code>GLM/mac</code> folder and right-click on the glm app, select <em>Show Package Contents</em></li>
-<li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
-<li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
-<li>Leave a space after the file path and type <code>--xdisp</code></li>
-<li>Press <code>Enter</code> and the model will run</li>
-</ul>
-<p>These steps are shown in the screen recording below for an example simulation:</p>
-<center>
-<video width="100%" height="100%" controls>
-<source src="images/09-module8/video1.mp4" type="video/mp4">
-</video>
-</center>
-
-<div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
-</div>
-
-<p><br></p>
-</div>
-<div id="C02_5" class="section level4 unnumbered hasAnchor">
-<h4>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1">..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</a>
-<a class="sourceLine" id="cb1-2" title="2">echo press <span class="fu">any</span> key</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">pause</span></a></code></pre></div>
-
-<div class="rmdnote2">
-<p>If the model is not opening make sure that you are <strong>not</strong> working from a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
-</div>
-
-<p><br></p>
-</div>
-<div id="C02_5" class="section level4 unnumbered hasAnchor">
-<h4>Running and editing GLM with Visual Studio Code<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:</p>
-<ul>
-<li>Download VSC from the website <a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a></li>
-<li>Install VSC onto your computer</li>
-<li>Open the GLM case study folder (e.g. TropicalReservoir) by clicking <code>File</code> –&gt; <code>Open Folder</code><br />
-</li>
-<li>Open the <code>glm3.nml</code> by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file</li>
-<li>If you are using Windows, open the glm.bat batch-file, click the <em>Run</em> symbol (see figure below) to run GLM</li>
-<li>If you are using Mac, open a termial (by cliking <code>Terminal</code> –&gt; <code>New Terminal</code>), then enter your commend in the terminal window to run GLM</li>
-<li>You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs</li>
-</ul>
-<center>
-<p><img src="images/01-gettingstarted/Visual_Studio_Code.PNG" width="100%" /></p>
-</center>
-
-<div class="rmdnote2">
-<p>If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:</p>
-<ul>
-<li><em>NewGRF Meta Language</em> extension for better visualising and editing nml files;</li>
-<li><em>Batch Runner</em> extenstion to run the batch file</li>
-</ul>
-</div>
-
-<p><br></p>
-</div>
-</div>
-<div id="visualising-results" class="section level3 unnumbered hasAnchor">
-<h3>Visualising Results<a href="running-glm.html#visualising-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM’s general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs.</p>
-</div>
-<div id="excel-1" class="section level3 unnumbered hasAnchor">
-<h3>Excel<a href="running-glm.html#excel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><img src="images/processing-outputs/picture1.png" width="100%" /></p>
-</div>
-<div id="r-1" class="section level3 unnumbered hasAnchor">
-<h3>R<a href="running-glm.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># Load packages</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(tidyverse) </a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb2-4" title="4"></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># Read GLM csv</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb2-7" title="7">    <span class="dt">time =</span> <span class="kw">as_datetime</span>(time, <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></a>
-<a class="sourceLine" id="cb2-8" title="8">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> temp)) <span class="op">+</span><span class="st"> </span><span class="co"># Plot with ggplot()</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="st">  </span><span class="kw">theme_classic</span>()</a></code></pre></div>
-<p><img src="GLM-Workbook_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="draft" class="section level2 unnumbered hasAnchor">
-<h2>Running GLM<a href="running-glm.html#draft" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Running GLM (Suggested Method)<a href="running-glm.html#draft" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="install-visual-studio-code" class="section level3 unnumbered hasAnchor">
 <h3>Install Visual Studio Code<a href="running-glm.html#install-visual-studio-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. Begin by downloading VSC <a href="https://code.visualstudio.com/">here</a>.</p>
@@ -334,25 +289,124 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <div id="run-glm" class="section level3 unnumbered hasAnchor">
 <h3>Run GLM<a href="running-glm.html#run-glm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To launch GLM, first open a new terminal session from the menu bar. Depending on your operating system, the commands to run the simulation will differ:</p>
+<p>To launch GLM,first open a new terminal session from VSC’s menu bar. Depending on your operating system, the commands to run the simulation will differ:</p>
 <div class="panelset">
 <div class="panel">
 <p><span class="panel-name unnumbered">MacOS/Linux</span></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">chmod</span> +x run_glm.sh </a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="fu">sh</span> run_glm.sh</a></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Begin by typing <code>chmod +x run_glm.sh</code> in the terminal and press <em>Enter</em>. This will enable executable permissions for the shell script that launches GLM.</li>
+</ol>
+
+<div class="rmdnote2">
+You only need to run <code>chmod +x run_glm.sh</code> once! Subsequent launches of GLM will not require this command to be executed.
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Next, run the GLM shell script by entering <code>sh run_glm.sh</code> into the terminal prompt.</p></li>
+<li><p>You’ll then be prompted to select which GLM plotting script will be used to visualise the model’s outputs as it runs. Enter <code>1</code> and the simulation will launch with the basic visualisation configuration (temperature and salinity).</p></li>
+</ol>
+
+<div class="rmdnote2">
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway.’ Then re-run <code>sh run_glm.sh</code> in VSC’s terminal.
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Once the simulation has finished, click <em>Done</em> and return to the terminal to either re-run the model or quit (option <code>4</code>).</li>
+</ol>
 <video width="100%" controls>
 <source src="images/09-module8/run_chmod.mp4" type="video/mp4"/>
 </video>
-
-<div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
-</div>
 </div>
 <div class="panel">
 <p><span class="panel-name unnumbered">Windows</span></p>
 </div>
 </div>
+</div>
+</div>
+<div id="running-glm-alternative-method" class="section level2 unnumbered hasAnchor">
+<h2>Running GLM (Alternative Method)<a href="running-glm.html#running-glm-alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="C02_4" class="section level3 unnumbered hasAnchor">
+<h3>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Open the Terminal application on your Mac</li>
+<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>WarmLake</em> folder)</li>
+<li>In Finder, go to the <code>GLM/mac</code> folder and right-click on the glm app, select <em>Show Package Contents</em></li>
+<li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
+<li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
+<li>Leave a space after the file path and type <code>--xdisp</code></li>
+<li>Press <code>Enter</code> and the model will run</li>
+</ul>
+<p>These steps are shown in the screen recording below for an example simulation:</p>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/09-module8/video1.mp4" type="video/mp4">
+</video>
+</center>
+
+<div class="rmdnote2">
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway.’
+</div>
+<p><br></p>
+</div>
+<div id="C02_5" class="section level3 unnumbered hasAnchor">
+<h3>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb1-1"><a href="running-glm.html#cb1-1" aria-hidden="true" tabindex="-1"></a>..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</span>
+<span id="cb1-2"><a href="running-glm.html#cb1-2" aria-hidden="true" tabindex="-1"></a>echo press <span class="fu">any</span> key</span>
+<span id="cb1-3"><a href="running-glm.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">pause</span></span></code></pre></div>
+
+<div class="rmdnote2">
+<p>If the model is not opening make sure that you are <strong>not</strong> working from a network directory (e.g. OneDrive) and the file path to the <code>glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
+</div>
+<p><br></p>
+</div>
+<div id="C02_5" class="section level3 unnumbered hasAnchor">
+<h3>Running and editing GLM with Visual Studio Code<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:</p>
+<ul>
+<li>Download VSC from the website <a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a></li>
+<li>Install VSC onto your computer</li>
+<li>Open the GLM case study folder (e.g. TropicalReservoir) by clicking <code>File</code> –&gt; <code>Open Folder</code><br />
+</li>
+<li>Open the <code>glm3.nml</code> by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file</li>
+<li>If you are using Windows, open the glm.bat batch-file, click the <em>Run</em> symbol (see figure below) to run GLM</li>
+<li>If you are using Mac, open a termial (by cliking <code>Terminal</code> –&gt; <code>New Terminal</code>), then enter your commend in the terminal window to run GLM</li>
+<li>You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs</li>
+</ul>
+<center>
+<p><img src="images/01-gettingstarted/Visual_Studio_Code.PNG" width="100%" /></p>
+</center>
+
+<div class="rmdnote2">
+<p>If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:</p>
+<ul>
+<li><em>NewGRF Meta Language</em> extension for better visualising and editing nml files;</li>
+<li><em>Batch Runner</em> extenstion to run the batch file</li>
+</ul>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="visualising-results" class="section level2 unnumbered hasAnchor">
+<h2>Visualising Results<a href="running-glm.html#visualising-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM’s general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs.</p>
+<div id="excel-1" class="section level3 unnumbered hasAnchor">
+<h3>Excel<a href="running-glm.html#excel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/processing-outputs/picture1.png" width="100%" /></p>
+</div>
+<div id="r-1" class="section level3 unnumbered hasAnchor">
+<h3>R<a href="running-glm.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="running-glm.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb2-2"><a href="running-glm.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb2-3"><a href="running-glm.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb2-4"><a href="running-glm.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="running-glm.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="sc">%&gt;%</span>  <span class="co"># Read GLM csv</span></span>
+<span id="cb2-6"><a href="running-glm.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-7"><a href="running-glm.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">as_datetime</span>(time, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></span>
+<span id="cb2-8"><a href="running-glm.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="running-glm.html#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> temp)) <span class="sc">+</span> <span class="co"># Plot with ggplot()</span></span>
+<span id="cb2-10"><a href="running-glm.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="running-glm.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="running-glm.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="GLM-Workbook_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
 </div>
 </div>
