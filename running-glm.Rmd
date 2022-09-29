@@ -41,7 +41,7 @@ GLM's WarmLake simulation can be configured by editing it's `.nml` text files in
 
 
 
-To launch GLM,first open a new terminal session from VSC's menu bar. Depending on your operating system, the commands to run the simulation will differ:
+To launch GLM, first open a new terminal session from VSC's menu bar. Depending on your operating system, the commands to run the simulation will differ:
 
 ::::: {.panelset}
 
@@ -80,6 +80,17 @@ htmltools::tags$video(
 ::: {.panel}
 [Windows]{.panel-name -}
 
+
+```{r panelsetVidWin, echo=FALSE, message=FALSE, warning=FALSE}
+htmltools::tags$video(
+  width='100%', 
+  controls=NA,
+  htmltools::tags$source(
+    src='images/09-module8/run_glm_windows.mp4',
+    type="video/mp4"
+  )
+  )
+```
 
 :::
 
