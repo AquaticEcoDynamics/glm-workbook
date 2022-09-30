@@ -48,21 +48,15 @@ To launch GLM, first open a new terminal session from VSC's menu bar. Depending 
 ::: {.panel}
 [MacOS/Linux]{.panel-name -}
 
-1) Begin by typing `chmod +x run_glm.sh` in the terminal and press *Enter*. This will enable executable permissions for the shell script that launches GLM.
+1) Begin by typing `sh run_glm.sh` into the terminal prompt. 
 
-```{block2, chmodTip, type='rmdnote2'}
-You only need to run `chmod +x run_glm.sh` once! Subsequent launches of GLM will not require this command to be executed.
-```
-
-2) Next, run the GLM shell script by entering `sh run_glm.sh` into the terminal prompt. 
-
-3) You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
+2) You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
 
 ```{block2, hint03_9, type='rmdnote2'}
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'. Then re-run `sh run_glm.sh` in VSC's terminal.
+You may need to run `chmod +x run_glm.sh` once in the terminal to enable executable permissions for the shell script that launches GLM. After running `sh run_glm.sh`, your Mac may block opening GLM for the first time. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'. Then re-run `sh run_glm.sh` in VSC's terminal.
 ```
 
-4) Once the simulation has finished, click *Done* and return to the terminal to either re-run the model or quit (option `4`).
+3) Once the simulation has finished, click *Done* and return to the terminal to either re-run the model or quit (option `4`).
 
 ```{r panelsetVid, echo=FALSE, message=FALSE, warning=FALSE}
 htmltools::tags$video(
@@ -97,6 +91,8 @@ htmltools::tags$video(
 :::::
 
 ## Running GLM (Alternative Method) {-}
+
+The model can also be run on Mac or Windows without the Visual Studio Code, based on the following instructions.
 
 ### Running GLM on MacOS {#C02_4 -}
 
@@ -140,46 +136,6 @@ If the model is not opening make sure that you are **not** working from a networ
 
 ```
 
-
-
-<br>
-
-### Running and editing GLM with Visual Studio Code {#C02_5 -}
-
-Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. To work with Visual Studio Code:
-
-- Download VSC from the website https://code.visualstudio.com/ 
-- Install VSC onto your computer
-- Open the GLM case study folder (e.g. TropicalReservoir) by clicking `File` --> `Open Folder`  
-- Open the `glm3.nml` by clicking the file name on the left file list panel, for viewing and editing the GLM configuration file
-- If you are using Windows, open the glm.bat batch-file, click the *Run* symbol (see figure below) to run GLM 
-- If you are using Mac, open a termial (by cliking `Terminal` --> `New Terminal`), then enter your commend in the terminal window to run GLM 
-- You can now edit the glm3.nml file to change your configurations and run GLM in a same environment to see the changes in the outputs
-
-
-<center>
-
-```{r picrun-2, echo=FALSE, fig.cap="", out.width = '100%'}
-
-knitr::include_graphics("images/01-gettingstarted/Visual_Studio_Code.PNG")
-```
-
-</center>
-
-
-```{block2, hint03_3, type='rmdnote2'}
-
-If you are new to Visual Studio Code and the software is being run for the first time, you would need to install the following extensions:
-
-- *NewGRF Meta Language* extension for better visualising and editing nml files;
-- *Batch Runner* extenstion to run the batch file 
-
-
-```
-
-
-
-<br>
 
 ## Visualising Results {-}
 
