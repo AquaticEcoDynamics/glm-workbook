@@ -174,6 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#run-glm"><i class="fa fa-check"></i>Run GLM</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a><ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Running GLM on MacOS</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
 <li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion on windows</a></li>
 </ul></li>
@@ -256,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="panel">
 <p><span class="panel-name unnumbered">MacOS/Linux</span></p>
 <ol style="list-style-type: decimal">
-<li>Begin by typing <code>chmod +x run_glm.sh</code> in the terminal and press <em>Enter</em>. This will enable executable permissions for the shell script that launches GLM.</li>
+<li>Begin by typing <code>sh run_glm.sh</code> into the terminal prompt.</li>
 </ol>
 
 <div class="rmdnote2">
@@ -268,9 +269,9 @@ You only need to run <code>chmod +x run_glm.sh</code> once! Subsequent launches 
 </ol>
 
 <div class="rmdnote2">
-Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’. Then re-run <code>sh run_glm.sh</code> in VSC’s terminal.
+You may need to run <code>chmod +x run_glm.sh</code> once in the terminal to enable executable permissions for the shell script that launches GLM. After running <code>sh run_glm.sh</code>, your Mac may block opening GLM for the first time. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’. Then re-run <code>sh run_glm.sh</code> in VSC’s terminal.
 </div>
-<ol start="4" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>Once the simulation has finished, click <em>Done</em> and return to the terminal to either re-run the model or quit (option <code>4</code>).</li>
 </ol>
 <video width="100%" controls>
@@ -293,9 +294,34 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <div id="running-glm-alternative-method" class="section level2 unnumbered hasAnchor">
 <h2>Running GLM (Alternative Method)<a href="running-glm.html#running-glm-alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The model can also be run on Mac or Windows without the Visual Studio Code, based on the following instructions.</p>
+<div id="C02_4" class="section level3 unnumbered hasAnchor">
+<h3>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Open the Terminal application on your Mac</li>
+<li>Use the <code>cd</code> (change directory) command to navigate to the simulation directory (e.g. the <em>WarmLake</em> folder)</li>
+<li>In Finder, go to the <code>GLM/mac</code> folder and right-click on the glm app, select <em>Show Package Contents</em></li>
+<li>Enter the Contents folder then the MacOS folder, and locate the glm executable file</li>
+<li>Back in terminal, enter the file path for this executable file - you can do this by dragging/dropping the file into the terminal</li>
+<li>Leave a space after the file path and type <code>--xdisp</code></li>
+<li>Press <code>Enter</code> and the model will run</li>
+</ul>
+<p>These steps are shown in the screen recording below for an example simulation:</p>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/09-module8/video1.mp4" type="video/mp4">
+</video>
+</center>
+
+<div class="rmdnote2">
+Your Mac may block opening GLM the first time you run it. If this occurs, go to your Security options inside System Preferences and click ‘Open Anyway’.
+</div>
+
+<p><br></p>
+</div>
 <div id="C02_5" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>On Windows, the model can be run by double-clicking the batch-file <code>run_glm.bat</code>, which you can open from in the simulation directory (e.g. <em>warmlake</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
+<p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><a class="sourceLine" id="cb1-1" title="1">..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</a>
 <a class="sourceLine" id="cb1-2" title="2">echo press <span class="fu">any</span> key</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="kw">pause</span></a></code></pre></div>
