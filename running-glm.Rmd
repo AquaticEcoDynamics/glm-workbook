@@ -48,13 +48,7 @@ To launch GLM, first open a new terminal session from VSC's menu bar. Depending 
 
 1) Begin by typing `sh run_glm.sh` into the terminal prompt.
 
-```{block2, chmodTip, type='rmdnote2'}
-You only need to run `chmod +x run_glm.sh` once! Subsequent launches of GLM will not require this command to be executed.
-```
-
-2) Next, run the GLM shell script by entering `sh run_glm.sh` into the terminal prompt.
-
-3) You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
+2) You'll then be prompted to select which GLM plotting script will be used to visualise the model's outputs as it runs. Enter `1` and the simulation will launch with the basic visualisation configuration (temperature and salinity).
 
 ```{block2, hint03_9, type='rmdnote2'}
 You may need to run `chmod +x run_glm.sh` once in the terminal to enable executable permissions for the shell script that launches GLM. After running `sh run_glm.sh`, your Mac may block opening GLM for the first time. If this occurs, go to your Security options inside System Preferences and click 'Open Anyway'. Then re-run `sh run_glm.sh` in VSC's terminal.
