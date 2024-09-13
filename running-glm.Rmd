@@ -163,7 +163,25 @@ If you are new to Visual Studio Code and the software is being run for the first
 
 ```
 
-<br>
+### Running GLM in Python with glm-py {-}
+
+glm-py provides a suite of Python tools for running GLM simulations. glm-py can
+be installed with `pip` by running:
+
+```
+pip install glm-py
+```
+
+If you're running Python from a notebook (e.g., Jupyter, Colab) use:
+
+```
+!pip install glm-py
+```
+
+Read the [documentation website](https://aquaticecodynamics.github.io/glm-py/) 
+for information on using glm-py, including a 
+[tutorial](https://aquaticecodynamics.github.io/glm-py/blog/2024/06/24/modelling-sparkling-lake-with-glm-py/) 
+on modelling Sparkling Lake.
 
 ## Visualising Results {-}
 
