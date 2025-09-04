@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Running GLM | GLM Workbook</title>
+  <title>Running GLM | exercise-6a</title>
   <meta name="description" content="The Online GLM Workbook" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Running GLM | GLM Workbook" />
+  <meta property="og:title" content="Running GLM | exercise-6a" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Running GLM | GLM Workbook" />
+  <meta name="twitter:title" content="Running GLM | exercise-6a" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -23,6 +23,7 @@
 <meta name="author" content="Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight" />
 
 
+<meta name="date" content="2025-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -64,6 +64,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -97,7 +98,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -110,7 +111,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -124,6 +125,32 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -199,20 +226,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Case Study Exercises</b></span></li>
 <li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>2.1</b> Energy Balance</a></li>
-<li class="chapter" data-level="2.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>2.2</b> Lake Stratification</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
-<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
+<li class="chapter" data-level="2" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>2</b> Updating Initial Height Conditions</a></li>
+<li class="chapter" data-level="3" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>3</b> Error Assessment</a>
 <ul>
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
-<li class="chapter" data-level="6" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Index (SI)</a></li>
-<li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
-<li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
+<li class="chapter" data-level="4" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>4</b> Adding Water Quality Models</a></li>
+<li class="chapter" data-level="5" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>5</b> Sensitivity Index (SI)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#r-markdown"><i class="fa fa-check"></i><b>5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="5.2" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#including-plots"><i class="fa fa-check"></i><b>5.2</b> Including Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>6</b> Warming Air Scenario</a></li>
+<li class="chapter" data-level="7" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>7</b> Changing Morphometry</a></li>
+<li class="chapter" data-level="8" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>8</b> Water Heating &amp; Stratification</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
+<li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -226,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GLM Workbook</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">exercise-6a</a>
           </h1>
         </div>
 
@@ -234,21 +265,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="running-glm" class="section level1 unnumbered hasAnchor" number="">
+<div id="running-glm" class="section level1 unnumbered hasAnchor">
 <h1>Running GLM<a href="running-glm.html#running-glm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="C02_4" class="section level2 unnumbered hasAnchor" number="">
+<div id="C02_4" class="section level2 unnumbered hasAnchor">
 <h2>Simulation workflow<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <center>
 <p><img src="images/02-files/GLMworkbook-15.png" width="100%" /></p>
 </center>
 </div>
-<div id="draft" class="section level2 unnumbered hasAnchor" number="">
+<div id="draft" class="section level2 unnumbered hasAnchor">
 <h2>Running GLM (Suggested Method)<a href="running-glm.html#draft" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="install-visual-studio-code" class="section level3 unnumbered hasAnchor" number="">
+<div id="install-visual-studio-code" class="section level3 unnumbered hasAnchor">
 <h3>Install Visual Studio Code<a href="running-glm.html#install-visual-studio-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Visual Studio Code (VSC) is a convenient tool for editing and running GLM in an integrated environment. Begin by downloading VSC <a href="https://code.visualstudio.com/">here</a>.</p>
 </div>
-<div id="open-the-warmlake-directory-in-vsc" class="section level3 unnumbered hasAnchor" number="">
+<div id="open-the-warmlake-directory-in-vsc" class="section level3 unnumbered hasAnchor">
 <h3>Open the WarmLake Directory in VSC<a href="running-glm.html#open-the-warmlake-directory-in-vsc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Launch VSC and click the <em>Explorer</em> button then <em>Open Folder</em>. Next, navigate to the <em>WarmLake</em> directory and click <em>Open</em>.</p>
 <center>
@@ -257,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </video>
 </center>
 </div>
-<div id="enable-syntax-highlighting-and-open-a-.nml-file" class="section level3 unnumbered hasAnchor" number="">
+<div id="enable-syntax-highlighting-and-open-a-.nml-file" class="section level3 unnumbered hasAnchor">
 <h3>Enable Syntax Highlighting and Open a <code>.nml</code> File<a href="running-glm.html#enable-syntax-highlighting-and-open-a-.nml-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>GLM’s WarmLake simulation can be configured by editing it’s <code>.nml</code> text files in VSC. For better legibility when editing a <code>.nml</code>, enable Fortran syntax highlighting. Click on the <em>Extensions</em> button and search for the <em>Fortran</em> extension to install. Once installed, click on the <em>Explorer</em> button again and open the <code>glm3.nml</code> file. In the bottom right-hand corner, click on <em>Plain Text</em> and search for <em>Fortran - Modern</em>.</p>
 <center>
@@ -266,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </video>
 </center>
 </div>
-<div id="run-glm" class="section level3 unnumbered hasAnchor" number="">
+<div id="run-glm" class="section level3 unnumbered hasAnchor">
 <h3>Run GLM<a href="running-glm.html#run-glm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To launch GLM, first open a new terminal session from VSC’s menu bar. Depending on your operating system, the commands to run the simulation will differ:</p>
 <div class="panelset">
@@ -301,10 +332,10 @@ You may need to run <code>chmod +x run_glm.sh</code> once in the terminal to ena
 </div>
 </div>
 </div>
-<div id="running-glm-alternative-method" class="section level2 unnumbered hasAnchor" number="">
+<div id="running-glm-alternative-method" class="section level2 unnumbered hasAnchor">
 <h2>Running GLM (Alternative Method)<a href="running-glm.html#running-glm-alternative-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The model can also be run on Mac or Windows without the Visual Studio Code, based on the following instructions.</p>
-<div id="C02_4" class="section level3 unnumbered hasAnchor" number="">
+<div id="C02_4" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM on MacOS<a href="running-glm.html#C02_4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Open the Terminal application on your Mac</li>
@@ -327,19 +358,19 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 </div>
 <p><br></p>
 </div>
-<div id="C02_5" class="section level3 unnumbered hasAnchor" number="">
+<div id="C02_5" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM on Windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On Windows, the model can be run using a batch-file <code>glm.bat</code>, which you can open from in the simulation directory (e.g. <em>Kinneret97</em> folder). The <code>.bat</code> file calls the GLM model from the current working directory, and should be located where the `glm.nml’ file is.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortran"><span id="cb1-1"><a href="running-glm.html#cb1-1" aria-hidden="true"></a>..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</span>
-<span id="cb1-2"><a href="running-glm.html#cb1-2" aria-hidden="true"></a>echo press <span class="fu">any</span> key</span>
-<span id="cb1-3"><a href="running-glm.html#cb1-3" aria-hidden="true"></a><span class="kw">pause</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode fortran"><code class="sourceCode fortranfixed"><span id="cb1-1"><a href="running-glm.html#cb1-1" tabindex="-1"></a>..\GLM\win\glm_<span class="fl">3.3.0</span>\glm.exe <span class="kw">--</span>xdisp</span>
+<span id="cb1-2"><a href="running-glm.html#cb1-2" tabindex="-1"></a>echo press <span class="fu">any</span> key</span>
+<span id="cb1-3"><a href="running-glm.html#cb1-3" tabindex="-1"></a><span class="kw">pause</span></span></code></pre></div>
 
 <div class="rmdnote2">
 <p>If the model is not opening make sure that you are <strong>not</strong> working from a network directory (e.g. OneDrive) and the file path to the <code>run_glm.bat</code> file has <strong>zero</strong> spaces in it.</p>
 </div>
 <p><br></p>
 </div>
-<div id="C02_5" class="section level3 unnumbered hasAnchor" number="">
+<div id="C02_5" class="section level3 unnumbered hasAnchor">
 <h3>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion on windows<a href="running-glm.html#C02_5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Click ‘Extensions’ on left panel, search ‘Batch Runner’</li>
@@ -357,7 +388,7 @@ Your Mac may block opening GLM the first time you run it. If this occurs, go to 
 <p>If you are new to Visual Studio Code and the software is being run for the first time, you can install the <em>NewGRF Meta Language</em> extension for better visualising and editing nml files.</p>
 </div>
 </div>
-<div id="running-glm-in-python-with-glm-py" class="section level3 unnumbered hasAnchor" number="">
+<div id="running-glm-in-python-with-glm-py" class="section level3 unnumbered hasAnchor">
 <h3>Running GLM in Python with glm-py<a href="running-glm.html#running-glm-in-python-with-glm-py" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>glm-py provides a suite of Python tools for running GLM simulations. glm-py can
 be installed with <code>pip</code> by running:</p>
@@ -370,27 +401,27 @@ for information on using glm-py, including a
 on modelling Sparkling Lake.</p>
 </div>
 </div>
-<div id="visualising-results" class="section level2 unnumbered hasAnchor" number="">
+<div id="visualising-results" class="section level2 unnumbered hasAnchor">
 <h2>Visualising Results<a href="running-glm.html#visualising-results" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Depending on your preference for visualisation software, both Excel and R can be used for the plotting of GLM’s general lake or depth-specific csv outputs. R is required for visualising NetCDF outputs.</p>
-<div id="excel-1" class="section level3 unnumbered hasAnchor" number="">
+<div id="excel-1" class="section level3 unnumbered hasAnchor">
 <h3>Excel<a href="running-glm.html#excel-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="images/processing-outputs/picture1.png" width="100%" /></p>
 </div>
-<div id="r-1" class="section level3 unnumbered hasAnchor" number="">
+<div id="r-1" class="section level3 unnumbered hasAnchor">
 <h3>R<a href="running-glm.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="running-glm.html#cb4-1" aria-hidden="true"></a><span class="co"># Load packages</span></span>
-<span id="cb4-2"><a href="running-glm.html#cb4-2" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb4-3"><a href="running-glm.html#cb4-3" aria-hidden="true"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb4-4"><a href="running-glm.html#cb4-4" aria-hidden="true"></a></span>
-<span id="cb4-5"><a href="running-glm.html#cb4-5" aria-hidden="true"></a><span class="kw">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># Read GLM csv</span></span>
-<span id="cb4-6"><a href="running-glm.html#cb4-6" aria-hidden="true"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
-<span id="cb4-7"><a href="running-glm.html#cb4-7" aria-hidden="true"></a>    <span class="dt">time =</span> <span class="kw">as_datetime</span>(time, <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></span>
-<span id="cb4-8"><a href="running-glm.html#cb4-8" aria-hidden="true"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb4-9"><a href="running-glm.html#cb4-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> temp)) <span class="op">+</span><span class="st"> </span><span class="co"># Plot with ggplot()</span></span>
-<span id="cb4-10"><a href="running-glm.html#cb4-10" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="op">+</span></span>
-<span id="cb4-11"><a href="running-glm.html#cb4-11" aria-hidden="true"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="op">+</span></span>
-<span id="cb4-12"><a href="running-glm.html#cb4-12" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_classic</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="running-glm.html#cb4-1" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<span id="cb4-2"><a href="running-glm.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-3"><a href="running-glm.html#cb4-3" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb4-4"><a href="running-glm.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="running-glm.html#cb4-5" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;plots/processing-outputs/WQ_5.csv&quot;</span>) <span class="sc">%&gt;%</span>  <span class="co"># Read GLM csv</span></span>
+<span id="cb4-6"><a href="running-glm.html#cb4-6" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-7"><a href="running-glm.html#cb4-7" tabindex="-1"></a>    <span class="at">time =</span> <span class="fu">as_datetime</span>(time, <span class="at">format =</span> <span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) <span class="co"># Format date/time</span></span>
+<span id="cb4-8"><a href="running-glm.html#cb4-8" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="running-glm.html#cb4-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> temp)) <span class="sc">+</span> <span class="co"># Plot with ggplot()</span></span>
+<span id="cb4-10"><a href="running-glm.html#cb4-10" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="running-glm.html#cb4-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Temperature (°C)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="running-glm.html#cb4-12" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p><img src="GLM-Workbook_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
 </div>
@@ -466,7 +497,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
