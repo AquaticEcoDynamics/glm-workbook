@@ -1,0 +1,76 @@
+# Adding Water Quality Models
+
+<br>
+
+Now lets turn our attention to the water quality / ecology part of the case-study simulation. Both the **WarmLake** and **TropicalReservoir** case-studies have the AED model pre-configured. A schematic (conceptual model) of the interactions being simulated in the AED module are shown below.
+
+<br>
+
+<center>
+
+```{r figex5-1, echo=FALSE, fig.cap="", out.width = '75%', out.extra='data-action="zoom"'}
+knitr::include_graphics("images/Exercises/AEDWQ.jpg")
+```
+
+</center>
+
+<br>
+
+Activate the water quality [AED modules](http://aquatic.science.uwa.edu.au/research/models/AED/modules.html) by making sure the `&wq_setup` block is ready and uncommented, and the  `wq_lib` = 'aed' entry is set. Make sure `glm3.nml` can find another namelist file `aed.nml` to configure the water quality model parameters, using the `&wq_setup` parameter `wq_nml_file`.
+
+<br>
+
+```{block2, hintex5_5, type='rmdnote2'}
+
+The above simulation was only plotting temperature and salinity and these plots were configured in `plots.nml`. Open `plots.nml` to see how you can customise the graphs. There are many other variables we may be interested in plotting when we run the watter quality model such as oxygen, nutrients, and algae. A pre-configured file called `plots_aed.nml` has been created. To use this file you simply need to add `plots_aed.nml` after the call to glm --xdisp in the mac terminal or the Windows batch file (right click and open the batch file with a text editor).
+
+```
+
+<br>
+
+<center>
+<video width="90%" height="100%" controls>
+  <source src="images/Exercises/plots_aed.mp4" type="video/mp4">
+</video>
+</center>
+
+<br>
+
+In `plots_aed.nml` the required variables are all listed, make sure the number of plots is high enough to include them all, and feel free to customise the settings.
+
+<center>
+
+```{r tabex5-1, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module7_1 <- read.csv("tables/Exercises/table1.csv", check.names=FALSE)
+kable(module7_1, format = "html", escape = F, align = "c", caption = "Water quality variables and their descriptions.") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "25em") %>%
+  column_spec(2, width_min = "25em") %>%
+  scroll_box(width = "100%", height="450px",
+             fixed_thead = FALSE)
+```
+
+</center>
+
+<br>
+
+Add water quality variables to the specific depth output files (i.e. `WQ_5.csv`). To do so we must edit the output section of the `glm3.nml` file, by adding the variables as extra columns to the `WQ_x.csv` files that were configured earlier
+
+```{block2, hintex5_6, type='rmdtip2'}
+If they are there already, make sure that the number of variables `nvar` is high enough to include them all.
+```
+
+```{=html}
+<style>
+ol > li > ol > li {list-style-type:lower-alpha}
+</style>
+```
+
+As an example of output water quality variables, let's plot all the nitrogen variables. Change `csv_point_vars` to include `NIT_amm`, `NIT_nit`, `OGM_don`, `OGM_pon`, `PHY_green_IN` - these are all the variables that contribute to the total nitrogen (TN) pool. Now re-run the model (e.g. Windows users double clicking `glm.bat` again). Once it's run open `WQ_35.csv` to see these new variables and create a stacked area plot to show how the different variables contribute to TN.
+
+Create a well formatted, interesting graph of variables of your choice (for example, you may like to consider all of the phytoplankton groups or create sums of these to generate a NPZD model) to see how they interact and change over time. If any variables are much bigger or smaller than the others, then use two y-axes or multiple plots.
