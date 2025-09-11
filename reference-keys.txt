@@ -8,10 +8,9 @@ updating-initial-height-conditions
 error-assessment
 adding-water-quality-models
 sensitivity-index-si
-r-markdown
-including-plots
 warming-air-scenario
 changing-morphometry
 WaterHeatingAndStratification
 energy-balance
 lake-stratification
+bonus-exercise-glm-python

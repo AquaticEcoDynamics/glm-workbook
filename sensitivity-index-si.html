@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Sensitivity Index (SI) | exercise-6a</title>
+  <title>5 Sensitivity Index (SI) | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Sensitivity Index (SI) | exercise-6a" />
+  <meta property="og:title" content="5 Sensitivity Index (SI) | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Sensitivity Index (SI) | exercise-6a" />
+  <meta name="twitter:title" content="5 Sensitivity Index (SI) | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -23,7 +23,6 @@
 <meta name="author" content="Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight" />
 
 
-<meta name="date" content="2025-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -206,11 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>4</b> Adding Water Quality Models</a></li>
-<li class="chapter" data-level="5" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>5</b> Sensitivity Index (SI)</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#r-markdown"><i class="fa fa-check"></i><b>5.1</b> R Markdown</a></li>
-<li class="chapter" data-level="5.2" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#including-plots"><i class="fa fa-check"></i><b>5.2</b> Including Plots</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>5</b> Sensitivity Index (SI)</a></li>
 <li class="chapter" data-level="6" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>6</b> Warming Air Scenario</a></li>
 <li class="chapter" data-level="7" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>7</b> Changing Morphometry</a></li>
 <li class="chapter" data-level="8" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>8</b> Water Heating &amp; Stratification</a>
@@ -218,6 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
 <li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="bonus-exercise-glm-python.html"><a href="bonus-exercise-glm-python.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -231,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">exercise-6a</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GLM Workbook</a>
           </h1>
         </div>
 
@@ -349,26 +345,6 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </div>
 <p>Are the water variables more sensitive to the change in wind, or the change water clarity?</p>
 
-<div id="r-markdown" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> R Markdown<a href="sensitivity-index-si.html#r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sensitivity-index-si.html#cb5-1" aria-hidden="true"></a><span class="kw">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</div>
-<div id="including-plots" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Including Plots<a href="sensitivity-index-si.html#including-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="GLM-Workbook_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
-
-</div>
 </div>
             </section>
 
