@@ -48,10 +48,10 @@ days<-Time$mday
 days[1:50]
 months<-Time$mon+1
 months[1:50]
-Have a 
-"Have a look at how I made the time sequence and try to understand it."
-Delete this
-"Delete this line once you have understood it."
+# Have a 
+# "Have a look at how I made the time sequence and try to understand it."
+# Delete this
+# "Delete this line once you have understood it."
 #CLIMATE
 alphaebs=0.5	#bare soil evap scaling (-)
 alphaeag=0.5	#crop evap scaling (-)

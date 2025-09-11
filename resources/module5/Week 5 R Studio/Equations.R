@@ -1,7 +1,7 @@
-precip
-P=as.matrix(precip)
-P
-delete this line once you have seen what I did with precipitation and P
+# precip
+# P=as.matrix(precip)
+# P
+# delete this line once you have seen what I did with precipitation and P
 
 
 
