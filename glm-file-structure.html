@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>GLM File Structure | exercise-6a</title>
+  <meta name="description" content="The Online GLM Workbook" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="GLM File Structure | exercise-6a" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The Online GLM Workbook" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GLM File Structure | exercise-6a" />
+  
+  <meta name="twitter:description" content="The Online GLM Workbook" />
+  
+
+<meta name="author" content="Matt Hipsey, Dan Paraska, Peisheng Huang, Casper Boon, Giles Knight" />
+
+
+<meta name="date" content="2025-09-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="setup.html"/>
+<link rel="next" href="running-glm.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+<script src="libs/panelset-0.2.6/panelset.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="https://hypothes.is/embed.js" async></script>
+  
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>GLM Workbook</b></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#glm-information"><i class="fa fa-check"></i>GLM Information</a></li>
+</ul></li>
+<li class="part"><span><b>I Getting Started</b></span></li>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i>Setup</a>
+<ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#tools-youll-need"><i class="fa fa-check"></i>Tools You’ll Need</a>
+<ul>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#text-editor"><i class="fa fa-check"></i>Text Editor</a></li>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#excel"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#r"><i class="fa fa-check"></i>R</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#case-study-download"><i class="fa fa-check"></i>Case-study download</a></li>
+<li class="chapter" data-level="" data-path="setup.html"><a href="setup.html#unzipping-files"><i class="fa fa-check"></i>Unzipping files</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html"><i class="fa fa-check"></i>GLM File Structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-input-files"><i class="fa fa-check"></i>GLM input files</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-configuration-file-glm3.nml"><i class="fa fa-check"></i>GLM configuration file: <code>glm3.nml</code></a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-plot-window-file-plots.nml"><i class="fa fa-check"></i>GLM plot window file: <code>plots.nml</code></a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#boundary-files"><i class="fa fa-check"></i>Boundary files</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#aed-water-quality-model-files"><i class="fa fa-check"></i>AED water quality model files</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#glm-output-files"><i class="fa fa-check"></i>GLM output files</a>
+<ul>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#output-netcdf"><i class="fa fa-check"></i>Output Netcdf</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#general-lake-.csv"><i class="fa fa-check"></i>General lake .csv</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#depth-specific-.csv"><i class="fa fa-check"></i>Depth-specific .csv</a></li>
+<li class="chapter" data-level="" data-path="glm-file-structure.html"><a href="glm-file-structure.html#plot-window"><i class="fa fa-check"></i>Plot window</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html"><i class="fa fa-check"></i>Running GLM</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Simulation workflow</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#draft"><i class="fa fa-check"></i>Running GLM (Suggested Method)</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#install-visual-studio-code"><i class="fa fa-check"></i>Install Visual Studio Code</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#open-the-warmlake-directory-in-vsc"><i class="fa fa-check"></i>Open the WarmLake Directory in VSC</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#enable-syntax-highlighting-and-open-a-.nml-file"><i class="fa fa-check"></i>Enable Syntax Highlighting and Open a <code>.nml</code> File</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#run-glm"><i class="fa fa-check"></i>Run GLM</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-alternative-method"><i class="fa fa-check"></i>Running GLM (Alternative Method)</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_4"><i class="fa fa-check"></i>Running GLM on MacOS</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running GLM on Windows</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#C02_5"><i class="fa fa-check"></i>Running and editing GLM with Visual Studio Code <em>Batch Runner</em> extenstion on windows</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#running-glm-in-python-with-glm-py"><i class="fa fa-check"></i>Running GLM in Python with glm-py</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#visualising-results"><i class="fa fa-check"></i>Visualising Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#excel-1"><i class="fa fa-check"></i>Excel</a></li>
+<li class="chapter" data-level="" data-path="running-glm.html"><a href="running-glm.html#r-1"><i class="fa fa-check"></i>R</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Case Study Exercises</b></span></li>
+<li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
+<li class="chapter" data-level="2" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>2</b> Updating Initial Height Conditions</a></li>
+<li class="chapter" data-level="3" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>3</b> Error Assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>4</b> Adding Water Quality Models</a></li>
+<li class="chapter" data-level="5" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>5</b> Sensitivity Index (SI)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#r-markdown"><i class="fa fa-check"></i><b>5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="5.2" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#including-plots"><i class="fa fa-check"></i><b>5.2</b> Including Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>6</b> Warming Air Scenario</a></li>
+<li class="chapter" data-level="7" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>7</b> Changing Morphometry</a></li>
+<li class="chapter" data-level="8" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>8</b> Water Heating &amp; Stratification</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
+<li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">exercise-6a</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="glm-file-structure" class="section level1 unnumbered hasAnchor" number="">
+<h1>GLM File Structure<a href="glm-file-structure.html#glm-file-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="glm-input-files" class="section level2 unnumbered hasAnchor" number="">
+<h2>GLM input files<a href="glm-file-structure.html#glm-input-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<center>
+<img src="images/02-files/GLMworkbook-16.png" width="33%" />
+</center>
+<div id="glm-configuration-file-glm3.nml" class="section level3 unnumbered hasAnchor" number="">
+<h3>GLM configuration file: <code>glm3.nml</code><a href="glm-file-structure.html#glm-configuration-file-glm3.nml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A GLM model simulation is controlled through the main configuration file : glm3.nml. This file is read as text by the GLM program, from top to bottom. Any text with a ‘!’ before it is not read by the program, but is used as a comment for the user.</p>
+<p>The key elements of this file are depicted as ‘blocks’ and each block of configuration options and parameters is summarised in detail on <a href="https://aquatic.science.uwa.edu.au/research/models/GLM/configuration.html">this page</a>. Each block is started with an ampersand <code>&amp;</code> and finished with a slash <code>/</code>. The blocks contain text that can be either</p>
+<ul>
+<li>single parameters (with units)<br />
+</li>
+<li>listed parameters, for example, for every depth layer or every river inflow<br />
+</li>
+<li>listed variables, for example, variables to be read in or written to the output<br />
+</li>
+<li>file paths and file names<br />
+</li>
+<li>configuration switches (integers or logical values)<br />
+</li>
+</ul>
+<p>Some key inputs for setting up a GLM simulation are listed below.</p>
+<p><code>&amp;wq_setup</code>:<code>wq_lib</code> sets an external water quality model, for example, ‘aed’.<br />
+<code>&amp;wq_setup</code>:<code>wq_nml_file</code> is the filepath and filename for an external water quality model namelist.<br />
+</p>
+<p><code>&amp;glm_morphometry</code>:<code>H</code> is a list of some of the heights of the lake.<br />
+<code>&amp;glm_morphometry</code>:<code>A</code> is a list of some of the areas of the lake, at the same layers listed in <code>H</code>.</p>
+<p><code>&amp;time</code>:<code>timefmt</code> is a switch for the time setup: either number of days (= 3) or start and stop days (= 2).<br />
+<code>&amp;time</code>:<code>start</code> and <code>stop</code> are the dates to start and stop (<code>timefmt</code> = 2).<br />
+<code>&amp;time</code>:<code>num_days</code> is the number of days for a simulation (<code>timefmt</code> = 3).<br />
+</p>
+<p><code>&amp;output</code>:<code>csv_point_nlevs</code> is the number of <code>csv_point_at</code> depths to use, as listed left to right.<br />
+<code>&amp;output</code>:<code>csv_point_at</code> is a list of the depths (m) from the bottom at which an output csv file is written.<br />
+<code>&amp;output</code>:<code>csv_point_vars</code> is a list of the simulated variables to write to the output csv.<br />
+<code>&amp;output</code>:<code>csv_point_nvars</code> is the number of <code>csv_point_vars</code> to use, as listed left to right.<br />
+</p>
+<p><code>&amp;init_profiles</code>:<code>num_depths</code> is the number (integer) of depths to set for the initial profile.<br />
+<code>&amp;init_profiles</code>:<code>the_depths</code> are the depths (m) of the initial profiles, where other features are configured, from bottom to top.<br />
+<code>&amp;init_profiles</code>:<code>the_temps</code> are the initial temperatures at <code>the_depths</code>.<br />
+<code>&amp;init_profiles</code>:<code>the_sals</code> are the initial salinity at <code>the_depths</code>.<br />
+</p>
+<p><code>&amp;inflow</code>:<code>num_inflows</code> is a number (integer) of inflowing streams.<br />
+<code>&amp;inflow</code>:<code>inflow_fl</code> is a list of the file names for the inflowing streams.<br />
+<code>&amp;inflow</code>:<code>inflow_vars</code> is a list of variables to be taken from the inflow files.<br />
+</p>
+<p><code>&amp;outflow</code>:<code>num_outlet</code> is a number (integer) of outflowing streams.<br />
+<code>&amp;outflow</code>:<code>outflow_fl</code> is a list of the file names for the outflowing streams.<br />
+<code>&amp;outflow</code>:<code>outflow_fl</code> is a list of the file names for the outflowing streams.<br />
+</p>
+<!-- `&sediment`:`zone_heights` is a list of the heights (m) of the sediment zones, from bottom to top.\ -->
+</div>
+<div id="glm-plot-window-file-plots.nml" class="section level3 unnumbered hasAnchor" number="">
+<h3>GLM plot window file: <code>plots.nml</code><a href="glm-file-structure.html#glm-plot-window-file-plots.nml" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>plots.nml</code> text file configures the automatic plot window that runs during the simulation. The x axis is time, the y axis is lake depth layer and the z axis (colour bar) is the scale of the variable, for example concentration. The user can configure the plot window using the following:</p>
+<ul>
+<li><code>&amp;plots_window</code>:<code>width</code> and <code>height</code> set the dimensions of the plotting window (mm).<br />
+</li>
+<li><code>&amp;plots</code>:<code>plot_width</code> and <code>plot_height</code> set the dimensions of the individual plots (mm).<br />
+</li>
+<li><code>&amp;plots</code>:<code>title</code> is a list of the titles displayed above each plot.<br />
+</li>
+<li><code>&amp;plots</code>:<code>vars</code> is a list of the GLM or AED variables for each plot, in the same sequence as <code>title</code>.<br />
+</li>
+<li><code>&amp;plots</code>:<code>min_z</code> and <code>max_z</code> set the minimum and maximum values for each of the variables, in the same sequence as <code>title</code>.</li>
+</ul>
+<center>
+<img src="images/02-files/Plotwindow.png" width="100%" />
+</center>
+</div>
+<div id="boundary-files" class="section level3 unnumbered hasAnchor" number="">
+<h3>Boundary files<a href="glm-file-structure.html#boundary-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Boundary .csv files can be found in the ‘inputs’ or ‘bcs’ (<em>boundary conditions</em>) directory. The exact names and paths are listed in the glm3.nml block <code>&amp;inflow</code>, <code>&amp;outflow</code> and <code>&amp;meteorology</code>.</p>
+<div id="inflow-files" class="section level4 unnumbered hasAnchor" number="">
+<h4>Inflow files<a href="glm-file-structure.html#inflow-files" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The simulated lake may have streams or rivers flowing into it. If so, one time series boundary .csv file is used for each inflow stream. The rows of the csv are time steps and the columns are inflowing variables, such as flow volume, salinity and oxygen. The file names are listed in <code>inflow_fl</code> and the model will read them in from left to right according to the number set in <code>num_inflows</code>.</p>
+</div>
+<div id="outflow-files" class="section level4 unnumbered hasAnchor" number="">
+<h4>Outflow files<a href="glm-file-structure.html#outflow-files" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In a similar way to the inflow files, the simulated lake may have streams or rivers flowing out of it. If so, one time series boundary .csv file is used for each outflow stream. The rows of the csv are time steps and the columns are outflowing variables, such as flow volume, salinity and oxygen. The file names are listed in <code>outflow_fl</code> and the model will read them in from left to right according to the number set in <code>num_outlet</code>.</p>
+</div>
+<div id="meteorological-file" class="section level4 unnumbered hasAnchor" number="">
+<h4>Meteorological file<a href="glm-file-structure.html#meteorological-file" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>One meteorological file sets conditions at the surface of the lake, i.e. the water-atmosphere boundary. It includes values such as air temperature, wind speed and light. The file is also a time-series boundary, with rows as time steps and columns as each boundary variable. It often has a name like ‘met.csv’.</p>
+<center>
+<img src="images/02-files/GLMworkbook-06.png" width="75%" />
+</center>
+</div>
+</div>
+<div id="aed-water-quality-model-files" class="section level3 unnumbered hasAnchor" number="">
+<h3>AED water quality model files<a href="glm-file-structure.html#aed-water-quality-model-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If an external water quality model is being used, it will be specified with the parameter <code>&amp;wq_setup</code>: <code>wq_lib</code>, for example, ‘aed’. The parameters for the water quality model are specified by a file and file path in <code>wq_nml_file</code>, for example, ‘aed/aed.nml’.</p>
+</div>
+</div>
+<div id="glm-output-files" class="section level2 unnumbered hasAnchor" number="">
+<h2>GLM output files<a href="glm-file-structure.html#glm-output-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once GLM is running, it will write its results to several different output files.</p>
+<center>
+<img src="images/02-files/GLMworkbook-17.png" width="50%" />
+</center>
+<div id="output-netcdf" class="section level3 unnumbered hasAnchor" number="">
+<h3>Output Netcdf<a href="glm-file-structure.html#output-netcdf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The results of all variables at all time steps and depths are written to the netcdf file. This file may have a size of hundreds of MB or GB. The file can be accessed with Matlab or R packages that have been created to organize these large file types.</p>
+<center>
+<img src="images/02-files/GLMworkbook-07.png" width="33%" />
+</center>
+</div>
+<div id="general-lake-.csv" class="section level3 unnumbered hasAnchor" number="">
+<h3>General lake .csv<a href="glm-file-structure.html#general-lake-.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>One csv is written for each simulation. The file name is set with the parameter <code>&amp;output</code>: <code>csv_lake_fname</code>, for example ‘lake.csv’. This file contains values that apply to the whole lake, such as lake volume, lake level and surface temperature.</p>
+
+<div class="rmdtip2">
+If this file is open in a program such as Excel, the GLM program cannot overwrite the file. Close the .csv or save it with a different file name before running the model again.
+</div>
+<p>A list of the variables contained in the lake .csv <a href="https://github.com/AquaticEcoDynamics/glm-aed/wiki/Navigating-GLM-outputs">can be found here</a>. The table ‘2D variables from lake.csv’ lists the variables, a description and the units of each.</p>
+<p>This .csv is especially useful for calculating the <a href="WaterBalance.html#WaterBalance">water balance</a> and heat balance of the lake.</p>
+</div>
+<div id="depth-specific-.csv" class="section level3 unnumbered hasAnchor" number="">
+<h3>Depth-specific .csv<a href="glm-file-structure.html#depth-specific-.csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Profiles can be output at specified depths, using <code>&amp;output</code>: <code>csv_point_fname</code> and <code>csv_point_at</code>. For example, if <code>csv_point_fname</code> is ‘WQ’ and <code>csv_point_at</code> is 1, 5, 12, then the model will create files ‘WQ_1’, ‘WQ_5’ and ‘WQ_12’. The variables for this file are listed in the parameter <code>csv_point_vars</code>. This file can be used to access output data at one depth more easily than via the netcdf file.</p>
+</div>
+<div id="plot-window" class="section level3 unnumbered hasAnchor" number="">
+<h3>Plot window<a href="glm-file-structure.html#plot-window" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can save the plot window as a .png image file by hitting the <code>Save</code> buttons. The plot window will overwrite any previous files each time you do this, so rename the file or save it to a different folder each time.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="running-glm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["GLM Module Resources.zip", "GLM Module Resources"]],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
