@@ -1,0 +1,3 @@
+# Bonus exercise: GLM + Python
+
+The glm-py package extends GLM into the Python programming ecosystem. You can run a short exercise in your browser [here](https://colab.research.google.com/drive/18F702WfbOBQMr3g0sq-kpmsKqhqlvXhb?usp=sharing). Note, you will need a Google account to access the Colab runtime.
