@@ -31,7 +31,7 @@ jobs:
       - uses: r-lib/actions/setup-renv@v2
 
       - name: Build site
-        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
+        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE, output_dir="docs")'
 
       - name: Deploy to GitHub pages 
         uses: JamesIves/github-pages-deploy-action@v4.5.0

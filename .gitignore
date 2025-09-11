@@ -10,6 +10,7 @@ docs/*.json
 docs/libs
 docs/images
 docs/*.txt
+docs/css
 docs/GLM-Workbook_files
 *.Rproj 
 *.rds
