@@ -4,7 +4,11 @@
 .Ruserdata
 .DS_Store
 _bookdown_files
-docs/*
+docs/.DS_Store
+docs/*.html
+docs/*.json
+docs/libs/
+docs/GLM-Workbook_files
 *.Rproj 
 *.rds
 _bookdown_files/
