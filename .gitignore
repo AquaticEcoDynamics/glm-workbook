@@ -7,7 +7,9 @@ _bookdown_files
 docs/.DS_Store
 docs/*.html
 docs/*.json
-docs/libs/
+docs/libs
+docs/images
+docs/*.txt
 docs/GLM-Workbook_files
 *.Rproj 
 *.rds
