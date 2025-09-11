@@ -1,7 +1,9 @@
 # Bonus exercise: GLM + Python
 
+<br>
+
 <center>
-```{r glmpy-exercise, echo=FALSE, fig.cap="", out.width = '75%'}
+```{r glmpy-exercise, echo=FALSE, fig.cap="", out.width = '85%'}
 knitr::include_graphics("images/py-plus-glm.png")
 ```
 </center>
