@@ -171,7 +171,7 @@ glm-py is Python API for GLM. You can use it to configure, run, and visualise GL
 pip install glm-py
 ```
 
-For users new to Python, it is recommended that you first complete the [Bonus Exercise](#glmpy-exercise) before installing Python and glm-py on your computer. You will use a browser-based Python notebook that won't require any installing any software on your computer.
+For users new to Python, it is recommended that you first complete the [Bonus Exercise](#glmpy-exercise) before installing Python and glm-py on your computer. You will use a browser-based Python notebook that won't require installing any software on your computer.
 
 
 ## Visualising Results {-}
