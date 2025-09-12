@@ -13,4 +13,4 @@ changing-morphometry
 WaterHeatingAndStratification
 energy-balance
 lake-stratification
-bonus-exercise-glm-python
+glmpy-exercise

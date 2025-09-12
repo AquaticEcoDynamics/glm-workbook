@@ -213,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
 <li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="bonus-exercise-glm-python.html"><a href="bonus-exercise-glm-python.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
+<li class="chapter" data-level="9" data-path="glmpy-exercise.html"><a href="glmpy-exercise.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -241,29 +241,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This can be achieved by altering the boundary condition files, such as the meteorology and inflow files, to represent this type of climate change scenario.</p>
 <p>Check whether your simulation package has a pre-made version of the meteorology file in the <em>bcs</em> folder, with the air temperature increased by 2 °C. For example, the file may be called <code>met_1997_2004_airT2.csv</code>. To use this file, update <code>meteo_fl = 'bcs/met_1997_2004.csv'</code> in the <code>&amp;meteorology</code> section of <code>glm3.nml</code>.</p>
 <p>Or alternatively you can edit the <code>met_hourly.csv</code> file to reflect these conditions. Open the met file in Excel and alter the conditions (e.g. add 2C to the air temperature) and then re-save the file as a new met csv file. Make sure to save with correct date format, taking note these met measurements are recorded hourly, so use the format <code>YYYY-MM-DD hh:mm</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode fortran"><code class="sourceCode fortran"><span id="cb5-1"><a href="warming-air-scenario.html#cb5-1" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb5-2"><a href="warming-air-scenario.html#cb5-2" aria-hidden="true"></a><span class="co">! meteorology</span></span>
-<span id="cb5-3"><a href="warming-air-scenario.html#cb5-3" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb5-4"><a href="warming-air-scenario.html#cb5-4" aria-hidden="true"></a><span class="kw">&amp;</span>meteorology</span>
-<span id="cb5-5"><a href="warming-air-scenario.html#cb5-5" aria-hidden="true"></a>   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb5-6"><a href="warming-air-scenario.html#cb5-6" aria-hidden="true"></a>   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></span>
-<span id="cb5-7"><a href="warming-air-scenario.html#cb5-7" aria-hidden="true"></a>   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></span>
-<span id="cb5-8"><a href="warming-air-scenario.html#cb5-8" aria-hidden="true"></a>   atm_stab    <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb5-9"><a href="warming-air-scenario.html#cb5-9" aria-hidden="true"></a>   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></span>
-<span id="cb5-10"><a href="warming-air-scenario.html#cb5-10" aria-hidden="true"></a>  <span class="co">!rad_mode    = 1</span></span>
-<span id="cb5-11"><a href="warming-air-scenario.html#cb5-11" aria-hidden="true"></a>   albedo_mode <span class="kw">=</span> <span class="dv">1</span></span>
-<span id="cb5-12"><a href="warming-air-scenario.html#cb5-12" aria-hidden="true"></a>   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></span>
-<span id="cb5-13"><a href="warming-air-scenario.html#cb5-13" aria-hidden="true"></a> <span class="co">!-- BC file details</span></span>
-<span id="cb5-14"><a href="warming-air-scenario.html#cb5-14" aria-hidden="true"></a>   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></span>
-<span id="cb5-15"><a href="warming-air-scenario.html#cb5-15" aria-hidden="true"></a>   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span>   <span class="co">!&lt;---- UPDATE THIS LINE TO READ THE NEW FILE</span></span>
-<span id="cb5-16"><a href="warming-air-scenario.html#cb5-16" aria-hidden="true"></a>   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></span>
-<span id="cb5-17"><a href="warming-air-scenario.html#cb5-17" aria-hidden="true"></a>   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></span>
-<span id="cb5-18"><a href="warming-air-scenario.html#cb5-18" aria-hidden="true"></a>   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></span>
-<span id="cb5-19"><a href="warming-air-scenario.html#cb5-19" aria-hidden="true"></a> <span class="co">!-- Parameters</span></span>
-<span id="cb5-20"><a href="warming-air-scenario.html#cb5-20" aria-hidden="true"></a>   ce <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb5-21"><a href="warming-air-scenario.html#cb5-21" aria-hidden="true"></a>   ch <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb5-22"><a href="warming-air-scenario.html#cb5-22" aria-hidden="true"></a>   cd <span class="kw">=</span> <span class="fl">0.0013</span></span>
-<span id="cb5-23"><a href="warming-air-scenario.html#cb5-23" aria-hidden="true"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode fortran"><code class="sourceCode fortran"><span id="cb4-1"><a href="warming-air-scenario.html#cb4-1" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb4-2"><a href="warming-air-scenario.html#cb4-2" aria-hidden="true"></a><span class="co">! meteorology</span></span>
+<span id="cb4-3"><a href="warming-air-scenario.html#cb4-3" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb4-4"><a href="warming-air-scenario.html#cb4-4" aria-hidden="true"></a><span class="kw">&amp;</span>meteorology</span>
+<span id="cb4-5"><a href="warming-air-scenario.html#cb4-5" aria-hidden="true"></a>   met_sw      <span class="kw">=</span> <span class="cn">.true.</span></span>
+<span id="cb4-6"><a href="warming-air-scenario.html#cb4-6" aria-hidden="true"></a>   lw_<span class="dt">type</span>     <span class="kw">=</span> <span class="st">&#39;LW_IN&#39;</span></span>
+<span id="cb4-7"><a href="warming-air-scenario.html#cb4-7" aria-hidden="true"></a>   rain_sw     <span class="kw">=</span> <span class="cn">.false.</span></span>
+<span id="cb4-8"><a href="warming-air-scenario.html#cb4-8" aria-hidden="true"></a>   atm_stab    <span class="kw">=</span> <span class="dv">0</span></span>
+<span id="cb4-9"><a href="warming-air-scenario.html#cb4-9" aria-hidden="true"></a>   fetch_mode  <span class="kw">=</span> <span class="dv">0</span></span>
+<span id="cb4-10"><a href="warming-air-scenario.html#cb4-10" aria-hidden="true"></a>  <span class="co">!rad_mode    = 1</span></span>
+<span id="cb4-11"><a href="warming-air-scenario.html#cb4-11" aria-hidden="true"></a>   albedo_mode <span class="kw">=</span> <span class="dv">1</span></span>
+<span id="cb4-12"><a href="warming-air-scenario.html#cb4-12" aria-hidden="true"></a>   cloud_mode  <span class="kw">=</span> <span class="dv">4</span></span>
+<span id="cb4-13"><a href="warming-air-scenario.html#cb4-13" aria-hidden="true"></a> <span class="co">!-- BC file details</span></span>
+<span id="cb4-14"><a href="warming-air-scenario.html#cb4-14" aria-hidden="true"></a>   subdaily    <span class="kw">=</span> <span class="cn">.true.</span></span>
+<span id="cb4-15"><a href="warming-air-scenario.html#cb4-15" aria-hidden="true"></a>   meteo_fl    <span class="kw">=</span> <span class="st">&#39;bcs/met_1997_2004.csv&#39;</span>   <span class="co">!&lt;---- UPDATE THIS LINE TO READ THE NEW FILE</span></span>
+<span id="cb4-16"><a href="warming-air-scenario.html#cb4-16" aria-hidden="true"></a>   wind_factor <span class="kw">=</span> <span class="fl">0.9</span></span>
+<span id="cb4-17"><a href="warming-air-scenario.html#cb4-17" aria-hidden="true"></a>   lw_factor   <span class="kw">=</span> <span class="fl">1.0</span></span>
+<span id="cb4-18"><a href="warming-air-scenario.html#cb4-18" aria-hidden="true"></a>   lw_offset   <span class="kw">=</span> <span class="fl">0.0</span></span>
+<span id="cb4-19"><a href="warming-air-scenario.html#cb4-19" aria-hidden="true"></a> <span class="co">!-- Parameters</span></span>
+<span id="cb4-20"><a href="warming-air-scenario.html#cb4-20" aria-hidden="true"></a>   ce <span class="kw">=</span> <span class="fl">0.0013</span></span>
+<span id="cb4-21"><a href="warming-air-scenario.html#cb4-21" aria-hidden="true"></a>   ch <span class="kw">=</span> <span class="fl">0.0013</span></span>
+<span id="cb4-22"><a href="warming-air-scenario.html#cb4-22" aria-hidden="true"></a>   cd <span class="kw">=</span> <span class="fl">0.0013</span></span>
+<span id="cb4-23"><a href="warming-air-scenario.html#cb4-23" aria-hidden="true"></a><span class="kw">/</span></span></code></pre></div>
 <p>Once you have successfully updated the GLM configuration to use the new air temperature boundary condition, examine the surface water temperature and phytoplankton outputs and compare them to the baseline scenario. This can be done by creating a time-series plot comparing the two simulations, and computing the mean difference between the two.</p>
 
 </div>

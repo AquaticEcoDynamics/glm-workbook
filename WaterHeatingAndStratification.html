@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="changing-morphometry.html"/>
-<link rel="next" href="bonus-exercise-glm-python.html"/>
+<link rel="next" href="glmpy-exercise.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
 <li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="bonus-exercise-glm-python.html"><a href="bonus-exercise-glm-python.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
+<li class="chapter" data-level="9" data-path="glmpy-exercise.html"><a href="glmpy-exercise.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -263,22 +263,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Inspect the depth-time contour plots in the GLM plotting window to examine the nature of stratification in the case study simulation(s). Do you see any seasonal patterns in the temperature differences between the top and the bottom? Is this reflected in any variables other than temperature?</p>
 <p><em>Outputing variables at multiple depths</em>: We can configure GLM to look in more depth the nature of differences between the upper and lower layers. Go to the <code>&amp;output</code> (not <code>&amp;outflow</code>!) section of <code>glm3.nml</code> and customize the configuration to make two <em>depth-specific</em> output files, one at 5 m from the bottom (ie. in the lake hypolimnion) and one at 35 m from the bottom (i.e. in the lake epilimnion). Use the parameter <code>csv_point_at</code> to set the depths, from the bottom, at which the model will write .csv files. This will create two <code>.csv</code> files (<code>WQ_5.csv</code> and <code>WQ_35.csv</code>) with conditions at these water depths. Make sure number of levels that you output (<code>csv_point_nlevs</code>) is set to the number of output .csvs that you want.</p>
 <p><br></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode fortran"><code class="sourceCode fortran"><span id="cb6-1"><a href="WaterHeatingAndStratification.html#cb6-1" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb6-2"><a href="WaterHeatingAndStratification.html#cb6-2" aria-hidden="true"></a><span class="co">! format for output and filename(s)</span></span>
-<span id="cb6-3"><a href="WaterHeatingAndStratification.html#cb6-3" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
-<span id="cb6-4"><a href="WaterHeatingAndStratification.html#cb6-4" aria-hidden="true"></a><span class="kw">&amp;</span>output</span>
-<span id="cb6-5"><a href="WaterHeatingAndStratification.html#cb6-5" aria-hidden="true"></a>   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
-<span id="cb6-6"><a href="WaterHeatingAndStratification.html#cb6-6" aria-hidden="true"></a>   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
-<span id="cb6-7"><a href="WaterHeatingAndStratification.html#cb6-7" aria-hidden="true"></a>   nsave   <span class="kw">=</span> <span class="dv">24</span>                      <span class="co">! This will output every 24 hours</span></span>
-<span id="cb6-8"><a href="WaterHeatingAndStratification.html#cb6-8" aria-hidden="true"></a>  <span class="co">!- General summary file</span></span>
-<span id="cb6-9"><a href="WaterHeatingAndStratification.html#cb6-9" aria-hidden="true"></a>   csv_lake_fname  <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></span>
-<span id="cb6-10"><a href="WaterHeatingAndStratification.html#cb6-10" aria-hidden="true"></a>  <span class="co">!- Depth specific outputs</span></span>
-<span id="cb6-11"><a href="WaterHeatingAndStratification.html#cb6-11" aria-hidden="true"></a>   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span>               <span class="co">! # of depth-specific output files</span></span>
-<span id="cb6-12"><a href="WaterHeatingAndStratification.html#cb6-12" aria-hidden="true"></a>   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span>           <span class="co">! prefix for files</span></span>
-<span id="cb6-13"><a href="WaterHeatingAndStratification.html#cb6-13" aria-hidden="true"></a>   csv_point_at    <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span>          <span class="co">! depths (above bottom) for output</span></span>
-<span id="cb6-14"><a href="WaterHeatingAndStratification.html#cb6-14" aria-hidden="true"></a>   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span>               <span class="co">! number of columns to write</span></span>
-<span id="cb6-15"><a href="WaterHeatingAndStratification.html#cb6-15" aria-hidden="true"></a>   csv_point_vars  <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></span>
-<span id="cb6-16"><a href="WaterHeatingAndStratification.html#cb6-16" aria-hidden="true"></a><span class="kw">/</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode fortran"><code class="sourceCode fortran"><span id="cb5-1"><a href="WaterHeatingAndStratification.html#cb5-1" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb5-2"><a href="WaterHeatingAndStratification.html#cb5-2" aria-hidden="true"></a><span class="co">! format for output and filename(s)</span></span>
+<span id="cb5-3"><a href="WaterHeatingAndStratification.html#cb5-3" aria-hidden="true"></a><span class="co">!-------------------------------------------------------------------------------</span></span>
+<span id="cb5-4"><a href="WaterHeatingAndStratification.html#cb5-4" aria-hidden="true"></a><span class="kw">&amp;</span>output</span>
+<span id="cb5-5"><a href="WaterHeatingAndStratification.html#cb5-5" aria-hidden="true"></a>   out_dir <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
+<span id="cb5-6"><a href="WaterHeatingAndStratification.html#cb5-6" aria-hidden="true"></a>   out_fn  <span class="kw">=</span> <span class="st">&#39;output&#39;</span></span>
+<span id="cb5-7"><a href="WaterHeatingAndStratification.html#cb5-7" aria-hidden="true"></a>   nsave   <span class="kw">=</span> <span class="dv">24</span>                      <span class="co">! This will output every 24 hours</span></span>
+<span id="cb5-8"><a href="WaterHeatingAndStratification.html#cb5-8" aria-hidden="true"></a>  <span class="co">!- General summary file</span></span>
+<span id="cb5-9"><a href="WaterHeatingAndStratification.html#cb5-9" aria-hidden="true"></a>   csv_lake_fname  <span class="kw">=</span> <span class="st">&#39;lake&#39;</span></span>
+<span id="cb5-10"><a href="WaterHeatingAndStratification.html#cb5-10" aria-hidden="true"></a>  <span class="co">!- Depth specific outputs</span></span>
+<span id="cb5-11"><a href="WaterHeatingAndStratification.html#cb5-11" aria-hidden="true"></a>   csv_point_nlevs <span class="kw">=</span> <span class="dv">2</span>               <span class="co">! # of depth-specific output files</span></span>
+<span id="cb5-12"><a href="WaterHeatingAndStratification.html#cb5-12" aria-hidden="true"></a>   csv_point_fname <span class="kw">=</span> <span class="st">&#39;WQ_&#39;</span>           <span class="co">! prefix for files</span></span>
+<span id="cb5-13"><a href="WaterHeatingAndStratification.html#cb5-13" aria-hidden="true"></a>   csv_point_at    <span class="kw">=</span> <span class="fl">5.</span>,<span class="fl">35.</span>          <span class="co">! depths (above bottom) for output</span></span>
+<span id="cb5-14"><a href="WaterHeatingAndStratification.html#cb5-14" aria-hidden="true"></a>   csv_point_nvars <span class="kw">=</span> <span class="dv">4</span>               <span class="co">! number of columns to write</span></span>
+<span id="cb5-15"><a href="WaterHeatingAndStratification.html#cb5-15" aria-hidden="true"></a>   csv_point_vars  <span class="kw">=</span> <span class="st">&#39;temp&#39;</span>,<span class="st">&#39;salt&#39;</span>,<span class="st">&#39;PHS_frp&#39;</span>,<span class="st">&#39;NIT_amm&#39;</span></span>
+<span id="cb5-16"><a href="WaterHeatingAndStratification.html#cb5-16" aria-hidden="true"></a><span class="kw">/</span></span></code></pre></div>
 <p><br></p>
 <p>Save the <code>glm3.nml</code> and run the model again.</p>
 <p>Find the new output <code>.csv</code> files in the <code>output</code> folder. Copy the data to a new Excel spreadsheet. Calculate the temperature difference between the top and the bottom. Identify the time periods where the lake is stratified and mixed.</p>
@@ -296,7 +296,7 @@ If an output file is open in Excel, the GLM program cannot overwrite the file. C
         </div>
       </div>
 <a href="changing-morphometry.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bonus-exercise-glm-python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="glmpy-exercise.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
