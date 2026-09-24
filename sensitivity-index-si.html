@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Sensitivity Index (SI) | GLM Workbook</title>
+  <title>6 Sensitivity Index (SI) | GLM Workbook</title>
   <meta name="description" content="The Online GLM Workbook" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Sensitivity Index (SI) | GLM Workbook" />
+  <meta property="og:title" content="6 Sensitivity Index (SI) | GLM Workbook" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="The Online GLM Workbook" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Sensitivity Index (SI) | GLM Workbook" />
+  <meta name="twitter:title" content="6 Sensitivity Index (SI) | GLM Workbook" />
   
   <meta name="twitter:description" content="The Online GLM Workbook" />
   
@@ -199,20 +199,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II Case Study Exercises</b></span></li>
 <li class="chapter" data-level="1" data-path="WaterBalance.html"><a href="WaterBalance.html"><i class="fa fa-check"></i><b>1</b> Water Level &amp; Balance</a></li>
-<li class="chapter" data-level="2" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>2</b> Updating Initial Height Conditions</a></li>
-<li class="chapter" data-level="3" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>3</b> Error Assessment</a>
+<li class="chapter" data-level="2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>2</b> Water Heating &amp; Stratification</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>2.1</b> Energy Balance</a></li>
+<li class="chapter" data-level="2.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>2.2</b> Lake Stratification</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="updating-initial-height-conditions.html"><a href="updating-initial-height-conditions.html"><i class="fa fa-check"></i><b>3</b> Updating Initial Height Conditions</a></li>
+<li class="chapter" data-level="4" data-path="error-assessment.html"><a href="error-assessment.html"><i class="fa fa-check"></i><b>4</b> Error Assessment</a>
 <ul>
 <li class="chapter" data-level="" data-path="error-assessment.html"><a href="error-assessment.html#mean-absolute-error-mae"><i class="fa fa-check"></i>Mean Absolute Error (MAE)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>4</b> Adding Water Quality Models</a></li>
-<li class="chapter" data-level="5" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>5</b> Sensitivity Index (SI)</a></li>
-<li class="chapter" data-level="6" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>6</b> Warming Air Scenario</a></li>
-<li class="chapter" data-level="7" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>7</b> Changing Morphometry</a></li>
-<li class="chapter" data-level="8" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html"><i class="fa fa-check"></i><b>8</b> Water Heating &amp; Stratification</a>
+<li class="chapter" data-level="5" data-path="adding-water-quality-models.html"><a href="adding-water-quality-models.html"><i class="fa fa-check"></i><b>5</b> Adding Water Quality Models</a></li>
+<li class="chapter" data-level="6" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html"><i class="fa fa-check"></i><b>6</b> Sensitivity Index (SI)</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#energy-balance"><i class="fa fa-check"></i><b>8.1</b> Energy Balance</a></li>
-<li class="chapter" data-level="8.2" data-path="WaterHeatingAndStratification.html"><a href="WaterHeatingAndStratification.html#lake-stratification"><i class="fa fa-check"></i><b>8.2</b> Lake Stratification</a></li>
+<li class="chapter" data-level="" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#temperature-sensitivity"><i class="fa fa-check"></i>Temperature sensitivity</a></li>
+<li class="chapter" data-level="" data-path="sensitivity-index-si.html"><a href="sensitivity-index-si.html#optional-phytoplankton-algae-sensitivity"><i class="fa fa-check"></i>Optional: Phytoplankton (algae) sensitivity</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="warming-air-scenario.html"><a href="warming-air-scenario.html"><i class="fa fa-check"></i><b>7</b> Warming Air Scenario</a></li>
+<li class="chapter" data-level="8" data-path="changing-morphometry.html"><a href="changing-morphometry.html"><i class="fa fa-check"></i><b>8</b> Changing Morphometry</a></li>
 <li class="chapter" data-level="9" data-path="glmpy-exercise.html"><a href="glmpy-exercise.html"><i class="fa fa-check"></i><b>9</b> Bonus exercise: GLM + Python</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -235,20 +239,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="sensitivity-index-si" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> Sensitivity Index (SI)<a href="sensitivity-index-si.html#sensitivity-index-si" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sensitivity-index-si" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Sensitivity Index (SI)<a href="sensitivity-index-si.html#sensitivity-index-si" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Calculating a sensitivity index allows the impact of changing an independent variable (e.g. a model parameter) to be assessed on a dependent variable. Another way to think of this is <em>how much does an output change if I change an input?</em> Given all other variables are held constant, the SI is computed by dividing the percentage change in the simulated result (i.e. the output) by the percentage change of the input parameter:</p>
 <center>
 <span class="math display" id="eq:ex6-1">\[\begin{equation}
 SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-Parameter_{original})/Parameter_{original}}
-\tag{5.1}
+\tag{6.1}
 \end{equation}\]</span>
 </center>
 <p>If there is a large change in the output variable, we say that the variable is sensitive to the parameter. If there is a small change in the output variable, we say the variable is not sensitive to the parameter.</p>
-<p>In this exercise we will compare the sensitivity of the water temperature and algae concentration to the mean wind speed, and the water clarity.</p>
+<p>In this exercise we will assess the sensitivity of the modelled water temperature to the water clarity and the mean wind speed.</p>
+<div id="temperature-sensitivity" class="section level2 unnumbered hasAnchor" number="">
+<h2>Temperature sensitivity<a href="sensitivity-index-si.html#temperature-sensitivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, <span class="math inline">\(K_w\)</span>) and wind speed (<code>wind_factor</code>). These can be found in <code>glm3.nml</code>: <code>&amp;light</code> and <code>&amp;meteorology</code>, respectively.</p>
 <p>Try increasing and decreasing the default parameter value by 0.2 (Kw) and 0.3 (wind) and see how much the output changes.</p>
-<p>Using the SI calculation on the simulation output, assess how sensitive the water temperature and phytoplankton biomass is to water clarity (<code>Kw</code>):</p>
+<p>Using the SI calculation on the simulation output, assess how sensitive the water temperature is to water clarity (<code>Kw</code>):</p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -280,23 +286,12 @@ Average WQ_35 temperature
 <td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-Average WQ_35 phytoplankton (green, crypto, diatom) biomass
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-<td style="text-align:center;min-width: 10em; ">
-</td>
-</tr>
 </tbody>
 </table>
 </div>
 </center>
 <p><br></p>
-<p>Assess how sensitive the temperature and phytoplankton biomass is to wind speed (<code>wind_factor</code>):</p>
+<p>Assess how sensitive the water temperature is to wind speed (<code>wind_factor</code>):</p>
 <p><br></p>
 <center>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
@@ -329,6 +324,42 @@ Average WQ_35 temperature
 <td style="text-align:center;min-width: 10em; ">
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>Is the water temperature more sensitive to the change in wind, or the change in water clarity?</p>
+</div>
+<div id="optional-phytoplankton-algae-sensitivity" class="section level2 unnumbered hasAnchor" number="">
+<h2>Optional: Phytoplankton (algae) sensitivity<a href="sensitivity-index-si.html#optional-phytoplankton-algae-sensitivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Changing a physical parameter does not only affect the physical variables. Water clarity and wind speed directly control the temperature and mixing of the lake, but these changes then flow on <em>indirectly</em> to the other variables simulated by the water quality model. For example:</p>
+<ul>
+<li><strong>Temperature</strong> controls the growth rates of phytoplankton, so a warmer or cooler surface layer will speed up or slow down algal growth.</li>
+<li><strong>Mixing and stratification</strong> control how long algae stay in the well-lit surface layer, and how easily nutrients released from the sediments and bottom waters are brought up to the surface.</li>
+<li><strong>Water clarity</strong> also directly changes how much light is available for photosynthesis, and how deep in the water column algae can grow.</li>
+</ul>
+<p>Because of these indirect pathways, a small change to a physical parameter can show up as a different algal biomass - sometimes with a larger (or smaller) sensitivity than the temperature itself.</p>
+<p>Using the same simulations as above (with the water quality model activated, as in the <a href="adding-water-quality-models.html#adding-water-quality-models">previous exercise</a>), add the phytoplankton groups (<code>PHY_green</code>, <code>PHY_crypto</code> and <code>PHY_diatom</code>) to your <code>WQ_35.csv</code> output and calculate the SI of the total phytoplankton biomass to water clarity (<code>Kw</code>):</p>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+GLM results
+</th>
+<th style="text-align:center;">
+Water clarity Decrease 0.37
+</th>
+<th style="text-align:center;">
+Water clarity Original 0.57
+</th>
+<th style="text-align:center;">
+Water clarity Increase 0.77
+</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align:center;min-width: 10em; ">
 Average WQ_35 phytoplankton (green, crypto, diatom) biomass
@@ -343,8 +374,48 @@ Average WQ_35 phytoplankton (green, crypto, diatom) biomass
 </tbody>
 </table>
 </div>
-<p>Are the water variables more sensitive to the change in wind, or the change water clarity?</p>
+</center>
+<p><br></p>
+<p>And to wind speed (<code>wind_factor</code>):</p>
+<p><br></p>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+GLM results
+</th>
+<th style="text-align:center;">
+Wind Speed Decrease 0.6
+</th>
+<th style="text-align:center;">
+Wind Speed Original 0.9
+</th>
+<th style="text-align:center;">
+Wind Speed Increase 1.2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Average WQ_35 phytoplankton (green, crypto, diatom) biomass
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+<td style="text-align:center;min-width: 10em; ">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>Is the phytoplankton biomass more or less sensitive than the water temperature to each parameter? Which of the pathways above do you think explains the difference?</p>
 
+</div>
 </div>
             </section>
 
