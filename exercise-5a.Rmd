@@ -14,13 +14,15 @@ SI = \frac{(Output_{new}-Output_{original})/Output_{original}}{(Parameter_{new}-
 
 If there is a large change in the output variable, we say that the variable is sensitive to the parameter. If there is a small change in the output variable, we say the variable is not sensitive to the parameter.
 
-In this exercise we will compare the sensitivity of the water temperature and algae concentration to the mean wind speed, and the water clarity.
+In this exercise we will assess the sensitivity of the modelled water temperature to the water clarity and the mean wind speed.
+
+## Temperature sensitivity {-}
 
 Calculate the sensitivity of the modelled temperature to changes in water clarity (the light extinction coefficient, $K_w$) and wind speed (`wind_factor`). These can be found in `glm3.nml`: `&light` and `&meteorology`, respectively.
 
 Try increasing and decreasing the default parameter value by 0.2 (Kw) and 0.3 (wind) and see how much the output changes.
 
-Using the SI calculation on the simulation output, assess how sensitive the water temperature and phytoplankton biomass is to water clarity (`Kw`):
+Using the SI calculation on the simulation output, assess how sensitive the water temperature is to water clarity (`Kw`):
 
 <center>
 
@@ -45,7 +47,7 @@ kable(module7_2, format = "html", escape = F, align = "c") %>%
 
 <br>
 
-Assess how sensitive the temperature and phytoplankton biomass is to wind speed (`wind_factor`):
+Assess how sensitive the water temperature is to wind speed (`wind_factor`):
 
 <br>
 
@@ -68,4 +70,68 @@ kable(module7_3, format = "html", escape = F, align = "c") %>%
              fixed_thead = FALSE)
 ```
 
-Are the water variables more sensitive to the change in wind, or the change water clarity?
+</center>
+
+Is the water temperature more sensitive to the change in wind, or the change in water clarity?
+
+## Optional: Phytoplankton (algae) sensitivity {-}
+
+Changing a physical parameter does not only affect the physical variables. Water clarity and wind speed directly control the temperature and mixing of the lake, but these changes then flow on *indirectly* to the other variables simulated by the water quality model. For example:
+
+-   **Temperature** controls the growth rates of phytoplankton, so a warmer or cooler surface layer will speed up or slow down algal growth.
+-   **Mixing and stratification** control how long algae stay in the well-lit surface layer, and how easily nutrients released from the sediments and bottom waters are brought up to the surface.
+-   **Water clarity** also directly changes how much light is available for photosynthesis, and how deep in the water column algae can grow.
+
+Because of these indirect pathways, a small change to a physical parameter can show up as a different algal biomass - sometimes with a larger (or smaller) sensitivity than the temperature itself.
+
+Using the same simulations as above (with the water quality model activated, as in the [previous exercise](#adding-water-quality-models)), add the phytoplankton groups (`PHY_green`, `PHY_crypto` and `PHY_diatom`) to your `WQ_35.csv` output and calculate the SI of the total phytoplankton biomass to water clarity (`Kw`):
+
+<center>
+
+```{r tabex6-3, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module7_4 <- read.csv("tables/Exercises/table4.csv", check.names=FALSE)
+kable(module7_4, format = "html", escape = F, align = "c") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
+  scroll_box(width = "100%",
+             fixed_thead = FALSE)
+```
+
+</center>
+
+<br>
+
+And to wind speed (`wind_factor`):
+
+<br>
+
+<center>
+
+```{r tabex6-4, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(hablar)
+library(dplyr)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+module7_5 <- read.csv("tables/Exercises/table5.csv", check.names=FALSE)
+kable(module7_5, format = "html", escape = F, align = "c") %>%
+  kable_styling(full_width = F, position = "center") %>%
+  column_spec(1, width_min = "10em") %>%
+  column_spec(2, width_min = "10em") %>%
+  column_spec(3, width_min = "10em") %>%
+  column_spec(4, width_min = "10em") %>%
+  scroll_box(width = "100%",
+             fixed_thead = FALSE)
+```
+
+</center>
+
+Is the phytoplankton biomass more or less sensitive than the water temperature to each parameter? Which of the pathways above do you think explains the difference?
